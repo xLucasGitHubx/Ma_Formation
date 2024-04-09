@@ -85,6 +85,7 @@ console.log(euclide(10, 5));
 */
 
 // 6 10
-// 10 6 (6%10)
-// 6  2 (10%6)
-// 2  0 (6%2) return a donc 2.
+// 10 6
+// 6  4
+// 4  2
+// 2  0  return a donc 2.
