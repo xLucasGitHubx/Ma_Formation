@@ -78,7 +78,7 @@ function euclide(a, b) {
 		return euclide(b, a % b);
 	}
 }
-console.log(euclide(6, 10));
+console.log(euclide(10, 5));
 
 /*
 À la main, calculer `euclide(6,10)`.
