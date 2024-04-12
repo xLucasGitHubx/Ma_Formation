@@ -212,28 +212,45 @@ console.log(nbOfDaysBetweenYears(1912, 2020));
 console.log(nbOfDaysSinceNewYear(8, "novembre", 2021));
 // Question 38
 //39950+1 pour 23juin qui saute
+console.log(nbOfDaysBetweenYears(1912, 2020) + nbOfDaysSinceNewYear(8, "novembre", 2021) - nbOfDaysSinceNewYear(23, "juin", 1912) + 1);
 // Question 39
 
-for (let i = 0; i < nbOfDaysSinceNewYear(23, "juin", 1912) - nbOfDaysBetweenYears(1912, 2020) + nbOfDaysSinceNewYear(8, "novembre", 2021) + 1; i++) {
-	if (i % 7 == 0) {
-		console.log("on est dimache");
-	} else if (i % 7 == 1) {
-		console.log("on est lundi");
-	} else if (i % 7 == 2) {
-		console.log("on est mardi");
-	} else if (i % 7 == 3) {
-		console.log("on est mercredi");
-	} else if (i % 7 == 4) {
-		console.log("on est jeudi");
-	} else if (i % 7 == 5) {
-		console.log("on est vendredi");
-	} else {
-		console.log("on est samedi");
-	}
+let Q39 = nbOfDaysBetweenYears(1912, 2020) + nbOfDaysSinceNewYear(8, "novembre", 2021) - nbOfDaysSinceNewYear(23, "juin", 1912) + 1;
+if (Q39 % 7 == 1) {
+	console.log("on est dimache");
+} else if (Q39 % 7 == 2) {
+	console.log("on est lundi");
+} else if (Q39 % 7 == 3) {
+	console.log("on est mardi");
+} else if (Q39 % 7 == 4) {
+	console.log("on est mercredi");
+} else if (Q39 % 7 == 5) {
+	console.log("on est jeudi");
+} else if (Q39 % 7 == 6) {
+	console.log("on est vendredi");
+} else {
+	console.log("on est samedi");
 }
 
 // Question 40
-function dayOfTheWeek() {}
+function dayOfTheWeek(day, month, year) {
+	let Q39 = nbOfDaysBetweenYears(1582, year - 1) + nbOfDaysSinceNewYear(day, month, year) - nbOfDaysSinceNewYear(15, "octobre", 1582) + 1;
+	if (Q39 % 7 == 1) {
+		return "on est vendredi";
+	} else if (Q39 % 7 == 2) {
+		return "on est samedi";
+	} else if (Q39 % 7 == 3) {
+		return "on est dimanche";
+	} else if (Q39 % 7 == 4) {
+		return "on est lundi";
+	} else if (Q39 % 7 == 5) {
+		return "on est mardi";
+	} else if (Q39 % 7 == 6) {
+		return "on est mercredi";
+	} else {
+		return "on est jeudi";
+	}
+}
 console.log("Question 40", dayOfTheWeek(8, "novembre", 2021));
 
 /*********************
@@ -241,33 +258,106 @@ TP2 - Le jeu de la vie
 *********************/
 
 // Question 41
-
+// 1 1 0 0
+// 1 1 1 1
+// 0 1 1 1
+// 0 1 1 1
 // Question 42
-
+// let ligneUn = [1,1,0,0];
 // Question 43
 
+let ligneUn = [1, 1, 0, 0];
+let ligneDeux = [1, 0, 0, 0];
+let ligneTrois = [1, 0, 1, 1];
+let ligneQuatre = [0, 0, 0, 1];
+
 // Question 44
-
+let allLigne = [ligneUn, ligneDeux, ligneTrois, ligneQuatre];
 // Question 45
-
+// (3,2) correspond à la 4eme colonne 3eme ligne
 // Question 46
-
+console.log(allLigne[2][3]);
 // Question 47
-function lineToString() {}
+function lineToString(ligne) {
+	let string = "";
+	for (let i = 0; i < ligne.length; i++) {
+		string += ligne[i];
+	}
+	return string;
+}
+console.log(lineToString(ligneQuatre));
 
 // Question 48
-function displayGrid() {}
+function displayGrid(matrice) {
+	let grille = "";
+	for (let i = 0; i < matrice.length; i++) {
+		grille += lineToString(matrice[i]);
+		grille += "\n";
+	}
+	return grille;
+}
+console.log(displayGrid(allLigne));
 
 // Question 49
-function createEmptyArray() {}
+function createEmptyArray(n) {
+	let string = [];
+	for (let i = 0; i < n; i++) {
+		string.push(0);
+	}
+	return string;
+}
+// console.log(createEmptyArray(3)); teeeessst
 
 // Question 50
-function createEmptyGrid() {}
+function createEmptyGrid(height, width) {
+	let matrice = [];
+	for (let i = 0; i < height; i++) {
+		matrice.push(createEmptyArray(width));
+	}
+	return matrice;
+}
+// console.log(createEmptyGrid(5, 3));
 
 // Question 51
-function evolution() {}
+function evolution(matrice) {
+	let ligne = matrice.length;
+	let colonne = matrice[0].length;
+	let matriceEvolve = createEmptyGrid(ligne, colonne);
+
+	for (let i = 0; i < ligne; i++) {
+		for (let j = 0; j < colonne; j++) {
+			let voisineVivante = 0;
+
+			for (let iv = -1; iv <= 1; iv++) {
+				for (let jv = -1; jv <= 1; jv++) {
+					let coordValide = i + iv >= 0 && i + iv < matrice.length && j + jv >= 0 && j + jv < matrice[i].length;
+					coordValide = coordValide && (iv !== 0 || jv !== 0);
+
+					if (coordValide && matrice[i + iv][j + jv] === 1) {
+						voisineVivante += 1;
+					}
+				}
+			}
+			if (matrice[i][j] === 1 && voisineVivante >= 2 && voisineVivante <= 3) {
+				matriceEvolve[i][j] = 1;
+			} else if (matrice[i][j] === 0 && voisineVivante === 3) {
+				matriceEvolve[i][j] = 1;
+			}
+		}
+	}
+	return matriceEvolve;
+}
+
+console.log(evolution(allLigne));
 
 // Question 52
+
+function timeJump(matrice, n) {
+	for (let i = 0; i < n; i++) {
+		matrice = evolution(matrice);
+	}
+	return matrice;
+}
 
 // Question 53
 function drawGrid() {}
