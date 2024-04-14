@@ -107,6 +107,21 @@ function bonus_suite(t) {
 }
 console.log(bonus_suite([14, 10, 3, 7, 1]));
 
+function binarySearch(t, x, debut, fin) {
+	if (debut > fin) {
+		return console.log(`le nombre ${x} n'existe pas dans le tableau`);
+	}
+	let mid = Math.floor((debut + fin) / 2);
+	if (t[mid] == x) {
+		return console.log(`le nombre ${x} existe dans le tableau`);
+	} else if (t[mid] > x) {
+		return binarySearch(t, x, debut, mid - 1);
+	} else {
+		return binarySearch(t, x, mid + 1, fin);
+	}
+}
+let tab = tabEnPlusDix(7777);
+binarySearch(tab, 70, 0, tab.length - 1);
 // Créer un tableau qui contient [1,2,3,...,7777].
 
 function tabAvecNElementCroissant(n) {
@@ -117,7 +132,7 @@ function tabAvecNElementCroissant(n) {
 	return t;
 }
 
-console.log(tabAvecNElementCroissant(7777));
+// console.log(tabAvecNElementCroissant(7777));
 
 // Créer un tableau qui contient [10,20,30,...,77770].
 
@@ -128,7 +143,7 @@ function tabEnPlusDix(n) {
 	}
 	return t;
 }
-console.log(tabEnPlusDix(7777));
+// console.log(tabEnPlusDix(7777));
 
 // En se servant du tableau précédent, créer un tableau qui contient [5,10,15,...,38885].
 function tabEnPlusCinq(n) {
