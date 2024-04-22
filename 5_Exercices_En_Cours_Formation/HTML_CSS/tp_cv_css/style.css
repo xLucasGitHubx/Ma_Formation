@@ -1,0 +1,17 @@
+h1 {
+	color: aqua;
+}
+.age {
+	color: red;
+}
+#about {
+	color: purple;
+	font-size: 2.5em;
+}
+header {
+	display: flex;
+	justify-content: space-around;
+}
+.textInHeader {
+	font-size: 2em;
+}
