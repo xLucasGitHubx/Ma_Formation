@@ -24,7 +24,7 @@ div {
 p,
 a {
 	font-size: 0.65vw;
-	color: white;
+	/* color: black; */
 }
 a:hover {
 	color: red;
@@ -36,6 +36,18 @@ a:hover {
 .tp {
 	background: rgb(2, 0, 36);
 	background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+#p1 {
+	color: yellow;
+}
+
+#p1:hover {
+	color: green;
+}
+
+#p2:hover {
+	color: aquamarine;
 }
 
 @media screen and (max-width: 1410px) {
@@ -50,4 +62,11 @@ a:hover {
 	a {
 		font-size: 1.2vw;
 	}
+}
+
+.p2 {
+	cursor: pointer;
+	position: relative;
+	padding: 10px 20px;
+	transition: all 3s;
 }
