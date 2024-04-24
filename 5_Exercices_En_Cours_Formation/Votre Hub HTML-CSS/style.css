@@ -40,6 +40,12 @@ nav ul li a {
 
 main {
 	padding: 20px;
+	background-image: url(./images/lucas_profil.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+div {
+	background-color: beige;
 }
 
 section {
