@@ -6,6 +6,7 @@ img {
 	border-radius: 8px;
 	object-fit: cover;
 }
+/* Utilisation des flexbox ci-dessous */
 main {
 	display: flex;
 	justify-content: space-around;
@@ -21,6 +22,8 @@ div {
 	border-radius: 15px;
 	color: white;
 }
+/* Utilisation des flexbox ci-dessus */
+
 p,
 a {
 	font-size: 0.65vw;
@@ -49,6 +52,8 @@ a:hover {
 #p2:hover {
 	color: aquamarine;
 }
+
+/* flexbox dans les media queries ci-dessous */
 
 @media screen and (max-width: 1410px) {
 	main {
