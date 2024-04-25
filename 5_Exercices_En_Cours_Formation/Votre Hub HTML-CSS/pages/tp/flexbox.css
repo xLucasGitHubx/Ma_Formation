@@ -1,0 +1,20 @@
+.container {
+	padding: 1%;
+	background-color: rgb(111, 134, 157);
+}
+
+#el1 {
+	background-color: rgb(0, 157, 255);
+}
+#el2 {
+	background-color: rgb(114, 232, 114);
+}
+#el3 {
+	background-color: rgb(246, 0, 0);
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column-reverse;
+}
