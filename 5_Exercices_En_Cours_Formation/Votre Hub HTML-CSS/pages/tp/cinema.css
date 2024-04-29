@@ -1,0 +1,77 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	width: 5vw;
+	cursor: pointer;
+}
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: gray;
+}
+h1 {
+	color: white;
+}
+main {
+	display: flex;
+	background-color: aliceblue;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: gray;
+}
+footer img {
+	border-radius: 5px;
+	margin: 2vw;
+}
+a {
+	font-size: 2vw;
+	margin: 1vw;
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+aside video {
+	width: 15vw;
+}
+aside {
+	margin-right: 2vw;
+	margin-top: 2vh;
+}
+#sectionVideo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2vh;
+}
+
+#sectionDescription {
+	padding: 5vw;
+	margin: 2vw;
+	margin-top: 1vh;
+	padding-top: 1vh;
+}
+
+input {
+	width: 100%;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: white;
+	background-image: url("../../images/loupe.svg");
+	background-position: 10px 10px;
+	background-size: 25px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+}
