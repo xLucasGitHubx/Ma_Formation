@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact</title>
+	</head>
+	<body>
+        <main>
+
+            <h1>Contactez-nous</h1>
+            <fieldset>
+                <legend>Contact</legend>
+                <form action="" method="">
+                    <label for="nom">Votre nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" />
+                    
+                    <label for="email">Votre e-mail</label>
+                    <input type="email" id="email" name="email" placeholder="monadresse@mail.com" />
+                    
+                    <label for="sujet">Quel est le sujet de votre message ?</label>
+                    <select name="sujet" id="sujet">
+                    <option value="" disabled selected hidden>Choisissez le sujet de votre message</option>
+                    <option value="probleme-compte">Problème avec mon compte</option>
+                    <option value="question-produit">Question à propos d’un produit</option>
+                    <option value="suivi-commande">Suivi de ma commande</option>
+                    <option value="autre">Autre...</option>
+                </select>
+                <label for="message">Votre message</label>
+                <textarea id="message" name="message" placeholder="Bonjour,..."></textarea>
+                <input type="submit"></input>
+            </form>
+                <a href="./connexion.html">Se Connecter</a>
+                <a href="./inscription.html">Créer un Compte?</a>
+            </fieldset>
+        </main>
+	</body>
+</html>

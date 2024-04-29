@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HTML - Form</title>
+		<style>
+			form {
+				width: 50%;
+				margin: auto;
+				display: flex;
+				flex-direction: column;
+			}
+			label,
+			input,
+			textarea {
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Inscription</h1>
+		<form>
+			<h4>Renseignez ces informations</h4>
+			<label for="pseudo"></label>
+			<input type="text" name="pseudonyme" id="pseudo" />
+			<input type="text" name="firstname" id="prenom" placeholder="votre Prénom" />
+			<input type="password" name="motDePasse" id="mdp" />
+			<textarea name="description" id="desc" cols="30" rows="10" style="resize: none"></textarea>
+			<input type="email" name="mail" id="mail" />
+			<input type="url" name="site" id="mysite" />
+			<input type="tel" name="tel" id="tel" />
+			<input type="number" name="number" id="number" />
+			<input type="range" name="range" id="range" />
+			<input type="submit" value="envoie" />
+		</form>
+	</body>
+</html>
