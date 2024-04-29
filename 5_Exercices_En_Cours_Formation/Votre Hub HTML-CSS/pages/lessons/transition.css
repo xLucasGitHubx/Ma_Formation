@@ -1,0 +1,17 @@
+.transition {
+	width: 200px;
+	height: 150px;
+	background-color: blue;
+	transition-property: background-color, width, transform;
+	/* transition-property: transform; */
+	/* transition-duration: 5s; */
+	/* transition-timing-function: ease; */
+	/* transition: background-color 6s ease; */
+	transition: background-color 6s ease, width 3s linear;
+}
+
+.transition:hover {
+	background-color: red;
+	width: 1000px;
+	transform: translateX(200px);
+}

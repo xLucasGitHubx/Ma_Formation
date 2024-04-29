@@ -30,6 +30,7 @@ ul {
 	justify-content: center;
 	grid-row: 1;
 	grid-column: 1/5;
+	list-style-type: none;
 }
 li {
 	padding-right: 2vw;
