@@ -1,0 +1,233 @@
+/* ---------reset css--------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------Reset Css-------- */
+
+a img {
+	width: 10vw;
+}
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: black;
+	height: 10vw;
+	padding-right: 1vw;
+}
+header a {
+	color: white;
+	text-decoration: none;
+	font-size: 1vw;
+}
+header a:hover {
+	color: red;
+}
+
+/* -------------------------------css du header au dessus-------------- */
+
+body {
+	background-color: #c2a70ec0;
+}
+
+h1 {
+	font-weight: 900;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.search {
+	margin-left: 50px;
+	margin-bottom: 50px;
+	width: 100%;
+}
+
+input {
+	width: 90vw;
+	height: 3vw;
+	border-radius: 20px;
+}
+
+p {
+	font-weight: 500px;
+	font-size: 17px;
+	margin-bottom: 50px;
+	margin-left: 90px;
+	margin-top: 30px;
+	color: white;
+}
+
+.galerie {
+	margin-left: 80px;
+	margin-bottom: 100px;
+}
+
+.img {
+	padding: 10px;
+	transition-duration: 0.5s;
+}
+
+.img:hover {
+	scale: 105%;
+}
+
+.border {
+	border: solid 1px black;
+	background: black;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #56a427;
+}
+footer img {
+    width: 5vw;
+    margin-right: 2vw;
+    cursor: pointer;
+}
+.iconFooter {
+    width: 10vw;
+    margin: 0;
+    border-radius: 10vw;
+}
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer a {
+    color: black;
+    text-decoration: none;
+    font-size: 2vw;
+    margin-bottom: 1vh;
+}
+footer a:hover {
+    color: red;
+}
