@@ -1,0 +1,53 @@
+.video {
+	display: block;
+	width: 99.1vw;
+	height: 100vh;
+	object-fit: cover;
+	z-index: -10;
+	/* position: relative; */
+}
+
+.france {
+	z-index: 10;
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	width: 35vw;
+}
+
+h1 {
+	z-index: 10;
+	position: absolute;
+	top: 25%;
+	left: 19%;
+	text-align: center;
+	font-size: 5vw;
+	font-weight: 600;
+	color: #f31d38;
+}
+
+ul {
+	z-index: 10;
+	position: absolute;
+	top: 60%;
+	left: 3%;
+	font-size: 3vw;
+	color: white;
+	font-weight: 400;
+	list-style-type: disc;
+	background-color: gray;
+	margin: 3vh;
+	padding: 1vh 5vh 1vh 5vh;
+	border-radius: 2vw;
+	width: 10vw;
+}
+li {
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	cursor: pointer;
+}
+
+li:hover {
+	color: red;
+	text-decoration: underline;
+}
