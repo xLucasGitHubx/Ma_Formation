@@ -213,3 +213,178 @@ footer img:hover {
 		transform: scale(1);
 	}
 }
+
+header img:hover {
+	animation: none;
+}
+
+/* ---------Début du blog---------- */
+
+.mainBlogArticle,
+.blogFiller {
+	padding: 20px;
+}
+
+.mainBlog {
+	background-color: #c2a70ec0;
+	color: rgb(0, 0, 0);
+	text-shadow: -1px -1px 0 #f31d38, 1px -1px 0 #f31d38, -1px 1px 0 #f31d38, 1px 1px 0 #f31d38;
+	text-align: center;
+	font-size: 3vw;
+}
+
+.mainBlog h2 {
+	margin-bottom: 20px;
+	border-top: solid red;
+}
+
+.mainBlogArticle,
+.genericArticle {
+	display: flex;
+	background-color: white;
+	color: black;
+	text-shadow: none;
+	font-size: 1vw;
+	align-items: center;
+	border: solid black;
+	border-radius: 10px;
+	text-align: justify;
+	margin: auto;
+	justify-content: center;
+	width: fit-content;
+}
+
+.genericArticle {
+	margin: 20px;
+}
+
+.mainBlogArticle p,
+.genericArticle p {
+	padding: 10px;
+}
+
+.mainBlogArticle h3,
+.genericArticle h3 {
+	font-size: 2vw;
+	padding-bottom: 10px;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.imgArticle {
+	width: 28.32vw;
+	height: 16vw;
+	transition-property: width, height;
+	transition-duration: 2s;
+	border-radius: 7px;
+}
+
+.imgArticle:hover {
+	width: 35.4vw;
+	height: 20vw;
+}
+
+.contenu {
+	width: 30vw;
+}
+
+.blogFiller {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.genericArticleImg {
+	width: 30vw;
+	transition-property: width, height;
+	transition-duration: 2s;
+	border-radius: 7px;
+}
+
+.genericArticleImg:hover {
+	width: 40vw;
+}
+
+.genericArticle {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ---------Fin du blog---------- */
+/* ---------Début du social---------- */
+
+.mainSocial {
+	background-color: #c2a70ec0;
+}
+
+.mainSocial h2 {
+	color: rgb(0, 0, 0);
+	text-shadow: -1px -1px 0 #f31d38, 1px -1px 0 #f31d38, -1px 1px 0 #f31d38, 1px 1px 0 #f31d38;
+	text-align: center;
+	font-size: 3vw;
+	margin-bottom: 20px;
+	border-top: solid red;
+}
+
+.socialList {
+	display: flex;
+}
+
+.socialImg {
+	clip-path: circle();
+}
+
+.socialImg:hover {
+	transform: rotate(360deg);
+	transition-duration: 1s;
+}
+
+.reseau p {
+	text-align: center;
+	font-size: 3vw;
+	margin: 20px;
+}
+
+.reseau {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+}
+
+/* ---------Fin du social---------- */
+/* ---------Début du livre d'or---------- */
+
+.mainGold {
+	background-color: #c2a70ec0;
+}
+
+.mainGold h2 {
+	color: rgb(0, 0, 0);
+	text-shadow: -1px -1px 0 #f31d38, 1px -1px 0 #f31d38, -1px 1px 0 #f31d38, 1px 1px 0 #f31d38;
+	text-align: center;
+	font-size: 3vw;
+	margin-bottom: 20px;
+	border-top: solid red;
+}
+
+.commentaire {
+	background-color: black;
+	color: rgba(194, 167, 14, 0.753);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: fit-content;
+	border: solid #f31d38;
+	font-size: 2vw;
+	padding: 10px;
+	margin: 20px;
+}
+
+.commentaire img {
+	filter: brightness(0) saturate(100%) invert(83%) sepia(36%) saturate(4858%) hue-rotate(9deg) brightness(89%) contrast(89%);
+}
+
+.goldContainer {
+	display: flex;
+	justify-content: space-evenly;
+}
