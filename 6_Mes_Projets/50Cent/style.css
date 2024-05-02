@@ -388,3 +388,78 @@ header img:hover {
 	display: flex;
 	justify-content: space-evenly;
 }
+
+/-----Philipe----/ .philipe {
+	background-image: url(/img/Philip.png);
+	background-size: 3%;
+}
+
+.philipe {
+	animation-name: animation;
+	animation-duration: 10s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	animation-direction: alternate;
+}
+
+@keyframes animation {
+	0.00% {
+		background-color: red;
+	}
+	16.67% {
+		background-color: orange;
+	}
+	33.33% {
+		background-color: yellow;
+	}
+	50.00% {
+		background-color: green;
+	}
+	66.67% {
+		background-color: blue;
+	}
+	83.33% {
+		background-color: indigo;
+	}
+	100.00% {
+		background-color: violet;
+	}
+}
+
+.philipe p {
+	font-size: 200px;
+	color: white;
+}
+
+.boxRainbow {
+	box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
+		rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+	display: flex;
+}
+
+.boxRainbow img {
+	width: fit-content;
+}
+
+.favorite {
+	display: flex;
+}
+
+.favorite img {
+	width: 8vw;
+	filter: brightness(0) saturate(100%) invert(14%) sepia(82%) saturate(5012%) hue-rotate(359deg) brightness(115%) contrast(128%);
+}
+
+.favorite img {
+	animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
