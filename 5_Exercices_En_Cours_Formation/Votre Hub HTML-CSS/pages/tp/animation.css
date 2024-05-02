@@ -1,0 +1,49 @@
+img:hover {
+	animation: zoom 3s;
+}
+
+div {
+	width: 15vw;
+	height: 15vw;
+	background-color: blue;
+}
+
+div:active {
+	animation: trucOuf 10s infinite;
+}
+
+@keyframes zoom {
+	100% {
+		transform: scale(1.3);
+	}
+}
+
+@keyframes trucOuf {
+	14% {
+		background-color: red;
+		margin-left: 14vw;
+		margin-top: 14vw;
+	}
+	28% {
+		rotate: 2turn;
+	}
+	42% {
+		transform: scale(1.3);
+		background-color: yellow;
+		transform: rotate3d(1, -2, 1, 4turn);
+		transform-origin: center 10% 44px;
+		transition: all 0.2s ease 0s;
+	}
+	56% {
+		padding: 5vw;
+	}
+	70% {
+		border-radius: 20%;
+	}
+	84% {
+		margin-top: 50vh;
+	}
+	100% {
+		background-color: black;
+	}
+}
