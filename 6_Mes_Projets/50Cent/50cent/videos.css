@@ -153,30 +153,28 @@ body {
 }
 
 footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #56a427;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #56a427;
 }
 footer img {
-    width: 5vw;
-    margin-right: 2vw;
-    cursor: pointer;
+	width: 5vw;
+	margin-right: 2vw;
+	cursor: pointer;
 }
 
 h1 {
-    font-weight: 900;
+	font-weight: 900;
 	font-size: 50px;
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-
-
 h2 {
-    font-weight: 700;
+	font-weight: 700;
 	font-size: 30px;
 	text-align: center;
 	margin-top: 20px;
@@ -184,38 +182,101 @@ h2 {
 }
 
 .p1 {
-    text-align: center;
-    font-size:larger;
+	text-align: center;
+	font-size: larger;
 }
 
 .left {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    margin-top: 30px;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    border: solid 1px black;
-    background: black;
-    color: white;
+	display: flex;
+	align-items: center;
+	margin-bottom: 50px;
+	margin-top: 30px;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	border: solid 1px black;
+	background: black;
+	color: white;
 }
 
-.test{
-    margin: 5vw;;
+.test {
+	margin: 5vw;
 }
 
 .reverse {
-    display: flex;
-    margin-bottom: 50px;
-    border: solid 1px black;
-    border-radius: 10px;
-    background: black;
-    color: white;
+	display: flex;
+	margin-bottom: 50px;
+	border: solid 1px black;
+	border-radius: 10px;
+	background: black;
+	color: white;
 }
 
+/* --------------------Début du footer----------------- */
+@keyframes tilt-shaking {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
 
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #56a427;
+}
+footer img {
+	width: 5vw;
+	margin-right: 2vw;
+	cursor: pointer;
+}
+.iconFooter {
+	width: 10vw;
+	margin: 0;
+	border-radius: 10vw;
+}
+.link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+footer a {
+	color: black;
+	text-decoration: none;
+	font-size: 2vw;
+	margin-bottom: 1vh;
+}
+footer a:hover {
+	color: red;
+}
 
+footer img:hover {
+	animation: tilt-shaking 0.25s infinite;
+}
+/* ---------Fin du footer---------- */
 
+/* ------animations scale------ */
 
+@keyframes scaleUp {
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
 
-
+header img:hover {
+	animation: none;
+}

@@ -202,32 +202,102 @@ p {
 }
 
 footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #56a427;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #56a427;
 }
 footer img {
-    width: 5vw;
-    margin-right: 2vw;
-    cursor: pointer;
+	width: 5vw;
+	margin-right: 2vw;
+	cursor: pointer;
 }
 .iconFooter {
-    width: 10vw;
-    margin: 0;
-    border-radius: 10vw;
+	width: 10vw;
+	margin: 0;
+	border-radius: 10vw;
 }
 .link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 footer a {
-    color: black;
-    text-decoration: none;
-    font-size: 2vw;
-    margin-bottom: 1vh;
+	color: black;
+	text-decoration: none;
+	font-size: 2vw;
+	margin-bottom: 1vh;
 }
 footer a:hover {
-    color: red;
+	color: red;
+}
+
+/* --------------------Début du footer----------------- */
+@keyframes tilt-shaking {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #56a427;
+}
+footer img {
+	width: 5vw;
+	margin-right: 2vw;
+	cursor: pointer;
+}
+.iconFooter {
+	width: 10vw;
+	margin: 0;
+	border-radius: 10vw;
+}
+.link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+footer a {
+	color: black;
+	text-decoration: none;
+	font-size: 2vw;
+	margin-bottom: 1vh;
+}
+footer a:hover {
+	color: red;
+}
+
+footer img:hover {
+	animation: tilt-shaking 0.25s infinite;
+}
+/* ---------Fin du footer---------- */
+
+/* ------animations scale------ */
+
+@keyframes scaleUp {
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+header img:hover {
+	animation: none;
 }
