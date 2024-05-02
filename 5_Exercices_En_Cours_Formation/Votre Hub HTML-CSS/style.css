@@ -9,15 +9,15 @@
 body {
 	font-family: Arial, sans-serif;
 	line-height: 1.6;
-	background-color: #f4f4f4;
 	color: #333;
+	background-color: #ff8529;
+	background-image: linear-gradient(135deg, #fec279 0%, #1672ff 100%);
 }
 
 header {
 	background-color: #333;
 	color: #fff;
 	padding: 20px;
-	width: 100%;
 }
 
 header h1 {
@@ -40,17 +40,56 @@ nav ul li a {
 }
 
 main {
-	padding: 20px;
-	background-image: url(./images/lucas_profil.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-div {
-	background-color: beige;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 20px 0;
 }
 
 section {
-	margin-bottom: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin: 10px;
+	width: 45%; /* Pour un affichage correct sur de petits écrans */
+}
+
+section h2 {
+	color: #333;
+}
+
+section p {
+	color: #666;
+}
+
+section a {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #333;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+section img {
+	float: left; /* Aligner l'image à gauche */
+	margin-left: 20px; /* Ajouter un espace à gauche de l'image */
+	max-width: 40%; /* Taille maximale de l'image */
+	height: auto; /* Hauteur automatique pour conserver les proportions */
+	margin: 1%;
+}
+
+form {
+	padding: 0 20%;
+	display: flex;
+	flex-direction: column;
+	input,
+	textarea {
+		margin-top: 1%;
+	}
 }
 
 footer {
@@ -58,26 +97,5 @@ footer {
 	color: #fff;
 	padding: 20px;
 	text-align: center;
-}
-
-/* Media Queries pour le côté responsive */
-@media screen and (max-width: 768px) {
-	header {
-		padding: 10px;
-	}
-
-	header h1 {
-		font-size: 24px;
-	}
-
-	nav ul li {
-		display: block;
-		margin-bottom: 10px;
-	}
-}
-
-@media screen and (max-width: 576px) {
-	nav ul li {
-		margin-right: 0;
-	}
+	margin-top: 20px;
 }
