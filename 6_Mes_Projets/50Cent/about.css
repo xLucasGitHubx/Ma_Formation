@@ -1,0 +1,48 @@
+main img {
+	width: 40vw;
+	height: 25vw;
+	object-fit: cover;
+	border-radius: 1vw;
+	margin-bottom: 1vw;
+}
+main {
+	background-color: #c2a70ec0;
+}
+
+main div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 1.5vh;
+	margin-right: 1.5vh;
+}
+div div {
+	flex-direction: column;
+}
+
+.reverse {
+	flex-direction: row-reverse;
+}
+
+h1 {
+	font-size: 5vw;
+	color: #f31d38;
+	text-align: center;
+	padding-top: 1vh;
+	margin-bottom: 1vh;
+}
+h2 {
+	font-size: 2.4vw;
+	text-decoration: underline;
+	margin-bottom: 1vh;
+}
+
+li {
+	list-style-type: disc;
+	font-size: 1.5vw;
+	margin-left: 1.9vh;
+}
+
+img:hover {
+	animation: scaleUp 3s;
+}

@@ -1,0 +1,390 @@
+/* ---------reset css--------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------Reset Css-------- */
+
+a img {
+	width: 10vw;
+}
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: black;
+	height: 10vw;
+	padding-right: 1vw;
+}
+header a {
+	color: white;
+	text-decoration: none;
+	font-size: 1vw;
+}
+header a:hover {
+	color: red;
+}
+
+/* -------------------------------css du header au dessus-------------- */
+
+/* --------------------Début du footer----------------- */
+@keyframes tilt-shaking {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #56a427;
+}
+footer img {
+	width: 5vw;
+	margin-right: 2vw;
+	cursor: pointer;
+}
+.iconFooter {
+	width: 10vw;
+	margin: 0;
+	border-radius: 10vw;
+}
+.link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+footer a {
+	color: black;
+	text-decoration: none;
+	font-size: 2vw;
+	margin-bottom: 1vh;
+}
+footer a:hover {
+	color: red;
+}
+
+footer img:hover {
+	animation: tilt-shaking 0.25s infinite;
+}
+/* ---------Fin du footer---------- */
+
+/* ------animations scale------ */
+
+@keyframes scaleUp {
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+header img:hover {
+	animation: none;
+}
+
+/* ---------Début du blog---------- */
+
+.mainBlogArticle,
+.blogFiller {
+	padding: 20px;
+}
+
+.mainBlog {
+	background-color: #c2a70ec0;
+	color: rgb(0, 0, 0);
+	text-shadow: -1px -1px 0 #f31d38, 1px -1px 0 #f31d38, -1px 1px 0 #f31d38, 1px 1px 0 #f31d38;
+	text-align: center;
+	font-size: 3vw;
+}
+
+.mainBlog h2 {
+	margin-bottom: 20px;
+	border-top: solid red;
+}
+
+.mainBlogArticle,
+.genericArticle {
+	display: flex;
+	background-color: white;
+	color: black;
+	text-shadow: none;
+	font-size: 1vw;
+	align-items: center;
+	border: solid black;
+	border-radius: 10px;
+	text-align: justify;
+	margin: auto;
+	justify-content: center;
+	width: fit-content;
+}
+
+.genericArticle {
+	margin: 20px;
+}
+
+.mainBlogArticle p,
+.genericArticle p {
+	padding: 10px;
+}
+
+.mainBlogArticle h3,
+.genericArticle h3 {
+	font-size: 2vw;
+	padding-bottom: 10px;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.imgArticle {
+	width: 28.32vw;
+	height: 16vw;
+	transition-property: width, height;
+	transition-duration: 2s;
+	border-radius: 7px;
+}
+
+.imgArticle:hover {
+	width: 35.4vw;
+	height: 20vw;
+}
+
+.contenu {
+	width: 30vw;
+}
+
+.blogFiller {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.genericArticleImg {
+	width: 30vw;
+	transition-property: width, height;
+	transition-duration: 2s;
+	border-radius: 7px;
+}
+
+.genericArticleImg:hover {
+	width: 40vw;
+}
+
+.genericArticle {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ---------Fin du blog---------- */
+/* ---------Début du social---------- */
+
+.mainSocial {
+	background-color: #c2a70ec0;
+}
+
+.mainSocial h2 {
+	color: rgb(0, 0, 0);
+	text-shadow: -1px -1px 0 #f31d38, 1px -1px 0 #f31d38, -1px 1px 0 #f31d38, 1px 1px 0 #f31d38;
+	text-align: center;
+	font-size: 3vw;
+	margin-bottom: 20px;
+	border-top: solid red;
+}
+
+.socialList {
+	display: flex;
+}
+
+.socialImg {
+	clip-path: circle();
+}
+
+.socialImg:hover {
+	transform: rotate(360deg);
+	transition-duration: 1s;
+}
+
+.reseau p {
+	text-align: center;
+	font-size: 3vw;
+	margin: 20px;
+}
+
+.reseau {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+}
+
+/* ---------Fin du social---------- */
+/* ---------Début du livre d'or---------- */
+
+.mainGold {
+	background-color: #c2a70ec0;
+}
+
+.mainGold h2 {
+	color: rgb(0, 0, 0);
+	text-shadow: -1px -1px 0 #f31d38, 1px -1px 0 #f31d38, -1px 1px 0 #f31d38, 1px 1px 0 #f31d38;
+	text-align: center;
+	font-size: 3vw;
+	margin-bottom: 20px;
+	border-top: solid red;
+}
+
+.commentaire {
+	background-color: black;
+	color: rgba(194, 167, 14, 0.753);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: fit-content;
+	border: solid #f31d38;
+	font-size: 2vw;
+	padding: 10px;
+	margin: 20px;
+}
+
+.commentaire img {
+	filter: brightness(0) saturate(100%) invert(83%) sepia(36%) saturate(4858%) hue-rotate(9deg) brightness(89%) contrast(89%);
+}
+
+.goldContainer {
+	display: flex;
+	justify-content: space-evenly;
+}
