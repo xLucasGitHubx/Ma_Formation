@@ -142,16 +142,25 @@ header {
 	align-items: center;
 }
 
+header a {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	display: flex;
+	justify-content: center;
+}
+
 header img {
 	height: 14vh;
 	position: absolute;
 	z-index: 10;
+	object-fit: cover;
 }
 
 #myVideo {
 	position: relative;
 	width: 100%;
-	height: 19vh;
+	height: 15vh;
 	object-fit: cover;
 	overflow: hidden;
 }
@@ -209,9 +218,9 @@ main .icon img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 8vw;
-	width: 60vw;
-	height: 13vw;
+	font-size: 6vw;
+	width: 50vw;
+	height: 10vw;
 	flex-shrink: 0;
 	background-color: #148611;
 	border-radius: 4.5vw;
@@ -230,13 +239,18 @@ footer {
 }
 
 footer .logo {
-	width: 30vw;
+	width: 20vw;
 }
 
 footer .liens {
 	width: 90vw;
 	display: flex;
 	justify-content: space-evenly;
+	margin-bottom: 5vw;
+}
+
+footer .icon {
+	width: 80vw;
 }
 
 footer .liens a {
@@ -250,8 +264,9 @@ footer .liens a:hover {
 	color: #b09500;
 }
 footer .icon img {
+	margin-top: 2vh;
 	width: 7vw;
-	margin-bottom: 3.5vw;
+	margin-bottom: 4vw;
 }
 
 /* ---------animations---------- */
@@ -269,9 +284,29 @@ footer .icon img {
 		transform: translateY(0);
 	}
 	40% {
-		transform: translateY(-30px);
+		transform: translateY(-20px);
 	}
 	60% {
-		transform: translateY(-15px);
+		transform: translateY(-5px);
 	}
 }
+
+/* ---page réalisation------------------------------ */
+
+main video {
+	width: 90vw;
+}
+
+.star {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 55vw;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
+}
+
+.star img {
+	width: 6vw;
+}
+/* -------------------------------- */
