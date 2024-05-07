@@ -17,48 +17,44 @@
 	</head>
 	<body>
 		<header>
-			<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<nav class="navbar navbar-expand-lg bg-body-lightd-flex justify-content-between">
 				<!--div principale-->
-				<div class="container-fluid ms-3">
-					<a class="navbar-brand" href="#">DENZEL WASHINGTON - Actualités</a>
+				<div class="container-fluid ms-3 justify-content-between">
+					<img src="https://i.ebayimg.com/images/g/ZTEAAOSw82hf6jff/s-l1200.webp" height="200" width="300" alt="MDB Logo" loading="lazy" />
+
 					<button
+						data-mdb-collapse-init
 						class="navbar-toggler"
 						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarNav"
-						aria-controls="navbarNav"
+						data-mdb-target="#navbarText"
+						aria-controls="navbarText"
 						aria-expanded="false"
 						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
+						<i class="fas fa-bars"></i>
 					</button>
+					<div class="collapse navbar-collapse ms-5" id="navbarText">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-3">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="./denzel.html">Accueil</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Biographie</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Filmographie</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./panier.html">Panier</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./actu.html">Actualités</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="./index.html">Boutique</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-
-				<div class="collapse navbar-collapse me-5" id="navbarNav">
-					<ul class="navbar-nav icon-link icon-link-hover">
-						<li class="nav-item">
-							<a class="nav-link active text-decoration-underline" aria-current="page" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-decoration-underline" href="#">Biographie</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-decoration-underline" href="#">Filmographie</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-decoration-underline" href="#">Actualités</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-decoration-underline" href="#">livred'or</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-decoration-underline" href="#">Boutique</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Contact</a>
-						</li>
-					</ul>
-				</div>
-				<!--div principale-->
 			</nav>
 		</header>
 		<main>
@@ -248,9 +244,48 @@
 				</div>
 			</section>
 		</main>
-		<footer class="bg-body-tertiary text-center text-lg-start">
+		<footer class="bg-body-tertiary text-center">
+			<!-- Grid container -->
+			<div class="container p-4 pb-0">
+				<!-- Section: Form -->
+				<section class="">
+					<form action="">
+						<!--Grid row-->
+						<div class="row d-flex justify-content-center">
+							<!--Grid column-->
+							<div class="col-auto">
+								<p class="pt-2">
+									<strong>Sign up for our newsletter</strong>
+								</p>
+							</div>
+							<!--Grid column-->
+
+							<!--Grid column-->
+							<div class="col-md-5 col-12">
+								<!-- Email input -->
+								<div data-mdb-input-init class="form-outline mb-4">
+									<input type="email" id="form5Example26" class="form-control" />
+									<label class="form-label" for="form5Example26">Email address</label>
+								</div>
+							</div>
+							<!--Grid column-->
+
+							<!--Grid column-->
+							<div class="col-auto">
+								<!-- Submit button -->
+								<button data-mdb-ripple-init type="submit" class="btn btn-primary mb-4">Subscribe</button>
+							</div>
+							<!--Grid column-->
+						</div>
+						<!--Grid row-->
+					</form>
+				</section>
+				<!-- Section: Form -->
+			</div>
+			<!-- Grid container -->
+
 			<!-- Copyright -->
-			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05)">© 2020 Copyright: Lucas.Audrey.Junior</div>
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05)">© 2020 Copyright: Audrey. Lucas .Junior</div>
 			<!-- Copyright -->
 		</footer>
 	</body>
