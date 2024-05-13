@@ -1,0 +1,31 @@
+$fond: #c07562;
+
+body {
+	display: flex;
+	justify-content: space-evenly;
+	div {
+		border: solid black 2px;
+		border-radius: 5vw;
+		width: 30vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: $fond;
+		box-shadow: 15px 11px 18px 5px rgba(0, 0, 0, 0.4);
+		h2 {
+			color: darkblue;
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		img {
+			border-radius: 1.5vw;
+			width: 15vw;
+		}
+	}
+}
+
+p {
+	text-align: justify;
+	padding: 1vw;
+}
