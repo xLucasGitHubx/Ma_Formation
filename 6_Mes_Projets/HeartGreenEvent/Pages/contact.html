@@ -24,32 +24,25 @@
 			<img src="../Icons/hamburger.svg" alt="menu hamburger" />
 		</nav>
 		<main>
-			<h2>Célébrer</h2>
-			<div>
-				<video autoplay loop muted src="../Video/celebrer/celebrer1.mp4" alt="enfant qui joue a la pinata" />
-			</div>
-			<div class="lesRond">
-				<img src="../Icons/rond_plein.svg" alt="rond plein" />
-				<img src="../Icons/rond_vide.svg" alt="rond plein" />
-			</div>
-			<img src="../Image/celebrer/pack_sur_mesure.png" alt="pack sur mesure" />
-			<div class="surMesure">
-				<h2>Pack Sur-Mesure</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem corrupti nulla commodi eos perferendis praesentium quaerat non eius natus
-					fugiat distinctio minus in, iste ut quos saepe aliquam voluptates earum. Sed, a nulla debitis, veniam iste accusantium sequi tempora optio
-					quis eum culpa voluptate obcaecati consequatur porro libero odio voluptatum ipsum labore. Ducimus, quae provident maiores autem iste aut
-					perspiciatis?
-				</p>
-			</div>
-			<a href="" class="nousContacter">Nous Contacter</a>
-			<div class="questionnaire">
-				<h2>Questionnaire</h2>
-				<p>Passez ce petit test pour en savoir plus sur ce qui pourrait vous plaire!</p>
-				<img src="../Image/celebrer/questionnaire.png" alt="homme qui s'intérroge" />
-				<a href="" class="suivant">Suivant</a>
-			</div>
+			<h2>Contact</h2>
+			<p>
+				Bienvenue sur notre page de contact ! Nous sommes ravis de vous accueillir. Afin de mieux répondre à vos besoins, nous vous invitons à
+				préciser la date de votre événement ou la nature de votre requête. Notre équipe est impatiente d'en apprendre davantage sur votre projet et de
+				vous accompagner dans sa réalisation. Cordialement, L'équipe Heart Green Event.
+			</p>
+			<form action="post">
+				<label for="nom">Nom:</label>
+				<input type="text" id="nom" name="nom" required />
+				<label for="prenom">Prenom:</label>
+				<input type="text" id="prenom" name="prenom" required />
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required />
+				<label for="message">Votre Message:</label>
+				<textarea id="message" name="message" required> </textarea>
+			</form>
+			<a href="" class="envoyer">Envoyer</a>
 		</main>
+
 		<footer>
 			<img class="logo" src="../Icons/Logos_var2/logo-transparent-svg.svg" alt="Heart green logo" />
 			<div class="icon">

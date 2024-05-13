@@ -230,7 +230,8 @@ main .icon img {
 }
 
 .nousContacter:hover,    /* page celebrer  hover du bouton suivant*/
-.suivant:hover {
+.suivant:hover,
+.envoyer:hover {
 	background-color: #b09500;
 	box-shadow: 6px 8px 9px -2px rgba(0, 0, 0, 0.4);
 }
@@ -357,4 +358,45 @@ main video {
 	margin-top: 2vw; */
 	margin: 2vw 3.5vw 2vw 0;
 	float: right;
+}
+
+/* --------contact-------- */
+form {
+	display: flex;
+	flex-direction: column;
+	width: 90vw;
+}
+label {
+	margin-top: 4vw;
+	font-family: "Trebuchet MS";
+	color: #3f170e;
+	font-size: 4vw;
+}
+input {
+	margin-top: 2vw;
+	height: 5vw;
+	border-radius: 5vw;
+	border-style: none;
+}
+textarea {
+	margin-top: 2vw;
+	height: 40vw;
+	border-radius: 3.5vw;
+	border-style: none;
+	resize: vertical;
+	margin-bottom: 2vw;
+}
+.envoyer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 6vw;
+	width: 50vw;
+	height: 10vw;
+	flex-shrink: 0;
+	background-color: #148611;
+	border-radius: 4.5vw;
+	text-decoration: none;
+	color: white;
+	margin-bottom: 2vw;
 }
