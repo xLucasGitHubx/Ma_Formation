@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="contact.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<img src="./adrar_logo.svg" alt="logo adrar" />
+			<a href="./index.html">ACCUEIL</a>
+			<a href="./pages/html.html">HTML</a>
+			<a href="">CSS</a>
+			<a href="">JAVASCRIPT</a>
+			<a href="">API</a>
+			<a href="./page_contact.html" class="contact">CONTACT</a>
+		</header>
+
+		<!--<img src="../photo/conceptweb31.jpg" alt="photo contact" height="200px" width="200px"> -->
+		<main>
+			<div class="contactez-nous">
+				<h2>Contactez-nous</h2>
+				<p>
+					Un problème, besoin d'avoir plus d'informations concernant nos formations, ou notre organisme ? N'hésitez pas à utliser ce formulmaire pour
+					prendre contact avec nous !
+				</p>
+				<form>
+					<div>
+						<label for="nom">Votre Nom</label>
+						<input type="text" name="pseudonyme" id="pseudo" placeholder="nom" />
+					</div>
+					<div>
+						<label for="prenom">Votre prenom</label>
+						<input type="text" name="firstname" id="prenom" placeholder="prenom" />
+					</div>
+					<div>
+						<label for="mail">Votre e-mail</label>
+						<input type="email" name="mail" id="mail" placeholder="email" />
+					</div>
+					<div>
+						<label for="lieu"> Lieu de formation souhaité:*</label>
+						<select name="lieu" id="lieu">
+							<option value="disabled selected hidden" placeholder="selectionner"></option>
+							<option value="Ramonville/Toulouse">Toulouse</option>
+							<option value="Tarbes">Tarbes</option>
+							<option value="Montpellier">Montpellier</option>
+						</select>
+					</div>
+					<div>
+						<label for="Actuellement vous êtes">Actuellement vous êtes:*</label>
+						<select name="formation" id="formation">
+							<option value="disabled selected hidden">selectionner</option>
+							<option value="Demandeur d'emploi">Demandeur d'emploi</option>
+							<option value="Alternant">Alternant</option>
+							<option value="Entreprise">Entreprise</option>
+							<option value="Salarié">Salarié</option>
+							<option value="Autre">Autre</option>
+						</select>
+					</div>
+					<div>
+						<label for="text"> Autre-Précisez</label>
+						<label for="sujet">Quel financement de votre formation avez-vous envisagé ?</label>
+						<select name="sujet" id="sujet">
+							<option value="disabled selected hidden">choississez le sujet de votre demande</option>
+							<option value="formation qualifiante">formation qualifiante</option>
+							<option value="Finacement">Finacement</option>
+							<option value="je ne sais pas">je ne sais pas</option>
+						</select>
+					</div>
+					<div>
+						<label for="text">Message*</label>
+						<textarea name="description" id="desc" cols="30" rows="10" placeholder="Entrer votre message..." required></textarea>
+					</div>
+					<div>
+						<button type="submit" value="Envoyer">Envoyer</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<div class="liens">
+				<a href="">Mentions Légales</a>
+				<a href="">Vie Privée</a>
+				<a href="">Conditions générales</a>
+			</div>
+			<div class="logo">
+				<a href=""><img src="./icons/facebook.svg" alt="facebook" /></a>
+				<a href=""><img src="./icons/instagram.svg" alt="instagram" /></a>
+				<a href=""><img src="./icons/pinterest.svg" alt="pinterest" /></a>
+			</div>
+
+			<a href="">© 2024 ADRAR Formation</a>
+		</footer>
+	</body>
+</html>

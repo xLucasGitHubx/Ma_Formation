@@ -1,0 +1,93 @@
+body {
+  background-color: #cdddf3;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #0f0f0f;
+}
+
+.h2 {
+  font-weight: 500;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 70px;
+  margin-top: 20px;
+}
+
+form div > label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/*img{
+    position: absolute;
+    top: 300px; right:100px;
+}*/
+form div > input,
+form div > select,
+form div > textarea {
+  background: #f6f7f8;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", "sans-serif";
+  box-shadow: 0px 2px 2px 0px rgba(18, 18, 192, 0.25);
+}
+
+form div > input,
+form div > select {
+  height: 50px;
+  padding-left: 10px;
+}
+
+form div > select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-size: 15px;
+  background-position: right 10px top 50%;
+  background-repeat: no-repeat;
+}
+
+form div > textarea {
+  height: 195px;
+  padding: 15px 0px 0px 10px;
+}
+
+form div > select option {
+  background: white;
+  color: #303030;
+}
+
+form div:last-child {
+  align-items: center;
+  margin-top: 20px;
+}
+
+form button {
+  width: 150px;
+  max-width: 500px;
+  height: 60px;
+  font-weight: 700;
+  font-size: 20px;
+  background: white;
+  border: rgba(117, 102, 250, 0.5) solid 1px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px #f6f7f8;
+  color: #363535;
+}
+
+input {
+  border: red 20px solid;
+}
+
+main {
+  margin-left: 300px;
+  margin-right: 300px;
+}/*# sourceMappingURL=contact.css.map */
