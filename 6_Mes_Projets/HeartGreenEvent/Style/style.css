@@ -226,7 +226,8 @@ main .icon img {
 	border-radius: 4.5vw;
 	text-decoration: none;
 	color: white;
-	margin-bottom: 2vw;
+	margin-bottom: 5vw;
+	margin-top: 3vw;
 }
 
 .nousContacter:hover,    /* page celebrer  hover du bouton suivant*/
@@ -384,7 +385,7 @@ textarea {
 	border-radius: 3.5vw;
 	border-style: none;
 	resize: vertical;
-	margin-bottom: 2vw;
+	margin-bottom: 5vw;
 }
 .envoyer {
 	display: flex;
@@ -398,5 +399,53 @@ textarea {
 	border-radius: 4.5vw;
 	text-decoration: none;
 	color: white;
-	margin-bottom: 2vw;
+	margin-bottom: 5vw;
+}
+
+/* ------- calendrier-------- */
+.calendar-outside {
+	width: 80vw;
+	margin-top: 7vw;
+	margin-bottom: 7vw;
+	background-color: white;
+	border-radius: 3vw;
+	padding: 4vw;
+}
+
+.en-tete-calendar {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 3vw;
+	padding-top: 5vw;
+}
+.date-actuel,
+.arrow {
+	font-size: 4vw;
+}
+.arrow {
+	padding-top: 0.8vw;
+	display: flex;
+}
+#suivant {
+	margin-left: 6vw;
+	margin-right: 3vw;
+}
+
+.weeks,
+.days {
+	display: flex;
+}
+ul {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	font-size: 4vw;
+	margin-bottom: 6vw;
+	margin-top: 6vw;
+	font-family: lato;
+}
+.days li {
+	width: 11.4285714286vw;
+	text-align: center;
+	margin: 4vw 0 4vw 0;
 }
