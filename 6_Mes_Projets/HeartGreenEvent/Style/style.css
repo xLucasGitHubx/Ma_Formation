@@ -445,7 +445,22 @@ ul {
 	font-family: lato;
 }
 .days li {
-	width: 11.4285714286vw;
+	width: 11vw;
 	text-align: center;
-	margin: 4vw 0 4vw 0;
+	padding: 3.5vw 0 3.5vw 0;
+	margin: 0.5vw 0.4285714286 0.5vw 0.4285714286;
+}
+
+.currentDay {
+	background-color: #148611;
+	border-radius: 100%;
+}
+
+.currentDay:hover {
+	background-color: #b09500;
+}
+
+.days li:hover {
+	background-color: lightgray;
+	border-radius: 100%;
 }
