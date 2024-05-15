@@ -232,7 +232,7 @@ main .icon img {
 
 .nousContacter:hover,    /* page celebrer  hover du bouton suivant*/
 .suivant:hover,
-.envoyer:hover {
+.envoyer:hover,.seConnecter:hover {
 	background-color: #b09500;
 	box-shadow: 6px 8px 9px -2px rgba(0, 0, 0, 0.4);
 }
@@ -431,6 +431,22 @@ textarea {
 	margin-right: 3vw;
 }
 
+#suivant {
+	margin-bottom: 0.4vw;
+	padding-left: 2.7vw;
+	padding-top: 1.5vw;
+}
+#precedant {
+	margin-bottom: 0.4vw;
+	padding-right: 2.7vw;
+	padding-top: 1.8vw;
+}
+#precedant:hover,
+#suivant:hover {
+	background-color: lightgray;
+	border-radius: 100%;
+}
+
 .weeks,
 .days {
 	display: flex;
@@ -445,10 +461,15 @@ ul {
 	font-family: lato;
 }
 .days li {
-	width: 11vw;
+	width: 8vw;
 	text-align: center;
-	padding: 3.5vw 0 3.5vw 0;
-	margin: 0.5vw 0.4285714286 0.5vw 0.4285714286;
+	padding: 2vw 0 2vw 0;
+	margin: 2vw 1.4285714286vw 2vw 1.4285714286vw;
+}
+
+.days li:hover {
+	background-color: lightgray;
+	border-radius: 100%;
 }
 
 .currentDay {
@@ -456,11 +477,39 @@ ul {
 	border-radius: 100%;
 }
 
-.currentDay:hover {
-	background-color: #b09500;
+.days li.currentDay:hover {
+	background-color: #e9ae3f;
 }
 
-.days li:hover {
-	background-color: lightgray;
-	border-radius: 100%;
+/* ----connexion----- */
+
+#password {
+	background: url(../Icons/eyes_hide.svg) no-repeat white;
+	background-position: right 3vw center;
+	background-size: 4vw;
+}
+
+.footerConnexion {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	margin-top: 32vh;
+}
+
+.seConnecter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 6vw;
+	width: 50vw;
+	height: 10vw;
+	flex-shrink: 0;
+	background-color: #148611;
+	border-radius: 4.5vw;
+	text-decoration: none;
+	color: white;
+	margin-top: 10vw;
+}
+#username {
+	margin-bottom: 6vw;
 }
