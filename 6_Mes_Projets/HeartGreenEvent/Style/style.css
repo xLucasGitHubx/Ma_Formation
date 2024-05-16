@@ -272,6 +272,16 @@ footer .icon img {
 	margin-bottom: 4vw;
 }
 
+/* -------input (champ de texte dans toute les pages-------------------- */
+
+input[type],
+textarea {
+	font-family: lato;
+	font-size: 4vw;
+	padding-bottom: 0.6vw;
+	padding-left: 2vw;
+}
+
 /* ---------animations---------- */
 .icon img:hover {
 	animation: bounce 1.5s ease;
@@ -391,6 +401,7 @@ textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	align-self: center;
 	font-size: 6vw;
 	width: 50vw;
 	height: 10vw;
@@ -400,6 +411,8 @@ textarea {
 	text-decoration: none;
 	color: white;
 	margin-bottom: 5vw;
+	border: none;
+	font-family: lato;
 }
 
 /* ------- calendrier-------- */

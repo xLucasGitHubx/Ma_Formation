@@ -30,7 +30,7 @@
 				préciser la date de votre événement ou la nature de votre requête. Notre équipe est impatiente d'en apprendre davantage sur votre projet et de
 				vous accompagner dans sa réalisation. Cordialement, L'équipe Heart Green Event.
 			</p>
-			<form action="post">
+			<form action="post" id="contact">
 				<label for="nom">Nom:</label>
 				<input type="text" id="nom" name="nom" required />
 				<label for="prenom">Prenom:</label>
@@ -39,8 +39,8 @@
 				<input type="email" id="email" name="email" required />
 				<label for="message">Votre Message:</label>
 				<textarea id="message" name="message" required> </textarea>
+				<button type="submit" form="contact" class="envoyer">Envoyer</button>
 			</form>
-			<a href="" class="envoyer">Envoyer</a>
 		</main>
 
 		<footer>
