@@ -24,11 +24,9 @@ console.log(textesTab);
 // (nom de la variable au choix)
 //TODO cette fonction fléchée elle va modifier le innerText
 
-let leTexte = [];
 textesTab.map((a) => {
-	leTexte += a.innerText;
+	a.innerText = "Coucou";
 });
-console.log(leTexte);
 
 // voici un tableau contenant des tableaux :
 // [[1,2,3],[4,5,6],[7,8,9]]
