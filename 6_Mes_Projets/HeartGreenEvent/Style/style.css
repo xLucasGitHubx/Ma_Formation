@@ -513,3 +513,16 @@ ul {
 #username {
 	margin-bottom: 6vw;
 }
+
+.mdpOublier {
+	align-self: flex-end;
+	margin-right: 5vw;
+	margin-top: 3vw;
+	text-decoration: none;
+	color: #148611;
+	font-size: 3vw;
+}
+.mdpOublier:hover {
+	text-decoration: underline;
+	color: #b09500;
+}
