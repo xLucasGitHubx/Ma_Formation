@@ -500,6 +500,7 @@ ul {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	align-self: center;
 	font-size: 6vw;
 	width: 50vw;
 	height: 10vw;
@@ -509,6 +510,8 @@ ul {
 	text-decoration: none;
 	color: white;
 	margin-top: 10vw;
+	border: none;
+	font-family: lato;
 }
 #username {
 	margin-bottom: 6vw;
