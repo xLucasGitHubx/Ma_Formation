@@ -1,34 +1,55 @@
-//TODO: Créer 1 variable pour un nom,
-//TODO: Créer une variable pour un âge,
-//TODO: Créer une variable passions qui est un tableau qui contient 2 chaînes de
-// caractères (au choix)
-//TODO: Puis créer une variable tabUser qui est un tableau qui contient les variable du
-// nom, de l'âge et passions
-//TODO: en Console on affiche le tabUser
-//TODO : en passant par tabUser on veut afficher en console uniquement les passions
-//TODO : en passant par tabUser on veut afficher en console uniquement la 2ème passion
+// / TODO :JS map phase 1
+// TODO : côté template html rajouter plein de <p></p>
+// TODO :On va récupérer TOUS les <p> de notre page dans une
+// variable lesTxt via getElementsByTagName
+// TODO :On va faire un console log de lesTxt
 
-// / TODO : Reprendre l'exercice 2 (⁠javascript⁠) en mode objet
-// (un objet user avec des propriétés pour le nom age et passions
-// qui est lui aussi un objet avec 2 propriétés
+let lesTxt = document.getElementsByTagName("p");
+console.log(lesTxt);
 
-let moi = {
-	nom: "lucas",
-	age: 21,
-	passion: [
-		{
-			hobbies: "escalade",
-		},
-		{
-			hobbies: "plonger",
-		},
-	],
-};
+//TODO JS map Phase 2
+//TODO Avec la methode Array.from(), dans une nouvelle variable
+// textesTab on va transformer notre htmlCollection en array
+//TODO On console log la variables textesTab
+//* On transforme le HTMLCollection(qui contient tous nos <p>) en
+// Array classique
 
-console.log(moi);
-console.log(moi.passion[1].hobbies);
-let array = [1, 2, 3];
-let test = (element) => {
-	console.log(element);
-};
-array.forEach(test);
+let textesTab = Array.from(lesTxt);
+console.log(textesTab);
+
+//TODO JS Map Phase 3 (on peut travailler sur un Array)
+//TODO Sur textesTab on va utiliser la ƒ° map(),
+//TODO dans map(), on va lui passer en param une fonction fléchée
+// qui elle a en parametre une variable temporaire
+// (nom de la variable au choix)
+//TODO cette fonction fléchée elle va modifier le innerText
+
+let leTexte = [];
+textesTab.map((a) => {
+	leTexte += a.innerText;
+});
+console.log(leTexte);
+
+// voici un tableau contenant des tableaux :
+// [[1,2,3],[4,5,6],[7,8,9]]
+
+// A l'aide de boucle, afficher la valeur de chaque case
+// Cela doit donner :
+
+let matrice = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+];
+
+for (let i = 0; i < matrice.length; i++) {
+	for (let j = 0; j < matrice[i].length; j++) {
+		console.log(matrice[i][j]);
+	}
+}
+
+for (const a of matrice) {
+	for (const b of matrice) {
+		console.log(matrice[a][b]);
+	}
+}
