@@ -230,6 +230,47 @@ main .icon img {
 	margin-top: 3vw;
 }
 
+/* -----Navigation version mobile-------- */
+
+.navLiens {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	width: 100vw;
+	height: 100vh;
+	background-color: #f4f0e3;
+}
+
+.navLiens a {
+	color: #3f170e;
+	font-family: "Ms Madi";
+	font-size: 10vw;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	text-decoration: none;
+}
+
+.navLiens a:hover {
+	text-decoration: underline;
+	text-underline-offset: 1.5vw;
+}
+
+.navLiens a img {
+	width: 20vw;
+}
+
+.navLiens .crossButton {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 15vw;
+}
+
 .nousContacter:hover,    /* page celebrer  hover du bouton suivant*/
 .suivant:hover,
 .envoyer:hover,.seConnecter:hover {
