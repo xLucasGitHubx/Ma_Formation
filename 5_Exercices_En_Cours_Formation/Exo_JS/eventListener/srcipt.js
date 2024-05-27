@@ -68,3 +68,34 @@ arrayImg.map((img, index) => {
 		console.log(`image numero ${index} - vient de finir de charger`);
 	});
 });
+
+const newH3 = document.querySelector("h3");
+document.addEventListener("mouseleave", () => {
+	newH3.style.display = "block";
+});
+document.addEventListener("mouseenter", () => {
+	newH3.style.display = "none";
+});
+
+const newBar = document.querySelector(".bar");
+document.addEventListener("scroll", () => {
+	let scrollMax = document.body.scrollHeight - innerHeight;
+	let onEstOu = (scrollY * 100) / scrollMax;
+	console.log(`
+	Hauteur de la page: ${document.body.scrollHeight}
+	Hauteur affichage: ${innerHeight}
+	Scroll Position: ${scrollY}
+	${onEstOu}`);
+	newBar.style.width = `${onEstOu}%`;
+});
+
+const textArea = document.querySelector("#yo");
+const copie = document.querySelector(".copie");
+const button = document.querySelector("button");
+
+textArea.addEventListener("keyup", (e) => {
+	copie.textContent += e.key;
+	if (copie.textContent.length == 5) {
+		button.disabled = "true";
+	}
+});

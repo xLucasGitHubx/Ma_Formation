@@ -1,3 +1,21 @@
 .green {
 	color: green;
 }
+
+h3 {
+	color: red;
+	background-color: green;
+	width: 100%;
+	display: none;
+}
+
+.bar {
+	border: solid rebeccapurple 3px;
+	width: 100%;
+	height: 25px;
+	background-color: aqua;
+}
+
+body {
+	height: 140vh;
+}
