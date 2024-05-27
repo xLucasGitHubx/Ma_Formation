@@ -16,3 +16,28 @@ crossButton.addEventListener("click", () => {
 	main.style.display = "flex";
 	nav.style.display = "none";
 });
+// nav desktop par default display
+const iconUser = document.querySelector("#iconUtilisateur");
+if (window.innerWidth >= "641") {
+	nav.style.display = "flex";
+	iconUser.src = "../Icons/user_icon_white.svg";
+}
+// weird windows size matters
+if (window.innerWidth < window.innerHeight) {
+	iconUser.src = "../Icons/user_icon_brown.svg";
+	nav.style.display = "none";
+}
+
+window.addEventListener("resize", () => {
+	if (window.innerWidth >= "641") {
+		nav.style.display = "flex";
+		iconUser.src = "../Icons/user_icon_white.svg";
+	} else {
+		nav.style.display = "none";
+		iconUser.src = "../Icons/user_icon_brown.svg";
+	}
+	if (window.innerWidth < window.innerHeight) {
+		iconUser.src = "../Icons/user_icon_brown.svg";
+		nav.style.display = "none";
+	}
+});
