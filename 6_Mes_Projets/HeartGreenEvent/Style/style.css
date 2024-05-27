@@ -612,6 +612,9 @@ ul {
 	.hamburgerIcon {
 		display: none;
 	}
+	header #myVideo {
+		height: 20vh;
+	}
 
 	/* --------------- */
 	/* footer---desktop------- */
@@ -629,12 +632,15 @@ ul {
 	main img {
 		width: 42vw;
 		margin-top: 6vw;
-		padding-left: 1vw;
+		padding-left: 2vw;
+		padding-right: 2vw;
 	}
 
 	main .icon {
 		width: 42vw;
-		padding-left: 1vw;
+		padding-left: 2vw;
+		padding-right: 2vw;
+		margin-top: 14vw;
 		justify-content: space-between;
 	}
 	main .icon img {
@@ -646,7 +652,7 @@ ul {
 	}
 
 	p {
-		font-size: 1.6vw;
+		font-size: 1.5vw;
 		text-align: start;
 		margin: 0;
 	}
