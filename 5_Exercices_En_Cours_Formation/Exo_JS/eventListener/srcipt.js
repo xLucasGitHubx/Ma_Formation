@@ -94,7 +94,12 @@ const copie = document.querySelector(".copie");
 const button = document.querySelector("button");
 
 textArea.addEventListener("keyup", (e) => {
-	copie.textContent += e.key;
+	if (e.key == "Backspace") {
+		copie.textContent = copie.slice(0, -1);
+	} else {
+		copie.textContent += e.key;
+	}
+
 	if (copie.textContent.length == 5) {
 		button.disabled = "true";
 	}
