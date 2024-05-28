@@ -22,7 +22,7 @@ newButton.addEventListener("mousedown", () => {
 	newButton.style.background = "orange";
 });
 document.addEventListener("mouseup", () => {
-	newButton.style.background = "cornflowerblue";
+	newButton.style.background = "";
 });
 
 newButton.addEventListener("click", () => {
