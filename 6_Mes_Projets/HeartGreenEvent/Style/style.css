@@ -703,7 +703,7 @@ ul {
 
 	main div {
 		width: 48vw;
-		margin-top: 6vw;
+		margin-top: 2.5vw;
 	}
 	main img {
 		width: 42vw;
@@ -739,5 +739,27 @@ ul {
 		font-size: 3vw;
 	}
 
+	/* --------------- */
+	/* Nos réalisations desktop----------------- */
+	.realisation {
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
+
+	.realisation video {
+		width: 60vw;
+	}
+	.realisation .star {
+		width: 25vw;
+	}
+	.realisation .star img {
+		margin: 0;
+		padding: 0;
+		width: 2.5vw;
+	}
+
+	.realisation p {
+		width: 70vw;
+	}
 	/*  */
 }
