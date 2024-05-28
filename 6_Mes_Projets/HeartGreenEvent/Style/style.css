@@ -761,5 +761,58 @@ ul {
 	.realisation p {
 		width: 70vw;
 	}
+	/* Célébrer desktop----------- */
+	.celebrer {
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
+
+	.celebrer div video {
+		width: 60vw;
+	}
+	.celebrer div .lesRond img {
+		width: 2vw;
+		padding: 0;
+	}
+	.celebrer div .lesRond {
+		margin-top: 2vw;
+	}
+	.celebrer img {
+		margin: 0;
+		padding: 2vw 0 2vw 0;
+		width: 40vw;
+	}
+
+	.celebrer .surMesure {
+		flex-direction: row;
+		justify-content: space-evenly;
+		width: 100%;
+		margin: 0;
+	}
+
+	.celebrer .surMesure div {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		margin-top: 0;
+	}
+	.celebrer .surMesure div h2 {
+		margin-top: 0;
+	}
+	.celebrer .questionnaire {
+		width: 90%;
+	}
+	.celebrer .questionnaire h2 {
+		align-self: start;
+	}
+
+	.celebrer .questionnaire .suivant {
+		width: 15vw;
+		height: 2.5vw;
+		font-size: 2.3vw;
+	}
+
 	/*  */
 }
