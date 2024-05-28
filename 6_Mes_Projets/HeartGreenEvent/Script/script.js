@@ -31,8 +31,12 @@ if (window.innerWidth < window.innerHeight) {
 window.addEventListener("resize", () => {
 	if (window.innerWidth >= "641") {
 		nav.style.display = "flex";
+		main.style.display = "flex";
+
 		iconUser.src = "../Icons/user_icon_white.svg";
 	} else {
+		main.style.display = "flex";
+
 		nav.style.display = "none";
 		iconUser.src = "../Icons/user_icon_brown.svg";
 	}
