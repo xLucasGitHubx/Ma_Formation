@@ -172,6 +172,16 @@ nav img {
 	cursor: pointer;
 }
 
+h1 {
+	color: #3f170e;
+	font-family: "Ms Madi";
+	font-size: 7vw;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-top: 0.2em;
+}
+
 p {
 	color: #000;
 	text-align: center;
@@ -473,7 +483,6 @@ textarea {
 	font-size: 6vw;
 	width: 50vw;
 	height: 10vw;
-	flex-shrink: 0;
 	background-color: #148611;
 	border-radius: 4.5vw;
 	text-decoration: none;
@@ -498,8 +507,6 @@ textarea {
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
-	margin-top: 3vw;
-	padding-top: 5vw;
 }
 .date-actuel,
 .arrow {
@@ -703,7 +710,7 @@ ul {
 
 	main div {
 		width: 48vw;
-		margin-top: 2.5vw;
+		margin-top: 0vw;
 	}
 	main img {
 		width: 42vw;
@@ -812,6 +819,82 @@ ul {
 		width: 15vw;
 		height: 2.5vw;
 		font-size: 2.3vw;
+	}
+
+	/*------- Planning desktop---------------- */
+	.planning {
+		flex-direction: column;
+	}
+	main .calendar-outside {
+		margin: 1vw;
+		width: 25em;
+		height: 40vw;
+	}
+	main .calendar-outside .calendar {
+		width: 100%;
+	}
+
+	.calendar-outside {
+		width: 80vw;
+		margin-top: 7vw;
+		margin-bottom: 7vw;
+		background-color: white;
+		border-radius: 3vw;
+		padding: 4vw;
+	}
+
+	.en-tete-calendar {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.date-actuel,
+	.arrow {
+		font-size: 2.2vw;
+	}
+
+	.date-actuel {
+		margin-top: 6vw;
+	}
+
+	.arrow {
+		width: 14%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+	#suivant {
+		margin-left: 6vw;
+		margin-right: 3vw;
+	}
+
+	#suivant {
+		padding: 0;
+		margin: 0;
+	}
+	#precedant {
+		margin: 0;
+		padding: 0;
+	}
+
+	.weeks,
+	.days {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	ul {
+		font-size: 2vw;
+		margin-bottom: 2vw;
+		margin-top: 2vw;
+		font-family: lato;
+	}
+	.days li {
+		width: 8vw;
+		text-align: center;
+		padding: 0;
+		margin: 0;
 	}
 
 	/*  */
