@@ -1,0 +1,16 @@
+aside {
+	margin-right: 30px;
+}
+
+.card {
+	padding: 15px 10px;
+}
+
+.card—hover {
+	background-color: orange;
+}
+
+#map {
+	height: 100vh;
+	width: 100vw;
+}
