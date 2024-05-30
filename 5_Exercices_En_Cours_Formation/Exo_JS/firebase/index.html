@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<!-- firebase sdk link goes here -->
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js" defer></script>
+		<!-- <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script> -->
+		<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js" defer></script>
+		<script src="./script.js" defer></script>
+
+		<title>Firebase</title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="text" name="name" placeholder="Nom" />
+			<input type="text" name="age" placeholder="Age" />
+			<input type="text" name="mail" placeholder="Email" />
+			<input type="submit" name="submit" />
+		</form>
+		<ul id="user-list"></ul>
+	</body>
+</html>
