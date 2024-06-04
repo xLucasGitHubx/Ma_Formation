@@ -378,6 +378,50 @@ textarea {
 		transform: translateX(0);
 	}
 }
+/* animations pour le defilement au scroll */
+main div.scroll,
+main img.scroll,
+main p.scroll,
+main .nousContacter,
+main h1,
+label,
+input,
+textarea,
+button,
+main a {
+	animation: fadeIn 1s ease-in-out both;
+}
+main div {
+	opacity: 0%;
+}
+@keyframes fadeIn {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* animations slide-in navbar version mobile */
+@keyframes slideInMobile {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+@keyframes slideOutMobile {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
 
 /* ---page réalisation------------------------------ */
 
@@ -658,6 +702,8 @@ ul {
 		width: 100%;
 		height: 5vw;
 		background-color: transparent;
+		transform: translateX(0%);
+		animation: none;
 	}
 
 	.navLiens a {
