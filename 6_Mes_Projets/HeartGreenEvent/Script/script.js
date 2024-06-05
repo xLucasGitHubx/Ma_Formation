@@ -282,7 +282,7 @@ document.addEventListener("click", function () {
 				allDay[j].classList.remove("dateCliquer");
 			}
 			// Ajoute la classe "dateCliquer" à l'élément "li" cliqué
-			this.classList.add("dateCliquer");
+			allDay[i].classList.add("dateCliquer");
 		});
 	}
 });
