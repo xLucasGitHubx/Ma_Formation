@@ -125,7 +125,7 @@ let date = new Date();
 let currYear = date.getFullYear();
 let currMonth = date.getMonth();
 // storing full name of all months in array
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const months = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"];
 
 const renderCalendar = () => {
 	let firstDayofMonth = new Date(currYear, currMonth, 0).getDay(); // getting first day of month
@@ -173,4 +173,16 @@ prevNextIcon.forEach((icon) => {
 		}
 		renderCalendar(); // calling renderCalendar function
 	});
+});
+
+document.addEventListener("click", () => {
+	const allDay = document.querySelectorAll("li");
+	for (let i = 0; i < allDay.length; i++) {
+		allDay[i].addEventListener("click", () => {
+			for (let j = 0; j < allDay.length; j++) {
+				allDay[j].classList.remove("dateCliquer");
+			}
+			allDay[i].classList.toggle("dateCliquer");
+		});
+	}
 });

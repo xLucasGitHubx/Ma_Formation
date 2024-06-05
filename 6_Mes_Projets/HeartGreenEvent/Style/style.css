@@ -564,6 +564,12 @@ textarea {
 	flex-direction: row;
 	justify-content: space-evenly;
 }
+
+.dateCliquer {
+	background-color: #b09500;
+	border-radius: 100%;
+}
+
 #suivant {
 	margin-left: 6vw;
 	margin-right: 3vw;
@@ -614,8 +620,9 @@ ul {
 }
 
 .days li:hover {
-	background-color: lightgray;
+	opacity: 60%;
 	border-radius: 100%;
+	cursor: pointer;
 }
 
 .currentDay {
