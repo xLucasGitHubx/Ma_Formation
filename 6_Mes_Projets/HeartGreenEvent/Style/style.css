@@ -492,6 +492,10 @@ main video {
 	margin: 2vw 3.5vw 2vw 0;
 	float: right;
 }
+/* --------page realisation */
+.realisation video {
+	margin-top: 2vw;
+}
 
 /* --------contact-------- */
 form {
@@ -501,15 +505,16 @@ form {
 }
 label {
 	margin-top: 4vw;
-	font-family: "Trebuchet MS";
 	color: #3f170e;
 	font-size: 4vw;
+	align-self: flex-start;
 }
 input {
 	margin-top: 2vw;
 	height: 5vw;
 	border-radius: 5vw;
 	border-style: none;
+	width: 100%;
 }
 textarea {
 	margin-top: 2vw;
@@ -518,6 +523,7 @@ textarea {
 	border-style: none;
 	resize: vertical;
 	margin-bottom: 5vw;
+	width: 100%;
 }
 .envoyer {
 	display: flex;
@@ -955,6 +961,42 @@ ul {
 
 	.planning li {
 		font-size: 22px;
+	}
+
+	/* -----Contact desktop---------------- */
+	.contact p {
+		width: 90%;
+		margin-bottom: 2.5vw;
+	}
+	.contact form label {
+		font-size: 2.3vw;
+	}
+
+	.contact form div {
+		width: 50%;
+		justify-content: flex-start;
+		margin-right: 2vw;
+	}
+	.contact form label,
+	.contact form input,
+	.contact form textarea {
+		margin: 0;
+		padding: 0;
+	}
+	.contact form label {
+		margin-top: 3vw;
+	}
+	.contact form input {
+		height: 3vw;
+		margin-top: 1vw;
+	}
+	.contact form textarea {
+		height: 22vw;
+		margin-top: 1vw;
+	}
+
+	.contact form {
+		flex-direction: row;
 	}
 
 	/*  */

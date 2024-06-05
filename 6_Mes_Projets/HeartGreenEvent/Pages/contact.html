@@ -27,12 +27,12 @@
 				<a href="./index.html">Accueil</a>
 				<a href="./realisation.html">Nos réalisations</a>
 				<a href="./celebrer.html">Célébrer</a>
-				<a href="./planning.html">planning</a>
+				<a href="./planning.html">Planning</a>
 				<a href="./contact.html">Contact</a>
 				<a href="./connexion.html"><img id="iconUtilisateur" src="../Icons/user_icon_brown.svg" alt="icone utilisateur" /></a>
 			</div>
 		</nav>
-		<main>
+		<main class="contact">
 			<h1>Contact</h1>
 			<p>
 				Bienvenue sur notre page de contact ! Nous sommes ravis de vous accueillir. Afin de mieux répondre à vos besoins, nous vous invitons à
@@ -40,15 +40,19 @@
 				vous accompagner dans sa réalisation. Cordialement, L'équipe Heart Green Event.
 			</p>
 			<form action="post" id="contact">
-				<label for="nom">Nom:</label>
-				<input type="text" id="nom" name="nom" required />
-				<label for="prenom">Prenom:</label>
-				<input type="text" id="prenom" name="prenom" required />
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required />
-				<label for="message">Votre Message:</label>
-				<textarea id="message" name="message" required> </textarea>
-				<button type="submit" form="contact" class="envoyer">Envoyer</button>
+				<div>
+					<label for="nom">Nom:</label>
+					<input type="text" id="nom" name="nom" required />
+					<label for="prenom">Prenom:</label>
+					<input type="text" id="prenom" name="prenom" required />
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required />
+				</div>
+				<div>
+					<label for="message">Votre Message:</label>
+					<textarea id="message" name="message" required> </textarea>
+					<button type="submit" form="contact" class="envoyer">Envoyer</button>
+				</div>
 			</form>
 		</main>
 
