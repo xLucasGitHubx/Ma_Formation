@@ -115,7 +115,7 @@ window.addEventListener("load", function () {
 });
 
 // ------calendrier-------
-
+/*
 const daysTag = document.querySelector(".days");
 const currentDate = document.querySelector(".date-actuel");
 const prevNextIcon = document.querySelectorAll("#suivant,#precedant");
@@ -195,6 +195,94 @@ document.addEventListener("click", () => {
 				allDay[j].classList.remove("dateCliquer");
 			}
 			allDay[i].classList.add("dateCliquer");
+		});
+	}
+});
+*/
+
+let daysTag = document.querySelector(".days");
+let currentDate = document.querySelector(".date-actuel");
+let prevNextIcon = document.querySelectorAll("#suivant,#precedant");
+// Crée une nouvelle date avec l'année et le mois actuels
+let date = new Date();
+let currYear = date.getFullYear();
+let currMonth = date.getMonth();
+
+// Crée un tableau avec le nom complet de tous les mois
+const months = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"];
+
+// Fonction pour afficher le calendrier
+function renderCalendar() {
+	// Récupère le jour de la semaine du premier jour du mois (entre 0 et 6)
+	let firstDayofMonth = new Date(currYear, currMonth, 0).getDay();
+
+	// Récupère le nombre de jours dans le mois
+	let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+
+	// Récupère le jour de la semaine du dernier jour du mois (entre 0 et 6)
+	let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
+
+	// Récupère le nombre de jours dans le mois précédent
+	let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+	let liTag = "";
+
+	// Boucle pour créer les éléments "li" des derniers jours du mois précédent
+	for (let i = firstDayofMonth; i >= 1; i--) {
+		liTag += `<li class="inactive">${lastDateofLastMonth - i}</li>`;
+	}
+
+	// Boucle pour créer les éléments "li" de tous les jours du mois actuel
+	for (let i = 1; i <= lastDateofMonth; i++) {
+		// Vérifie si la date actuelle est égale à la date du jour en cours
+		if (i == date.getDate() && currMonth == new Date().getMonth() && currYear == new Date().getFullYear()) {
+			liTag += `<li class="currentDay">${i}</li>`;
+		} else {
+			liTag += `<li>${i}</li>`;
+		}
+	}
+
+	// Boucle pour créer les éléments "li" des premiers jours du mois suivant
+	for (let i = lastDayofMonth; i < 7; i++) {
+		liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+	}
+	currentDate.innerText = `${months[currMonth]} ${currYear}`;
+	daysTag.innerHTML = liTag;
+}
+
+// Afficher le calendrier
+renderCalendar();
+
+// Boucle pour ajouter un écouteur d'événements "click" à chaque bouton "prevNextIcon"
+for (const icon of prevNextIcon) {
+	icon.addEventListener("click", function () {
+		// Met à jour le mois actuel en fonction du bouton cliqué
+		currMonth += icon.id === "precedant" ? -1 : 1;
+
+		// Met à jour l'année actuelle si le mois actuel est en dehors de la plage valide
+		if (currMonth < 0) {
+			currMonth = 11;
+			currYear--;
+		} else if (currMonth > 11) {
+			currMonth = 0;
+			currYear++;
+		}
+
+		// Afficher calendrier mis à jour
+		renderCalendar();
+	});
+}
+
+document.addEventListener("click", function () {
+	const allDay = document.querySelectorAll(".days li");
+	// Boucle pour ajouter un écouteur d'événements "click" à chaque élément "li"
+	for (let i = 0; i < allDay.length; i++) {
+		allDay[i].addEventListener("click", function () {
+			// Boucle pour supprimer la classe "dateCliquer" de tous les éléments "li"
+			for (let j = 0; j < allDay.length; j++) {
+				allDay[j].classList.remove("dateCliquer");
+			}
+			// Ajoute la classe "dateCliquer" à l'élément "li" cliqué
+			this.classList.add("dateCliquer");
 		});
 	}
 });
