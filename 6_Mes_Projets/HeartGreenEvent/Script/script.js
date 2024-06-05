@@ -55,7 +55,7 @@ window.addEventListener("resize", () => {
 // --------------------------------------------------------------------------
 
 // Trouve tous les éléments à laquel je veux appliquer mon effet de scroll
-let scrollElements = document.querySelectorAll("main div,main img,main p,main .nousContacter,main h1,label,input,textarea,button,main a");
+let scrollElements = document.querySelectorAll("main div,main img,main p,main .nousContacter,main h1,label,input,textarea,button,main a,#connexion");
 // Vérifie si un élément est dans la zone visible de la page (viewport)
 function elementInView(element) {
 	// Trouve la position du haut de l'élément par rapport à la zone visible
