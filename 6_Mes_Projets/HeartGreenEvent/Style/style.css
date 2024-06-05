@@ -622,6 +622,9 @@ ul {
 	background-color: #148611;
 	border-radius: 100%;
 }
+.inactive {
+	color: #00000062;
+}
 
 .days li.currentDay:hover {
 	background-color: #e9ae3f;
@@ -876,7 +879,7 @@ ul {
 	main .calendar-outside {
 		margin: 1vw;
 		width: 25em;
-		height: 25em;
+		height: 30em;
 	}
 	main .calendar-outside .calendar {
 		width: 100%;
@@ -921,6 +924,7 @@ ul {
 		padding: 0;
 		margin: 0;
 		padding-left: 10px;
+		cursor: pointer;
 	}
 	#precedant {
 		width: 40px;
@@ -928,6 +932,7 @@ ul {
 		margin: 0;
 		padding: 0;
 		padding-right: 10px;
+		cursor: pointer;
 	}
 
 	.weeks {
