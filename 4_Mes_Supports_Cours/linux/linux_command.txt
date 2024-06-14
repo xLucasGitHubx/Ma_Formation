@@ -3,3 +3,9 @@ ip r config du routeur
 adduser lucas sudo
 172.16.6.32/24
 172.16.6.255
+
+#passer en interface terminal
+sudo systemctl isolate multi-user.target
+
+#passer en interface graphique
+sudo systemctl isolate graphical.target
