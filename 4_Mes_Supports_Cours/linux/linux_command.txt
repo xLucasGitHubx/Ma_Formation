@@ -1,0 +1,5 @@
+ip a utiliser ifconfig existe pu
+ip r config du routeur
+adduser lucas sudo
+172.16.6.32/24
+172.16.6.255
