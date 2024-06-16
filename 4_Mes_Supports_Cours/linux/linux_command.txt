@@ -9,3 +9,7 @@ sudo systemctl isolate multi-user.target
 
 #passer en interface graphique
 sudo systemctl isolate graphical.target
+
+
+#pour mon projet
+git pull --depth=2 origin master
