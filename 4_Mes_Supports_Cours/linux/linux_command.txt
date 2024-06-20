@@ -12,4 +12,4 @@ sudo systemctl isolate graphical.target
 
 
 #pour mon projet ce mettre dans le dosier web_app_hge
-git pull --depth=2 origin master
+git pull --depth=2 origin main
