@@ -22,7 +22,7 @@ build a docker containers
 docker build -t server-hge .
 
 run the docker image
-docker run -d --name hge -p 80:80 server-hge
+docker run -dit --name hge -p 80:80 server-hge
 
 id of the docker running
 25cc17d1db6cab4e9f9fc2254a0c70c311e4ac8c2fad9e27a7a2c3039d2b5690
