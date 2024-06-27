@@ -70,3 +70,47 @@ INSERT INTO users VALUES(1,"Depriester","Yoann",null, null, "yoann.dep@gmail.com
 INSERT INTO users (name_user,firstname_user,email,password_user)
 	VALUES ("Uzumaki","Naruto","kyubi@konoha.com","jetaimeSasuke"),
 		("Uchiwa","Sadara","susano@konoha.com","12345");
+
+-- Modification de données avec UPDATE :
+
+UPDATE users SET day_of_born = "1984-02-12"; -- Sans la condition WHERE, on modifie tous les enregistrement pour le champ day_of_born
+
+-- Avec une condition WHERE :
+UPDATE users SET day_of_born = "1991-01-25" WHERE iduser = 2;
+
+-- En combinant des conditions :
+UPDATE users SET day_of_born = "1993-05-09" WHERE iduser = 2 OR firstname_user = "Sadara" ;
+
+-- Testons en préfixant du nom d'une BDD
+UPDATE tickets.articles SET prix = 900.00 WHERE id_article = 1; -- On peut voir que ça marche ^^
+
+-- Condition IN au sein d'un WHERE : vérifie un ensemble de valeur
+-- Ici on modifie les enregistrements dont l'iduser est égal à 2, 5 ou 6
+UPDATE users SET weight = 75.00 WHERE iduser IN (2,5,6);
+
+-- Condition BETWEEN...AND : vérifie les valeurs entre 2 bornes
+UPDATE users SET weight = 90.00 WHERe iduser BETWEEN 3 AND 10;
+
+-- Condition LIKE : vérifie la valeur d'un champ selon un enchaînement de caractère
+UPDATE users SET email = "yoyo@yoyo.com" WHERE firstname_user LIKE "%a"; -- tous les prénoms finissant par a
+UPDATE users SET email = "yoyo@yoyo.com" WHERE firstname_user LIKE "a%"; -- tous les prénoms commençant par a
+UPDATE users SET weight = 80.00 WHERE firstname_user LIKE "%a%"; -- tous les prénoms qui contiennent la lettre a
+
+-- JOINTURE : inner join
+SELECT name_user, firstname_user, name_character FROM users
+	INNER JOIN characters ON users.iduser = characters.iduser;
+    
+
+SELECT vendeurs.nom, vendeurs.prenom, clients.nom, clients.prenom, clients.id_clients
+	FROM vendeurs
+	INNER JOIN tickets ON vendeurs.id_vendeur = tickets.id_vendeur
+    INNER JOIN clients ON tickets.id_clients = clients.id_clients;
+    
+    
+
+SELECT vendeurs.nom, vendeurs.prenom, clients.nom, clients.prenom, clients.id_clients, articles.nom, contenir.quantite, tickets.date_ticket
+	FROM tickets
+    JOIN contenir ON tickets.id_ticket = contenir.id_ticket
+    JOIN articles ON contenir.id_article = articles.id_article
+    JOIN vendeurs ON vendeurs.id_vendeur = tickets.id_vendeur
+    JOIN clients ON clients.id_clients = tickets.id_clients;

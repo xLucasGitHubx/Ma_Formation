@@ -71,3 +71,36 @@ INSERT INTO contenir (id_tickets, id_articles,quantite)
 	VALUES (1,1,4),
 		(2,2,5),
         (3,3,6);
+        
+        
+        
+UPDATE articles SET prix = "8" WHERE id_articles = 1;
+UPDATE articles SET prix = "9" WHERE id_articles = 2;
+UPDATE articles SET prix = "10" WHERE id_articles = 3;
+
+UPDATE clients SET nom = "ruby" WHERE id_clients = 1;
+UPDATE clients SET prenom = "bob" WHERE id_clients = 1;
+
+UPDATE vendeurs SET nom = "joe" WHERE nom LIKE "%BO%"; 
+UPDATE vendeurs SET prenom = "fraie" WHERE prenom LIKE "%Au%"; 
+
+UPDATE tickets SET date_ticket = "2024-01-01" WHERE id_tickets BETWEEN 2 AND 5;
+
+UPDATE contenir SET quantite = 8 WHERE id_tickets IN (1,2,4,6);
+
+-- Calcul
+
+SELECT count(id_vendeurs) AS nombre_de_vendeurs FROM vendeurs;
+SELECT count(id_tickets) AS nombre_de_tickets FROM tickets;
+SELECT id_vendeurs, count(id_tickets) AS nombre_de_ticket_vendu FROM tickets GROUP BY	id_vendeurs;
+SELECT AVG(quantite) AS nombre_article_vendu FROM contenir;
+SELECT id_tickets, AVG(quantite) AS nombre_article_vendu FROM contenir GROUP BY id_tickets;
+
+SELECT nom, prix FROM articles ORDER BY prix DESC LIMIT 1;
+SELECT nom, prix FROM articles ORDER BY prix LIMIT 1;
+SELECT AVG(prix) AS prix_moyen FROM articles;
+
+SELECT prenom FROM clients ORDER BY id_clients DESC LIMIT 1;
+SELECT prenom FROM clients ORDER BY id_clients  LIMIT 1;
+
+
