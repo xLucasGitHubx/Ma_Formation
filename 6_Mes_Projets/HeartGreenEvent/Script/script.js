@@ -62,7 +62,7 @@ window.addEventListener("resize", () => {
 
 // Find all elements to apply scroll effect
 let scrollElements = document.querySelectorAll(
-	"main div, main img, main p, main .nousContacter, main h1, label, input, textarea, button, main a, #connexion"
+	"main div, main img, main p, main.nousContacter, main h1, label, input, textarea, button, main a, #connexion"
 );
 
 // Check if an element is in the visible area of the page (viewport)
@@ -135,7 +135,7 @@ let currMonth = date.getMonth();
 // Create an array with the full names of all months
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-// Function to render the calendar
+// Functionto render the calendar
 function renderCalendar() {
 	// Get the day of the week of the first day of the month (between 0 and 6)
 	let firstDayofMonth = new Date(currYear, currMonth, 0).getDay();
