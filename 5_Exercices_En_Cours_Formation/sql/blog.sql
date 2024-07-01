@@ -11,9 +11,6 @@ prenom  VARCHAR(50),
 avatar  VARCHAR(50)
 );
 
-
-
-
 CREATE TABLE articles(
 id_articles INT PRIMARY KEY AUTO_INCREMENT,
 titre VARCHAR(255),
@@ -80,3 +77,16 @@ FROM utilisateurs
 	 INNER JOIN articles ON utilisateurs.id_utilisateurs = articles.id_utilisateurs
      INNER JOIN categoriser ON articles.id_articles = categoriser.id_articles
 	 INNER JOIN categories ON categoriser.id_categories = categories.id_categories ;
+     
+INSERT INTO commentaires (commentaire,note,id_articles,id_utilisateurs)
+	VALUES ("commentaireqesfezrhrthrthrthrthzth1",8,(SELECT id_articles FROM articles WHERE titre="titre1"),(SELECT id_utilisateurs FROM utilisateurs WHERE nom="johna")),
+		("commentaire1grregger4523543253",9,(SELECT id_articles FROM articles WHERE titre="titre2"),(SELECT id_utilisateurs FROM utilisateurs WHERE nom="john")),
+		("commentairesththrthrthhghtfght___trhth1",7,(SELECT id_articles FROM articles WHERE titre="titre3"),(SELECT id_utilisateurs FROM utilisateurs WHERE nom="johny"));
+        
+ UPDATE articles SET id_utilisateurs = (SELECT id_utilisateurs FROM utilisateurs WHERE nom="john") WHERE id_utilisateurs = (SELECT id_utilisateurs FROM utilisateurs WHERE nom="johny" AND email="jo.mail@da.com" AND prenom="joe");
+
+
+
+
+
+
