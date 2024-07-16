@@ -1,0 +1,22 @@
+<?php
+
+// -Créer une fonction qui soustrait à $a la variable $b (2 paramètres en entrée),
+// -la fonction doit renvoyer le résultat de la soustraction $a-$b (return).
+
+function soustraction($a,$b){
+    return $a - $b;
+}
+
+function arrondi($float){
+    return round($float);
+}
+
+function somme ($a,$b,$c){
+    return $a+$b+$c;
+}
+
+function moyenneDe3($a,$b,$c){
+    return ($a+$b+$c)/3;
+}
+
+echo ( soustraction(5,2)."<br>". arrondi(42.3) . "<br>" . somme(1,1,1) . "<br>" . moyenneDe3(5,10,8)); 
