@@ -685,6 +685,42 @@ ul {
 	text-decoration: underline;
 	color: #b09500;
 }
+
+/* ------ utilisateur------- */
+/* ------ événement -------- */
+.evenement {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.evenement article {
+	display: flex;
+	justify-content: space-around;
+	width: 90%;
+	padding-bottom: 2vw;
+}
+h3 {
+	color: #3f170e;
+	font-family: "Ms Madi";
+	font-size: 7vw;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	padding: 1vw 2.5vw 1vw 2.5vw;
+}
+
+.evenement img {
+	margin-bottom: 4vw;
+	margin-top: 2vw;
+	border-radius: 1.5vw;
+}
+
+.noSelectH3 {
+	border: solid #3f170e 0.36vw;
+	border-radius: 0 0 0 5vw;
+}
+
 /* ---------------------------------------------- */
 /* ---------------------------------------------- */
 /*-------------- DESKTOP Version Accueil-------- */
