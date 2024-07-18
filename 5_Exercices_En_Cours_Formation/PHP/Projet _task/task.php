@@ -15,7 +15,8 @@ if (isset($_POST["submit"])) {
         $name_user = htmlentities(strip_tags(stripcslashes(trim($_POST["name_user"]))));
         $first_name_user = htmlentities(strip_tags(stripcslashes(trim($_POST["first_name_user"]))));
         $login_user = htmlentities(strip_tags(stripcslashes(trim($_POST["login_user"]))));
-        $mdp_user = htmlentities(strip_tags(stripcslashes(trim($_POST["mdp_user"]))));
+        // $mdp_user = htmlentities(strip_tags(stripcslashes(trim($_POST["mdp_user"]))));
+        $mdp_user = password_hash($_POST["mdp_user"], PASSWORD_BCRYPT);
 
 
 
