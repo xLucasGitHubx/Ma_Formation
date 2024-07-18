@@ -694,10 +694,10 @@ ul {
 	justify-content: center;
 	align-items: center;
 }
-.evenement article {
+section article {
 	display: flex;
 	justify-content: space-around;
-	width: 90%;
+	width: 100%;
 	padding-bottom: 2vw;
 }
 h3 {
@@ -718,7 +718,13 @@ h3 {
 
 .noSelectH3 {
 	border: solid #3f170e 0.36vw;
-	border-radius: 0 0 0 5vw;
+	border-radius: 79% 21% 83% 17% / 35% 60% 40% 65%;
+	box-shadow: 1vw 1vw 0.2vw 0px #000000;
+	cursor: pointer;
+}
+.noSelectH3:active {
+	transform: translate(1vw, 1vw);
+	box-shadow: initial;
 }
 
 /* ---------------------------------------------- */
