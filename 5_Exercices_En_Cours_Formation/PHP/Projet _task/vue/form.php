@@ -18,6 +18,14 @@
             <input type="password" name="mdp_user" id="" placeholder="password">
             <input type="submit" value="ajouter" name="submit">
         </form>
+
+        <fieldset>
+            <legend>supprimer</legend>
+            <form action="" method="post">
+                <input type="text" name="elementDelete" placeholder="login à delete">
+                <input type="submit" value="supprimer" name="delete">
+            </form>
+        </fieldset>
     </body>
 
     </html>
