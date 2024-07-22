@@ -35,9 +35,13 @@ if (isset($_POST["submit"])) {
 if (isset($_POST["delete"])) {
     if (isset($_POST["elementDelete"]) && !empty($_POST["elementDelete"])) {
         $elementDelete = htmlentities(strip_tags(stripcslashes(trim($_POST["elementDelete"]))));
-        $result = delete($elementDelete, $bdd);
+        if (!empty(verifyData($elementDelete, $bdd))) {
+            $result = delete($elementDelete, $bdd);
+        } else {
+            $result = "Nom d'utilisateur non trouver en bdd";
+        }
     } else {
-        $result = "impossible de supprimer car l'utilisateur n'existe pas";
+        $result = "Veuillez entrer un login à supprimer";
     }
     $data = initFetch($bdd);
 }
