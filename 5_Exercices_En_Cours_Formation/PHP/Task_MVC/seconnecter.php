@@ -27,7 +27,7 @@ function seConnecter()
         return "Nom d'utilisateur incorrect";
     }
     // var_dump($data[0]);
-    if (password_verify($password, $data[0]["mdp_users"])) {
+    if (password_verify($password, $data[0]["mdp_users"]) == false) {
         return "mots de pass incorrect";
     }
     $_SESSION['login'] = $login;
