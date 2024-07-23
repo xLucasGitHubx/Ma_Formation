@@ -52,3 +52,17 @@ function addUser($bdd, $name, $firstname, $login, $password)
         return $error->getMessage();
     }
 }
+
+function delete($elementDelete, $bdd)
+{
+
+    try {
+        $req = $bdd->prepare("DELETE FROM users WHERE login_user = ?");
+        $req->bindParam(1, $elementDelete, PDO::PARAM_STR);
+        $req->execute();
+        $result = "les information sont bien supprimer";
+        return $result;
+    } catch (EXCEPTION $error) {
+        return $error->getMessage();
+    }
+}

@@ -40,6 +40,13 @@ switch ($path) {
 
         include './controller/deconnexion.php';
         break;
+
+    case $path === "/Task_MVC_controller/supprimercompte":
+        include './view/viewAccueil.php';
+        include './components/viewCardUser.php';
+        include './controller/supprimermoncompte.php';
+        include './controller/accueil.php';
+        break;
     //route par default
     default:
         include './controller/404.php';

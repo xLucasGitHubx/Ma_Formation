@@ -22,6 +22,7 @@ function renderHeader($linkCSS)
                 <a href="/Task_MVC_controller/seconnecter">Connexion</a>
                 <a href="/Task_MVC_controller/moncompte">Mon Compte</a>
                 <a href="/Task_MVC_controller/deconnexion">Se Déconnecter</a>
+                <a href="/Task_MVC_controller/supprimercompte">Supprimer Mon compte</a>
             </nav>
         </header>
 
