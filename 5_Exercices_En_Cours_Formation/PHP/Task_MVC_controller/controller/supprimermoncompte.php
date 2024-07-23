@@ -6,8 +6,9 @@ function suppresion()
     }
 
     $bdd = connectBDD($_ENV['hostBDD'], $_ENV['dbnameBDD'], $_ENV['dbLogin'], $_ENV['dbPassword']);
-    delete($_SESSION['login'], $bdd);
+    delete($_SESSION['login'], $bdd); //Fonctionne très bien malgré le warning
     header('Location:./');
-    exit;
+    return "compte supprimer";
+
 }
-$message = suppresion();
+echo suppresion();

@@ -42,10 +42,7 @@ switch ($path) {
         break;
 
     case $path === "/Task_MVC_controller/supprimercompte":
-        include './view/viewAccueil.php';
-        include './components/viewCardUser.php';
         include './controller/supprimermoncompte.php';
-        include './controller/accueil.php';
         break;
     //route par default
     default:
