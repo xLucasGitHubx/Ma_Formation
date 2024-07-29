@@ -15,6 +15,7 @@
     <a href="./formulaire2/index.php">formulaire2</a><br>
     <a href="./exo_buffer/index.php">exo_buffer</a><br>
     <a href="./exo_bdd/index.php">exo_bdd</a><br>
+    <a href="./POO-exo1/index.php">poo</a>
 </body>
 
 </html>
