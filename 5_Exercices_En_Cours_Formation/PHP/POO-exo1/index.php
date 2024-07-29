@@ -92,24 +92,6 @@ class Utilisateur
         return $this;
     }
 
-    public function getInfoById()
-    {
-        try {
-            $req = $this->getBdd()->prepare('SELECT nom, prenom, pseudo, email,dob FROM utilisateurs WHERE id = ?');
-            $n = $this->getId();
-            $req->bindParam(1, $n, PDO::PARAM_INT);
-
-            $req->execute();
-
-            return $req->fetchAll(PDO::FETCH_ASSOC);
-
-        } catch (EXCEPTION $error) {
-            return $error->getMessage();
-        }
-
-
-
-    }
 
     public function displayInfo()
     {
@@ -119,14 +101,15 @@ class Utilisateur
         echo "Voici le prenom: " . $this->getPrenom();
         echo "<br>";
         echo "Voici le pseudo: " . $this->getPseudo();
+        echo "<br>";
     }
 
 }
 
 $user = new Utilisateur(1);
 
-$data = $user->getInfoById();
-print_r($data);
+// $data = $user->getInfoById();
+// print_r($data);
 
 $user->setNom("lucas");
 $user->setPrenom("madjinda");
