@@ -31,9 +31,4 @@ class ManagerUtilisateur extends Utilisateur
             return $error->getMessage();
         }
     }
-
-    public function displayUtilisateur()
-    {
-        return $this->getNom() . ' ' . $this->getPrenom() . ' - ' . $this->getPseudo() . "<br>" . "Yeepikaye ! Mother F**r !";
-    }
 }
