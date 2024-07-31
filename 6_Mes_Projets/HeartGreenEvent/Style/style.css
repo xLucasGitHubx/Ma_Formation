@@ -688,11 +688,13 @@ ul {
 
 /* ------ utilisateur------- */
 /* ------ événement -------- */
-.evenement {
+.evenement,
+.discussion {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 }
 section article {
 	display: flex;
