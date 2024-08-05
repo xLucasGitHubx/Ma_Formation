@@ -688,11 +688,13 @@ ul {
 
 /* ------ utilisateur------- */
 /* ------ événement -------- */
-.evenement {
+.evenement,
+.discussion {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 }
 section article {
 	display: flex;
@@ -727,6 +729,27 @@ h3 {
 	box-shadow: initial;
 }
 
+/* -----discussion ------------------------------ */
+.discussion ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+}
+.discussion ul li {
+	width: 100%;
+	padding-top: 2vw;
+	padding-bottom: 2vw;
+	border-top: solid 2px black;
+	text-align: center;
+}
+
+/* .utilisateur footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+} */
 /* ---------------------------------------------- */
 /* ---------------------------------------------- */
 /*-------------- DESKTOP Version Accueil-------- */
