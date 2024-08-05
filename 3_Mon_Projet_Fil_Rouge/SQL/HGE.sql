@@ -1,3 +1,6 @@
+CREATE DATABASE HGE;
+USE HGE;
+
 CREATE TABLE Utilisateur(
    Id_Utilisateur INT AUTO_INCREMENT,
    Nom VARCHAR(50) ,
