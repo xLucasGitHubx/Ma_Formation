@@ -339,8 +339,11 @@ textarea {
 /* ---------animations---------- */
 
 /* animations pour les icon de réseau sociaux */
-.icon img:hover {
+footer .icon img:hover {
 	animation: bounce 1.5s ease;
+	cursor: pointer;
+}
+main .icon img:hover {
 	cursor: pointer;
 }
 
