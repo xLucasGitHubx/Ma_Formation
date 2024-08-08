@@ -40,12 +40,13 @@ function handleScrollAnimation() {
 	for (let i = 0; i < scrollElements.length; i++) {
 		let element = scrollElements[i];
 
-		// If the element is in the viewport, add the "scroll" class
+		// If the element is in the viewport, add the "scroll" class and "already-shown" class
 		if (elementInView(element)) {
 			element.classList.add("scroll");
+			element.classList.add("already-shown");
 		}
 		// Otherwise, the element is out of the viewport, remove the "scroll" class
-		else if (elementOutofView(element)) {
+		else if (elementOutofView(element) && !element.classList.contains("already-shown")) {
 			element.classList.remove("scroll");
 		}
 	}
