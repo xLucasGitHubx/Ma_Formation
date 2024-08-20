@@ -707,6 +707,21 @@ ul {
 	align-items: center;
 	width: 100%;
 }
+#deconnexion {
+	width: 15%;
+	font-size: 1.3vw;
+	display: flex;
+	align-self: flex-end;
+	justify-content: center;
+	border: none;
+	cursor: pointer;
+	background-color: unset;
+	color: #3f170e;
+}
+#deconnexion:hover {
+	text-decoration: underline;
+	color: red;
+}
 section article {
 	display: flex;
 	justify-content: space-around;

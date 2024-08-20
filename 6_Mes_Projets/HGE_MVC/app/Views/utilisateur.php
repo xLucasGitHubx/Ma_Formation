@@ -5,6 +5,11 @@ function utilisateurContent($user)
     ?>
     <main class="utilisateur">
         <h1>Bienvenue <?php echo $user ?>!</h1>
+        <!-- Formulaire de déconnexion -->
+        <form method="POST" action="/deconnexion">
+            <button type="submit" id="deconnexion">Se déconnecter</button>
+        </form>
+
         <section class="evenement">
             <article>
                 <h3>Événement</h3>

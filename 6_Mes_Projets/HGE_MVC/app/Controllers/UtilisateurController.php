@@ -22,7 +22,7 @@ class UtilisateurController
 
         echo headContent($title, $scripts);
         echo headerContent();
-        echo utilisateurContent($_SESSION['user_name']);
+        echo utilisateurContent($_SESSION['user_prenom']);
         echo footerContent();
     }
 }

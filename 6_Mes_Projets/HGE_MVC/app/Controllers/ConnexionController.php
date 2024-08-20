@@ -33,6 +33,7 @@ class ConnexionController
                 // Connexion réussie, démarrer une session
                 $_SESSION['user_id'] = $user['Id_Utilisateur'];
                 $_SESSION['user_name'] = $user['Nom'];
+                $_SESSION['user_prenom'] = $user['Prénom'];
 
                 // Redirection vers la page utilisateur
                 header("Location: /utilisateur");
