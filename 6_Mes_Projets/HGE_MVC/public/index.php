@@ -1,19 +1,21 @@
 <?php
 // public/index.php
-require_once '../env.php';
-require_once '../config/db.php';
-require_once '../config/routes.php';
+
+require_once '../env.php'; // Pour les variables d'environnement
+require_once '../config/db.php'; // Pour la connexion à la base de données
+require_once '../config/routes.php'; // Pour les routes
 
 // Fonction d'autoload pour les classes
 function autoload($class_name)
 {
     $controllerPath = "../app/Controllers/{$class_name}.php";
+    $modelPath = "../app/Models/{$class_name}.php";
+
     if (file_exists($controllerPath)) {
         require_once $controllerPath;
         return;
     }
 
-    $modelPath = "../app/Models/{$class_name}.php";
     if (file_exists($modelPath)) {
         require_once $modelPath;
         return;
@@ -26,10 +28,13 @@ spl_autoload_register('autoload');
 // Fonction pour créer des instances de contrôleur avec les dépendances nécessaires
 function createController($controllerName, $db = null)
 {
-    if ($controllerName === 'ConnexionController' && $db) {
+    // Vérifie si le contrôleur a besoin de dépendances
+    if ($controllerName === 'ConnexionController' || $controllerName === 'UtilisateurController') {
         $model = new UtilisateurModel($db);
         return new $controllerName($model);
     }
+
+    // Création du contrôleur sans dépendances
     return new $controllerName();
 }
 
@@ -47,8 +52,10 @@ foreach ($routes as $route => $params) {
         $controllerName = $params['controller'];
         $action = $params['action'];
 
+        // Création de l'instance du contrôleur avec les dépendances nécessaires
         $controller = createController($controllerName, $db);
 
+        // Appel de l'action du contrôleur
         call_user_func_array([$controller, $action], array_slice($matches, 1));
         $routeFound = true;
         break;
@@ -56,6 +63,7 @@ foreach ($routes as $route => $params) {
 }
 
 if (!$routeFound) {
+    // Affichage de l'erreur 404 si aucune route ne correspond
     http_response_code(404);
     echo "404 Not Found";
 }

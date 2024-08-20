@@ -2,6 +2,12 @@
 
 class UtilisateurController
 {
+    private $utilisateurModel;
+
+    public function __construct($utilisateurModel)
+    {
+        $this->utilisateurModel = $utilisateurModel;
+    }
     public function index()
     {
         session_start();
@@ -14,6 +20,8 @@ class UtilisateurController
         $title = $_SESSION['user_name'];
         $scripts = ['utilisateur.js'];
 
+        $prenoms = $this->utilisateurModel->getSpecificPrenoms(['Lucas', 'Anaé', 'Jean', 'David']);
+
         // Inclure les vues
         include '../app/Views/head.php';
         include '../app/Views/header.php';
@@ -22,7 +30,7 @@ class UtilisateurController
 
         echo headContent($title, $scripts);
         echo headerContent();
-        echo utilisateurContent($_SESSION['user_prenom']);
+        echo utilisateurContent($_SESSION['user_prenom'], $prenoms);
         echo footerContent();
     }
 }

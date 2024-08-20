@@ -1,5 +1,5 @@
 <?php
-function utilisateurContent($user)
+function utilisateurContent($user, $prenoms)
 {
     ob_start();
     ?>
@@ -28,10 +28,9 @@ function utilisateurContent($user)
             </article>
             <!-- continuer la structure de la discussion ici -->
             <ul>
-                <li>JEAN</li>
-                <li>DAVID</li>
-                <li>MATHILDE</li>
-                <li>CAMILLE</li>
+                <?php foreach ($prenoms as $prenom): ?>
+                    <li><?php echo htmlspecialchars($prenom); ?></li>
+                <?php endforeach; ?>
             </ul>
         </section>
     </main>
