@@ -48,6 +48,10 @@ $routes = [
         'controller' => 'DeconnexionController',
         'action' => 'index'
     ],
+    'discussion' => [
+        'controller' => 'DiscussionController',
+        'action' => 'index'
+    ],
     // Autres routes (si nécessaire)
     // 'legal/copyright' => [
     //     'controller' => 'LegalController',

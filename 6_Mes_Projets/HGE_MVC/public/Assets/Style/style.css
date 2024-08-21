@@ -1184,4 +1184,141 @@ h3 {
 	}
 
 	/*  */
+	/* ----messagerie privée mp desktop */
+	.messagerie .chat-container {
+		height: 60vh;
+		width: 50%;
+		background-color: #f9f2d9;
+		border-radius: 25px;
+		box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.7);
+	}
+	.messagerie .message p {
+		margin: 0;
+		color: #3f170e;
+		font-family: Lato;
+		font-size: 1vw;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+}
+
+/* messagerie privée mp ---------------------------- */
+
+.messagerie {
+	background: #f4f0e3;
+	display: flex;
+	justify-content: center;
+}
+
+.messagerie .chat-container {
+	background-color: #f4f0e3;
+	border: none;
+	height: 90vh;
+	overflow: scroll;
+	scrollbar-width: none;
+	padding: 15px;
+	position: relative;
+	width: 75%;
+	max-width: 100%;
+}
+
+.messagerie .chat {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	padding-top: 30vw;
+}
+
+.message {
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 50px;
+	box-shadow: 0px 15px 5px 0px rgba(0, 0, 0, 0.5);
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.message.left {
+	padding: 15px 20px 15px 70px;
+}
+
+.message.right {
+	align-self: flex-end;
+	padding: 15px 70px 15px 20px;
+}
+.messagerie img {
+	background-color: 0;
+	background: none;
+	border: unset;
+	margin: 0;
+	padding: 0;
+}
+.messagerie .logo {
+	background-color: 0;
+	background: none;
+	/* border: unset; */
+
+	border-radius: 50%;
+	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.7);
+	object-fit: cover;
+	position: absolute;
+	left: 10px;
+	top: -10px;
+	width: 50px;
+	height: 50px;
+}
+
+.message.right .logo {
+	left: auto;
+	right: 10px;
+}
+
+.messagerie .message p {
+	margin: 0;
+	color: #3f170e;
+	font-family: Lato;
+	font-size: 1.5vw;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.messagerie .text_input,
+.messagerie #mp {
+	font-size: 16px;
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0;
+	height: 5vw;
+	width: 100%;
+}
+.messagerie .text_input {
+	border: #3f170e solid 1px;
+	border-radius: 20vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	width: 98%;
+	height: 20vw;
+}
+
+.messagerie #mp #submit {
+	border: none;
+	position: absolute;
+	z-index: 10;
+	bottom: 0.6vw;
+	right: 0.1vw;
+	height: 2.5vw;
+	background-color: unset;
+	width: 4vw;
+}
+
+.messagerie #mp #submit img {
+	width: 100%;
 }
