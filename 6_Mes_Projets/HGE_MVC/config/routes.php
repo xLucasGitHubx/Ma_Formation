@@ -61,16 +61,11 @@ $routes = [
         'controller' => 'DiscussionController',
         'action' => 'discussionWith'
     ],
-    // Autres routes (si nécessaire)
-    // 'legal/copyright' => [
-    //     'controller' => 'LegalController',
-    //     'action' => 'copyright'
-    // ],
-    // 'legal/mentions' => [
-    //     'controller' => 'LegalController',
-    //     'action' => 'mentions'
-    // ],
-
+    // Route pour récupérer les nouveaux messages
+    'discussion/getNewMessages' => [
+        'controller' => 'DiscussionController',
+        'action' => 'getNewMessages'
+    ],
     // Route par défaut pour les pages non trouvées (404)
     '404' => [
         'controller' => 'ErrorController',

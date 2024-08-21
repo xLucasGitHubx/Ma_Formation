@@ -57,7 +57,7 @@ class DiscussionController
         $messages = $this->messageModel->getMessagesBetweenUsers($userId, $destinataireId);
 
         $title = "Discussion avec $prenom";
-        $scripts = ['goBottomMp.js'];
+        $scripts = ['goBottomMp.js', 'ajax.js'];
 
         include '../app/Views/head.php';
         include '../app/Views/header.php';
@@ -75,7 +75,8 @@ class DiscussionController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_start();
             if (!isset($_SESSION['user_id'])) {
-                header("Location: /connexion");
+                http_response_code(403); // Forbidden
+                echo json_encode(['error' => 'Utilisateur non connecté']);
                 exit();
             }
 
@@ -83,26 +84,55 @@ class DiscussionController
             $otherUserId = $_POST['destinataire_id'];
             $messageContent = $_POST['message'];
 
-            // Debugging pour vérifier les valeurs
-            error_log("User ID: $userId");
-            error_log("Other User ID: $otherUserId");
-            error_log("Message Content: $messageContent");
-
-            // Validation des données
             if (empty($messageContent) || !is_numeric($otherUserId)) {
-                echo "Données invalides pour l'envoi du message.";
-                return;
+                http_response_code(400); // Bad Request
+                echo json_encode(['error' => 'Données invalides pour l\'envoi du message.']);
+                exit();
             }
 
             try {
                 $this->messageModel->insertMessage($messageContent, $userId, $otherUserId);
-                header("Location: /discussion/" . $this->utilisateurModel->getPrenomById($otherUserId));
-                exit();
+                echo json_encode([
+                    'success' => true,
+                    'message' => htmlspecialchars($messageContent),
+                    'expediteur_id' => $userId,
+                ]);
             } catch (InvalidArgumentException $e) {
-                echo $e->getMessage();
-                return;
+                http_response_code(500); // Internal Server Error
+                echo json_encode(['error' => $e->getMessage()]);
             }
+            exit();
         }
     }
+
+
+    public function getNewMessages()
+    {
+        session_start();
+        if (!isset($_SESSION['user_id'])) {
+            header("HTTP/1.1 403 Forbidden");
+            echo json_encode(['success' => false, 'message' => 'Non autorisé']);
+            exit();
+        }
+
+        $userId = $_SESSION['user_id'];
+        $otherUserId = $_GET['destinataire_id'];
+
+        // Débogage: Affichez la valeur de destinataire_id
+        error_log("ID du destinataire : " . $otherUserId);
+
+        if (!is_numeric($otherUserId)) {
+            http_response_code(400); // Bad Request
+            echo json_encode(['success' => false, 'message' => 'ID de destinataire invalide']);
+            exit();
+        }
+
+        $messages = $this->messageModel->getMessagesBetweenUsers($userId, "2");
+        echo json_encode(['success' => true, 'messages' => $messages]);
+        exit();
+    }
+
+
+
 
 }

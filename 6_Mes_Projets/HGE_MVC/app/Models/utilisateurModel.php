@@ -30,6 +30,13 @@ class UtilisateurModel
         return $req->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getUserById($id)
+    {
+        $query = $this->db->prepare("SELECT * FROM Utilisateur WHERE Id_Utilisateur = :id");
+        $query->execute(['id' => $id]);
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
+
     function getPrenomById($userId)
     {
         // Préparer la requête SQL pour récupérer le prénom en utilisant l'ID de l'utilisateur

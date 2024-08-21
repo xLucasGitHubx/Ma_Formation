@@ -22,7 +22,7 @@ function discussionContent($messages, $destinataireId = null, $personne = null)
 
             <form id="message-form" class="mp" action="/discussion/sendMessage" method="post">
                 <input type="text" name="message" class="text_input" placeholder="Message..." required />
-                <input type="hidden" name="destinataire_id" value="<?= htmlspecialchars($destinataireId) ?>" />
+                <input type="hidden" name="destinataire_id" id="" value="<?= htmlspecialchars($destinataireId) ?>" />
                 <button type="submit" id="submit" name="submit">
                     <img src="/Assets/Icons/send_button.svg" alt="bouton envoyer" />
                 </button>
