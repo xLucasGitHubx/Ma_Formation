@@ -4,16 +4,16 @@ function footerContent()
     ob_start();
     ?>
     <footer>
-        <img class="logo" src="./Assets/Icons/Logos_var2/logo-transparent-svg.svg" alt="Heart green logo" />
+        <img class="logo" src="/Assets/Icons/Logos_var2/logo-transparent-svg.svg" alt="Heart green logo" />
         <div class="icon">
             <a href="https://www.facebook.com" target="_blank">
-                <img src="./Assets/Icons/facebook.svg" alt="icon de facebook" />
+                <img src="/Assets/Icons/facebook.svg" alt="icon de facebook" />
             </a>
             <a href="https://www.instagram.com" target="_blank">
-                <img src="./Assets/Icons/instagram.svg" alt="icon de Instagram" />
+                <img src="/Assets/Icons/instagram.svg" alt="icon de Instagram" />
             </a>
             <a href="https://www.pinterest.com" target="_blank">
-                <img src="./Assets/Icons/pinterest.svg" alt="icon de pinterest" />
+                <img src="/Assets/Icons/pinterest.svg" alt="icon de pinterest" />
             </a>
         </div>
         <div class="liens">

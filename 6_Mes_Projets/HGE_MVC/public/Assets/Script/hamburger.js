@@ -33,12 +33,12 @@ crossButton.addEventListener("click", () => {
 const iconUser = document.querySelector("#iconUtilisateur");
 if (window.innerWidth >= 641) {
 	nav.style.display = "flex";
-	iconUser.src = "./Assets/Icons/user_icon_white.svg";
+	iconUser.src = "/Assets/Icons/user_icon_white.svg";
 }
 
 // Weird window size matters
 if (window.innerWidth < window.innerHeight) {
-	iconUser.src = "./Assets/Icons/user_icon_brown.svg";
+	iconUser.src = "/Assets/Icons/user_icon_brown.svg";
 	nav.style.display = "none";
 }
 
@@ -46,14 +46,14 @@ window.addEventListener("resize", () => {
 	if (window.innerWidth >= 641) {
 		nav.style.display = "flex";
 		main.style.display = "flex";
-		iconUser.src = "./Assets/Icons/user_icon_white.svg";
+		iconUser.src = "/Assets/Icons/user_icon_white.svg";
 	} else {
 		main.style.display = "flex";
 		nav.style.display = "none";
-		iconUser.src = "./Assets/Icons/user_icon_brown.svg";
+		iconUser.src = "/Assets/Icons/user_icon_brown.svg";
 	}
 	if (window.innerWidth < window.innerHeight) {
-		iconUser.src = "./Assets/Icons/user_icon_brown.svg";
+		iconUser.src = "/Assets/Icons/user_icon_brown.svg";
 		nav.style.display = "none";
 	}
 });

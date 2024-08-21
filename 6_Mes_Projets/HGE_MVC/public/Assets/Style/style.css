@@ -1221,6 +1221,8 @@ h3 {
 	position: relative;
 	width: 75%;
 	max-width: 100%;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
 }
 
 .messagerie .chat {
@@ -1232,9 +1234,8 @@ h3 {
 	padding: 0;
 	margin: 0;
 	width: 100%;
-	padding-top: 30vw;
+	padding-top: 15%;
 }
-
 .message {
 	background-color: rgba(255, 255, 255, 0.9);
 	border-radius: 50px;
@@ -1289,7 +1290,7 @@ h3 {
 }
 
 .messagerie .text_input,
-.messagerie #mp {
+.messagerie .mp {
 	font-size: 16px;
 	position: sticky;
 	bottom: 0;
@@ -1305,10 +1306,10 @@ h3 {
 	padding-left: 1vw;
 	padding-right: 1vw;
 	width: 98%;
-	height: 20vw;
+	height: 5vw;
 }
 
-.messagerie #mp #submit {
+.messagerie .mp #submit {
 	border: none;
 	position: absolute;
 	z-index: 10;
@@ -1319,6 +1320,6 @@ h3 {
 	width: 4vw;
 }
 
-.messagerie #mp #submit img {
+.messagerie .mp #submit img {
 	width: 100%;
 }

@@ -66,7 +66,7 @@ class DiscussionController
 
         echo headContent($title, $scripts);
         echo headerContent();
-        echo discussionContent($messages, $destinataireId);
+        echo discussionContent($messages, $destinataireId, $prenom);
         echo footerContent();
     }
 
