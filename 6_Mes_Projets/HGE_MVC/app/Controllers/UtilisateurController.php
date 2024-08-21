@@ -8,6 +8,7 @@ class UtilisateurController
     {
         $this->utilisateurModel = $utilisateurModel;
     }
+
     public function index()
     {
         session_start();
@@ -20,6 +21,7 @@ class UtilisateurController
         $title = $_SESSION['user_name'];
         $scripts = ['utilisateur.js'];
 
+        // Récupérer les prénoms pour les afficher dans la vue
         $prenoms = $this->utilisateurModel->getSpecificPrenoms(['Lucas', 'Anaé', 'Jean', 'David']);
 
         // Inclure les vues

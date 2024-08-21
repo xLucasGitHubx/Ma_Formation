@@ -52,6 +52,15 @@ $routes = [
         'controller' => 'DiscussionController',
         'action' => 'index'
     ],
+    'discussion/sendMessage' => [
+        'controller' => 'DiscussionController',
+        'action' => 'sendMessage'
+    ],
+
+    'discussion/([a-zA-Z0-9_-]+)' => [
+        'controller' => 'DiscussionController',
+        'action' => 'discussionWith'
+    ],
     // Autres routes (si nécessaire)
     // 'legal/copyright' => [
     //     'controller' => 'LegalController',

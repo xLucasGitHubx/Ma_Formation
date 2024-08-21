@@ -26,17 +26,26 @@ function autoload($class_name)
 spl_autoload_register('autoload');
 
 // Fonction pour créer des instances de contrôleur avec les dépendances nécessaires
+// Fonction pour créer des instances de contrôleur avec les dépendances nécessaires
 function createController($controllerName, $db = null)
 {
-    // Vérifie si le contrôleur a besoin de dépendances
-    if ($controllerName === 'ConnexionController' || $controllerName === 'UtilisateurController') {
-        $model = new UtilisateurModel($db);
-        return new $controllerName($model);
-    }
+    switch ($controllerName) {
+        case 'DiscussionController':
+            $messageModel = new MessageModel($db);
+            $utilisateurModel = new UtilisateurModel($db);
+            return new DiscussionController($messageModel, $utilisateurModel);
 
-    // Création du contrôleur sans dépendances
-    return new $controllerName();
+        case 'ConnexionController':
+        case 'UtilisateurController':
+            $model = new UtilisateurModel($db);
+            return new $controllerName($model);
+
+        default:
+            // Création du contrôleur sans dépendances
+            return new $controllerName();
+    }
 }
+
 
 // Parsing the URL to determine which controller and action to invoke
 $request = trim($_SERVER['REQUEST_URI'], '/');

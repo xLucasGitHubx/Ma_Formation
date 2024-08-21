@@ -1,75 +1,56 @@
 <?php
-function discussionContent()
+function discussionContent($messages, $destinataireId = null)
 {
     ob_start();
     ?>
     <main class="messagerie">
         <div class="chat-container">
-            <ul class="chat">
-                <li class="message left">
-                    <img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
-                    <p>I'm hungry!</p>
-                </li>
-                <li class="message right">
-                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="" />
-                    <p>Hi hungry, nice to meet you. I'm Dad.</p>
-                </li>
-                <li class="message left">
-                    <img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
-                    <p>DAD! I'm serious!</p>
-                </li>
-                <li class="message right">
-                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="" />
-                    <p>I thought your name was hungry...?</p>
-                </li>
-                <li class="message left">
-                    <img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
-                    <p>ARE YOU KIDDING ME?</p>
-                </li>
-                <li class="message right">
-                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="" />
-                    <p>No, I'm Dad...</p>
-                </li>
-                <li class="message left">
-                    <img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
-                    <p>I'm hungry!</p>
-                </li>
-                <li class="message right">
-                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="" />
-                    <p>Hi hungry, nice to meet you. I'm Dad.</p>
-                </li>
-                <li class="message left">
-                    <img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
-                    <p>DAD! I'm serious!</p>
-                </li>
-                <li class="message right">
-                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="" />
-                    <p>
-                        I thought your name was hungry...?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, ea
-                        possimus. Id corporis sed eius
-                        beatae, officiis, illum nostrum architecto, at nam quos suscipit unde autem earum! Corporis, ducimus
-                        in?Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Deserunt cupiditate similique quaerat doloremque iste officia minima.
-                        Enim voluptatibus consectetur
-                        accusantium dolorum quos temporibus, laboriosam quam doloribus animi corporis id ratione!
-                    </p>
-                </li>
-                <li class="message left">
-                    <img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
-                    <p>ARE YOU KIDDING ME?</p>
-                </li>
-                <li class="message right">
-                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="" />
-                    <p>No, I'm Dad...</p>
-                </li>
+            <ul class="chat" id="message-list">
+                <?php foreach ($messages as $message): ?>
+                    <li
+                        class="message <?= htmlspecialchars($message['Id_Expéditeur']) == $_SESSION['user_id'] ? 'right' : 'left' ?>">
+                        <img class="logo"
+                            src="https://randomuser.me/api/portraits/<?= htmlspecialchars($message['Id_Expéditeur']) == $_SESSION['user_id'] ? 'men' : 'women' ?>/67.jpg"
+                            alt="" />
+                        <p><?= htmlspecialchars($message['Contenu']) ?></p>
+                    </li>
+                <?php endforeach; ?>
             </ul>
-            <form action="/send" method="post" id="mp">
-                <input type="textarea" class="text_input" placeholder="Message..." />
-                <button type="submit" id="submit" name="submit"><img src="../Assets/Icons/send_button.svg"
-                        alt="bouton envoyer" /></button>
+            <form id="message-form" action="/discussion/sendMessage" method="post">
+                <input type="text" name="message" class="text_input" placeholder="Message..." required />
+                <input type="hidden" name="destinataire_id" value="<?= htmlspecialchars($destinataireId) ?>" />
+                <button type="submit" id="submit" name="submit">
+                    <img src="../Assets/Icons/send_button.svg" alt="bouton envoyer" />
+                </button>
             </form>
         </div>
     </main>
+    <!-- <script>
+        // document.querySelector("#message-form").addEventListener("submit", function (event) {
+        //     console.log("Form submitted"); // Vérification
+        //     event.preventDefault(); // Empêche la soumission normale du formulaire
+
+        //     let formData = new FormData(this);
+
+        //     fetch("/discussion/sendMessage", {
+        //         method: "POST",
+        //         body: formData,
+        //     })
+        //         .then((response) => response.text())
+        //         .then((data) => {
+        //             console.log(data); // Vérification de la réponse
+        //             // Traitez la réponse ici, par exemple, rechargez la liste des messages
+        //             if (data.trim() === "Données invalides pour l'envoi du message.") {
+        //                 alert("Erreur lors de l'envoi du message");
+        //             } else {
+        //                 // Recharger la liste des messages
+        //                 document.getElementById("message-list").innerHTML = data;
+        //             }
+        //         })
+        //         .catch((error) => console.error("Erreur:", error));
+        // });
+
+    </script> -->
     <?php
     return ob_get_clean();
 }

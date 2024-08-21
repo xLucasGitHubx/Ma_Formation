@@ -22,6 +22,33 @@ class UtilisateurModel
         return password_verify($enteredPassword, $storedPassword);
     }
 
+    public function getUserByPrenom($prenom)
+    {
+        $req = $this->db->prepare("SELECT * FROM Utilisateur WHERE Prénom = :prenom");
+        $req->bindParam(':prenom', $prenom);
+        $req->execute();
+        return $req->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function getPrenomById($userId)
+    {
+        // Préparer la requête SQL pour récupérer le prénom en utilisant l'ID de l'utilisateur
+        $query = $this->db->prepare("SELECT prénom FROM Utilisateur WHERE Id_Utilisateur = :userId");
+
+        // Exécuter la requête avec l'ID de l'utilisateur comme paramètre
+        $query->execute(['userId' => $userId]);
+
+        // Récupérer le résultat sous forme de tableau associatif
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+
+        // Vérifier si un prénom a été trouvé, sinon retourner null
+        if ($result) {
+            return $result['prénom'];
+        } else {
+            return null; // Utilisateur non trouvé
+        }
+    }
+
     public function getSpecificPrenoms($prenoms)
     {
         // Préparer la requête SQL avec les bons placeholders directement
