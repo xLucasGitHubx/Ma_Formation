@@ -22,8 +22,9 @@ class ConnexionController
 
         // Vérifier si le formulaire a été soumis
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            $email = htmlentities(strip_tags(stripcslashes(trim($_POST['email']))), ENT_QUOTES, 'UTF-8');
+            $password = htmlentities(strip_tags(stripcslashes(trim($_POST['password']))), ENT_QUOTES, 'UTF-8');
+
 
             // Chercher l'utilisateur par email
             $user = $this->utilisateurModel->findUserByEmail($email);

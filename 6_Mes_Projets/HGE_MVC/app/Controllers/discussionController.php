@@ -82,7 +82,7 @@ class DiscussionController
 
             $userId = $_SESSION['user_id'];
             $otherUserId = $_POST['destinataire_id'];
-            $messageContent = $_POST['message'];
+            $messageContent = htmlentities(strip_tags(stripcslashes(trim($_POST['message']))), ENT_QUOTES, 'UTF-8');
 
             if (empty($messageContent) || !is_numeric($otherUserId)) {
                 http_response_code(400); // Bad Request
@@ -94,7 +94,7 @@ class DiscussionController
                 $this->messageModel->insertMessage($messageContent, $userId, $otherUserId);
                 echo json_encode([
                     'success' => true,
-                    'message' => htmlspecialchars($messageContent),
+                    'message' => $messageContent,
                     'expediteur_id' => $userId,
                 ]);
             } catch (InvalidArgumentException $e) {
