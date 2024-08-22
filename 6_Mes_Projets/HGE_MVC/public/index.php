@@ -26,7 +26,6 @@ function autoload($class_name)
 spl_autoload_register('autoload');
 
 // Fonction pour créer des instances de contrôleur avec les dépendances nécessaires
-// Fonction pour créer des instances de contrôleur avec les dépendances nécessaires
 function createController($controllerName, $db = null)
 {
     switch ($controllerName) {

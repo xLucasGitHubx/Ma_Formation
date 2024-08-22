@@ -22,7 +22,7 @@ class UtilisateurController
         $scripts = ['utilisateur.js'];
 
         // Récupérer les prénoms pour les afficher dans la vue
-        $prenoms = $this->utilisateurModel->getSpecificPrenoms(['Lucas', 'Anaé', 'Jean', 'David']);
+        $prenoms = $this->utilisateurModel->getSpecificPrenoms(['Lucas', 'Anaé', 'Jean', 'David', 'alice']);
 
         // Inclure les vues
         include '../app/Views/head.php';
