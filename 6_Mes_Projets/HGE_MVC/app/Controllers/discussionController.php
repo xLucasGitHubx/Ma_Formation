@@ -15,6 +15,8 @@ class DiscussionController
     {
         session_start();
         if (!isset($_SESSION['user_id'])) {
+            http_response_code(403); // Forbidden
+            echo json_encode(['error' => 'Utilisateur non connecté']);
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header("Location: /connexion");
             exit();
@@ -40,6 +42,8 @@ class DiscussionController
     {
         session_start();
         if (!isset($_SESSION['user_id'])) {
+            http_response_code(403); // Forbidden
+            echo json_encode(['error' => 'Utilisateur non connecté']);
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header("Location: /connexion");
             exit();
@@ -77,6 +81,7 @@ class DiscussionController
             if (!isset($_SESSION['user_id'])) {
                 http_response_code(403); // Forbidden
                 echo json_encode(['error' => 'Utilisateur non connecté']);
+                header("Location: /connexion");
                 exit();
             }
 
@@ -110,8 +115,9 @@ class DiscussionController
     {
         session_start();
         if (!isset($_SESSION['user_id'])) {
-            header("HTTP/1.1 403 Forbidden");
-            echo json_encode(['success' => false, 'message' => 'Non autorisé']);
+            http_response_code(403); // Forbidden
+            echo json_encode(['error' => 'Utilisateur non connecté']);
+            header("Location: /connexion");
             exit();
         }
 

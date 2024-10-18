@@ -13,6 +13,8 @@ class UtilisateurController
     {
         session_start();
         if (!isset($_SESSION['user_id'])) {
+            http_response_code(403); // Forbidden
+            echo json_encode(['error' => 'Utilisateur non connecté']);
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header("Location: /connexion");
             exit();
