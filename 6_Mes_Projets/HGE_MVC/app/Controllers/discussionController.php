@@ -133,7 +133,7 @@ class DiscussionController
             exit();
         }
 
-        $messages = $this->messageModel->getMessagesBetweenUsers($userId, "2");
+        $messages = $this->messageModel->getMessagesBetweenUsers($userId, $otherUserId);
         echo json_encode(['success' => true, 'messages' => $messages]);
         exit();
     }
