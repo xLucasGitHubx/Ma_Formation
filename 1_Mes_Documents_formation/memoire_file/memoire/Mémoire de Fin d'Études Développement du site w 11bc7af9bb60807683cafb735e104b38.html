@@ -1,0 +1,935 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Mémoire de Fin d&#x27;Études : Développement du site web &quot;Heart Green Event&quot;</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="11bc7af9-bb60-8076-83ca-fb735e104b38" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📝</span></div><h1 class="page-title">Mémoire de Fin d&#x27;Études <strong>: Développement du site web &quot;Heart Green Event&quot;</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="11bc7af9-bb60-807f-8dd4-faefa6c5b958" class=""><strong>Auteur : Lucas Madjinda</strong></p><p id="11bc7af9-bb60-80cb-a39e-e6c09f4fd20b" class=""><strong>Année : 2024</strong></p><p id="128c7af9-bb60-80dd-96de-f095f42bdeaa" class="">La visualisation de ce document en format HTML est vivement recommandée ou directement sur <a href="https://www.notion.so/M-moire-de-Fin-d-tudes-D-veloppement-du-site-web-Heart-Green-Event-11bc7af9bb60807683cafb735e104b38?pvs=21">le lien ci-joint : 🌐</a></p><figure id="128c7af9-bb60-80b6-b700-c0e54e794fff" class="image"><a href="image.png"><img style="width:816px" src="image.png"/></a></figure><p id="128c7af9-bb60-8058-ad7d-dc92d99f15a4" class="">Compétences du REAC traitées dans le mémoire : 1, 2, 3, 4, 5, 6 (pour la partie SQL), 7 et 8. La partie NoSQL est présentée dans le dossier professionnel.</p><hr id="11bc7af9-bb60-80f9-a186-f0eb8d924fee"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Sommaire</summary><div class="indented"><ol type="1" id="128c7af9-bb60-80ff-99b5-d82cb5c46557" class="numbered-list" start="1"><li><strong>Introduction</strong><ul id="128c7af9-bb60-80e6-9d5a-da47b0e19b52" class="bulleted-list"><li style="list-style-type:disc">Contexte général</li></ul></li></ol><ol type="1" id="128c7af9-bb60-80fe-9ba1-d82c34b78bd7" class="numbered-list" start="2"><li><strong>Compétences Développées</strong><ul id="128c7af9-bb60-80fd-b429-d6fee7cef149" class="bulleted-list"><li style="list-style-type:disc">Compétences techniques</li></ul></li></ol><ol type="1" id="128c7af9-bb60-80d3-ae4d-e9d56b75f182" class="numbered-list" start="3"><li><strong>Analyse du Besoin</strong><ul id="128c7af9-bb60-80d3-bd3c-eaab0e3a57bf" class="bulleted-list"><li style="list-style-type:disc">Présentation de l&#x27;entreprise</li></ul><ul id="128c7af9-bb60-8057-b5fc-ccb2d7034579" class="bulleted-list"><li style="list-style-type:disc">Contexte et besoins</li></ul></li></ol><ol type="1" id="128c7af9-bb60-80b6-a96c-da5dd1599e47" class="numbered-list" start="4"><li><strong>Spécifications Fonctionnelles</strong><ul id="128c7af9-bb60-8065-8553-f81c0c7384d6" class="bulleted-list"><li style="list-style-type:disc">Cas d&#x27;utilisation principaux</li></ul><ul id="128c7af9-bb60-80e5-864f-ee8da663d35f" class="bulleted-list"><li style="list-style-type:disc">Diagrammes UML</li></ul></li></ol><ol type="1" id="128c7af9-bb60-80b6-abf6-df7bba76ff7e" class="numbered-list" start="5"><li><strong>Arborescence du Site</strong><ul id="128c7af9-bb60-80b2-a49d-c8824a039734" class="bulleted-list"><li style="list-style-type:disc">Structure globale</li></ul></li></ol><ol type="1" id="128c7af9-bb60-8093-8aaf-fe99061e3782" class="numbered-list" start="6"><li><strong>Maquettage</strong><ul id="128c7af9-bb60-8057-990d-c5bfc22b4aae" class="bulleted-list"><li style="list-style-type:disc">Zoning et Wireframes</li></ul><ul id="128c7af9-bb60-808f-9361-f3472a9e1ed5" class="bulleted-list"><li style="list-style-type:disc">Mockup</li></ul></li></ol><ol type="1" id="128c7af9-bb60-802f-ba49-e1664af7382e" class="numbered-list" start="7"><li><strong>Développement Front-End</strong><ul id="128c7af9-bb60-80f8-a002-dfe0f97e9551" class="bulleted-list"><li style="list-style-type:disc">Implémentation des interfaces</li></ul><ul id="128c7af9-bb60-80e9-a59c-e647100476bb" class="bulleted-list"><li style="list-style-type:disc">Interfaces Dynamiques</li></ul></li></ol><ol type="1" id="128c7af9-bb60-80aa-9a12-e2b19d9d8e1a" class="numbered-list" start="8"><li><strong>Conception</strong><ul id="128c7af9-bb60-805f-bc36-cb327646d327" class="bulleted-list"><li style="list-style-type:disc">Modèle conceptuel de données (MCD)</li></ul><ul id="128c7af9-bb60-8034-93f5-c03a97303600" class="bulleted-list"><li style="list-style-type:disc">Modèle logique de données (MLD)</li></ul></li></ol><ol type="1" id="128c7af9-bb60-8023-a68d-c80fd355a37b" class="numbered-list" start="9"><li><strong>Développement Back-End</strong><ul id="128c7af9-bb60-80d0-afb8-d89fd1d4a8bd" class="bulleted-list"><li style="list-style-type:disc">Composants Métier</li></ul><ul id="128c7af9-bb60-807e-a1af-e865a508a119" class="bulleted-list"><li style="list-style-type:disc">Sécurité et validation des données</li></ul></li></ol><ol type="1" id="128c7af9-bb60-8066-95f0-e320dd78437e" class="numbered-list" start="10"><li><strong>Documentation du Déploiement</strong><ul id="128c7af9-bb60-8024-ad1b-c027b49aff07" class="bulleted-list"><li style="list-style-type:disc">Configuration du serveur</li></ul><ul id="128c7af9-bb60-8095-9d0c-e7decb4ffc1e" class="bulleted-list"><li style="list-style-type:disc">Mise en ligne</li></ul></li></ol><ol type="1" id="128c7af9-bb60-80bd-84fa-f12563803942" class="numbered-list" start="11"><li><strong>Conclusion</strong><ul id="128c7af9-bb60-807b-98fb-e7b57a4ffc18" class="bulleted-list"><li style="list-style-type:disc">Bilan et améliorations futures</li></ul></li></ol><ol type="1" id="128c7af9-bb60-801b-a3d5-d7526a2f0023" class="numbered-list" start="12"><li><strong>Annexes</strong></li></ol></div></details><hr id="11bc7af9-bb60-8076-a737-c31c25889fa0"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1. Introduction</summary><div class="indented"><p id="123c7af9-bb60-8072-80e3-c69ebc947de7" class="">Le projet <strong>Heart Green Event</strong> consiste à créer un site web professionnel pour une entreprise spécialisée dans l&#x27;organisation d&#x27;événements personnalisés à thème, tels que les mariages, anniversaires, baptêmes et autres célébrations. Heart Green Event se distingue par son engagement envers des pratiques écoresponsables, en utilisant notamment des éléments de décoration fabriqués à partir de matériaux recyclés. L&#x27;objectif principal de cette plateforme en ligne est de faciliter l&#x27;interaction entre l&#x27;entreprise et ses clients en offrant des fonctionnalités telles que la réservation en ligne, la communication directe et la personnalisation des thèmes d&#x27;événements, tout en garantissant des services de qualité respectueux de l&#x27;environnement.</p><p id="123c7af9-bb60-80db-8ac1-dcd6c35b090c" class="">Ce projet, développé dans le cadre d&#x27;une certification en tant que développeur web, vise à démontrer les compétences acquises en matière de création de sites web. Le site a été conçu en utilisant des technologies modernes comme HTML, CSS, JavaScript et PHP, avec une base de données MySQL. Il reflète l&#x27;engagement de l&#x27;entreprise envers la durabilité et la créativité, tout en offrant une expérience utilisateur fluide, sécurisée, et permettant une gestion efficace de la prise de contact et de la réservation des événements.</p></div></details><hr id="11fc7af9-bb60-8076-bf36-c46287c6ba71"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2. Compétences Développées</summary><div class="indented"><p id="11bc7af9-bb60-8053-b320-e2ba119817c6" class="">Au cours du développement du site <strong>Heart Green Event</strong>, j&#x27;ai mobilisé et renforcé plusieurs compétences professionnelles alignées avec le référentiel REAC du titre de développeur web :</p><ol type="1" id="11bc7af9-bb60-801d-8377-c4f216660755" class="numbered-list" start="1"><li><strong>Installer et configurer l&#x27;environnement de travail :</strong><ul id="11bc7af9-bb60-8027-a980-ea7ae8256901" class="bulleted-list"><li style="list-style-type:disc">Mise en place d&#x27;un environnement de développement comprenant PHP, MySQL et des outils front-end.</li></ul><ul id="11bc7af9-bb60-80cf-828d-e2330267b106" class="bulleted-list"><li style="list-style-type:disc">Configuration d&#x27;un serveur LAMP sur un Raspberry Pi pour l&#x27;hébergement.</li></ul></li></ol><ol type="1" id="11bc7af9-bb60-80b0-a26b-c75066bb6fdc" class="numbered-list" start="2"><li><strong>Maquetter des interfaces utilisateur :</strong><ul id="11bc7af9-bb60-8022-840c-e09488b70a3f" class="bulleted-list"><li style="list-style-type:disc">Création de wireframes et de prototypes basés sur les besoins du client.</li></ul></li></ol><ol type="1" id="11bc7af9-bb60-80a1-9ba0-e9cc038c17ca" class="numbered-list" start="3"><li><strong>Développer des interfaces utilisateur statiques :</strong><ul id="11bc7af9-bb60-8090-ac6a-cd6731480c26" class="bulleted-list"><li style="list-style-type:disc">Conception des pages en HTML et CSS.</li></ul><ul id="11bc7af9-bb60-80f4-9937-fc2dc0f098d4" class="bulleted-list"><li style="list-style-type:disc">Utilisation des principes d&#x27;ergonomie et de responsive design.</li></ul></li></ol><ol type="1" id="11bc7af9-bb60-8001-bd66-ee5ac99b0cb2" class="numbered-list" start="4"><li><strong>Développer la partie front-end dynamique :</strong><ul id="11bc7af9-bb60-8097-9009-c8000fe933f8" class="bulleted-list"><li style="list-style-type:disc">Intégration de JavaScript pour améliorer l&#x27;interactivité.</li></ul><ul id="11bc7af9-bb60-801c-b550-dab9cce4ffdd" class="bulleted-list"><li style="list-style-type:disc">Mise en place de fonctionnalités telles que les formulaires dynamiques et les animations.</li></ul></li></ol><ol type="1" id="11bc7af9-bb60-802d-b5d8-ec2149bfb1af" class="numbered-list" start="5"><li><strong>Mettre en place une base de données relationnelle :</strong><ul id="11bc7af9-bb60-80bd-9884-feacf830fc5f" class="bulleted-list"><li style="list-style-type:disc">Création du modèle de données conceptuel et logique.</li></ul><ul id="11bc7af9-bb60-8064-a885-d3752f586ed3" class="bulleted-list"><li style="list-style-type:disc">Implémentation de la base de données MySQL pour gérer les utilisateurs, événements et réservations.</li></ul></li></ol><ol type="1" id="11bc7af9-bb60-8051-b1f5-cfb8af1f9877" class="numbered-list" start="6"><li><strong>Développer la partie back-end :</strong><ul id="11bc7af9-bb60-8056-a6cb-f405d8684325" class="bulleted-list"><li style="list-style-type:disc">Développement en PHP de la logique serveur.</li></ul><ul id="11bc7af9-bb60-803a-9e13-f3fb7d770fea" class="bulleted-list"><li style="list-style-type:disc">Gestion de l&#x27;authentification, des réservations et des communications.</li></ul></li></ol><ol type="1" id="11bc7af9-bb60-801c-9da2-f804664aef02" class="numbered-list" start="7"><li><strong>Documenter le déploiement :</strong><ul id="11bc7af9-bb60-807a-aa94-eea62f09d1ba" class="bulleted-list"><li style="list-style-type:disc">Rédaction de la documentation pour le déploiement sur le serveur LAMP.</li></ul><ul id="11bc7af9-bb60-80f5-a0a3-f4fc8ba0c4d4" class="bulleted-list"><li style="list-style-type:disc">Instructions pour la configuration du nom de domaine et le port forwarding.</li></ul></li></ol></div></details><hr id="11bc7af9-bb60-80f2-9e7f-c91a427cea5c"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">3. Analyse du Besoin</summary><div class="indented"><h3 id="11bc7af9-bb60-80a5-bf1a-fc0aae834987" class="">3.1 Contexte et Besoins</h3><p id="11bc7af9-bb60-8048-ae5b-d6f496e72c6f" class="">Le besoin principal d&#x27;Heart Green Event est de créer une présence en ligne qui permette de mieux servir ses clients et de promouvoir ses valeurs écoresponsables. En tant qu&#x27;entreprise à la recherche de solutions innovantes pour l&#x27;organisation d&#x27;événements, le site doit répondre aux besoins suivants :</p><ul id="11bc7af9-bb60-80ad-a6be-f0e1e0e0f1fe" class="bulleted-list"><li style="list-style-type:disc"><strong>Faciliter la prise de contact :</strong> Le site doit permettre aux clients potentiels de contacter facilement l&#x27;entreprise pour obtenir des informations sur les services, discuter des détails de l&#x27;événement ou demander des devis.</li></ul><ul id="11bc7af9-bb60-80c0-800b-dcf27114a68e" class="bulleted-list"><li style="list-style-type:disc"><strong>Réservation en ligne :</strong> Permettre aux clients de réserver une date et un type d&#x27;événement directement sur le site web. Cela inclut un calendrier de disponibilité et la gestion des réservations.</li></ul><ul id="11bc7af9-bb60-8004-865e-ff219e4d05ef" class="bulleted-list"><li style="list-style-type:disc"><strong>Mise en avant des thèmes :</strong> Offrir une galerie des thèmes disponibles pour que les clients puissent choisir un thème d&#x27;événement préconçu.<p id="11bc7af9-bb60-8092-8ff4-db1b576508ec" class=""><strong>Insertion recommandée :</strong> Inclure des images des différents thèmes proposés, ce qui permettra de donner un aperçu visuel aux clients potentiels.</p><p id="11bc7af9-bb60-80fc-bd9e-d0bcfe83fafd" class=""><strong>Image à insérer :</strong> Galerie des thèmes (fichiers &quot;image.png&quot; téléchargés).</p></li></ul><ul id="11bc7af9-bb60-80b5-827c-f5dbac5cc379" class="bulleted-list"><li style="list-style-type:disc"><strong>Renforcer l&#x27;image de marque :</strong> Le site doit refléter les valeurs écoresponsables de l&#x27;entreprise en utilisant une charte graphique en accord avec la thématique écologique, ainsi que des illustrations et des couleurs évoquant la nature.</li></ul><p id="11bc7af9-bb60-808e-b7bd-f760cdc52299" class="">Le site web vise à offrir une expérience utilisateur fluide et intuitive, en rendant la navigation simple, les informations faciles à trouver et le processus de réservation sans friction. De plus, il est important d&#x27;améliorer la visibilité en ligne de l&#x27;entreprise grâce à l&#x27;optimisation SEO (Search Engine Optimization).</p><p id="128c7af9-bb60-8035-81ee-ebb04146573a" class="">Après la définition du contexte et des différents besoins lier à mon projet j’ai pu me concentrer sur le public cible en réalisant des Persona qu’on peut voir si dessous:</p><p id="128c7af9-bb60-8038-8e81-f85e9cfd2415" class="">
+</p><p id="128c7af9-bb60-806b-8679-d5ec167d083c" class="">Thomas Martin représente l&#x27;un des profils types des clients de Heart Green Event. En tant que cadre dynamique dans une grande entreprise, marié et bientôt père, il incarne le client à la recherche d&#x27;une solution complète et personnalisée pour organiser un événement important. Ce persona a été créé pour mieux comprendre les besoins, les motivations et les défis rencontrés par ce type de client, et ainsi aligner les services proposés par Heart Green Event avec leurs attentes spécifiques.</p><figure id="11bc7af9-bb60-80b7-8a01-e9be734eca44" class="image"><a href="image%201.png"><img style="width:707.9874877929688px" src="image%201.png"/></a></figure><p id="128c7af9-bb60-809e-9b39-d2b93f4d5f2a" class="">Emilie Dubois incarne une cliente potentielle de Heart Green Event. En tant qu&#x27;enseignante en primaire, passionnée par la décoration et le DIY, Elle cherche un prestataire capable de gérer les moindres détails de son mariage tout en respectant son budget et son implication dans le processus de création à certains moment. Son emploi du temps chargé nécessite une solution clé en main qui allie efficacité et originalité.</p><figure id="11bc7af9-bb60-8050-89f9-e2affac6e532" class="image"><a href="image%202.png"><img style="width:707.9750366210938px" src="image%202.png"/></a></figure><h3 id="11bc7af9-bb60-80e2-8049-f22b09774df0" class="">3.2 Contraintes Techniques</h3><div id="128c7af9-bb60-802e-85c0-ea85219abb11" class="column-list"><div id="128c7af9-bb60-8025-aa1e-f14804c77ef9" style="width:100%" class="column"><figure id="128c7af9-bb60-8020-ab3f-e612a561670e" class="image"><a href="image%203.png"><img style="width:192px" src="image%203.png"/></a></figure></div><div id="128c7af9-bb60-807b-8b25-e7e3df4a107f" style="width:100%" class="column"><figure id="128c7af9-bb60-8037-bcb2-f960557a5820" class="image"><a href="image%204.png"><img style="width:120px" src="image%204.png"/></a></figure></div><div id="128c7af9-bb60-8045-9ee6-e47d2edf7ed3" style="width:100%" class="column"><figure id="128c7af9-bb60-80ae-86f1-cf0540d0dd1b" class="image"><a href="image%205.png"><img style="width:173.4375px" src="image%205.png"/></a></figure></div><div id="128c7af9-bb60-8073-992d-dc7fce161421" style="width:97.50000000000001%" class="column"><p id="128c7af9-bb60-800e-8e18-c8edb35e44f5" class="">
+</p><figure id="128c7af9-bb60-8087-a111-dbb86920a35f" class="image"><a href="image%206.png"><img style="width:192px" src="image%206.png"/></a></figure><p id="128c7af9-bb60-8047-b55b-ff00fbb642b9" class="">
+</p></div><div id="128c7af9-bb60-80da-9bd9-fc29a44cda67" style="width:102.49999999999999%" class="column"><figure id="128c7af9-bb60-80c7-9e3e-dea8dad21def" class="image"><a href="image%207.png"><img style="width:192px" src="image%207.png"/></a></figure></div></div><div id="128c7af9-bb60-80d5-b5b5-eca921a11b95" class="column-list"><div id="6252a8df-ee32-425d-9746-1b00b28b5b74" style="width:25%" class="column"><figure id="128c7af9-bb60-804d-ac7d-ee0f05ed4209" class="image"><a href="image%208.png"><img style="width:228.28750610351562px" src="image%208.png"/></a></figure></div><div id="9359dc0c-b4ab-4b29-b613-0b973061a447" style="width:25%" class="column"><figure id="128c7af9-bb60-803f-9620-c1c028d5ea6b" class="image"><a href="image%209.png"><img style="width:228.2624969482422px" src="image%209.png"/></a></figure></div><div id="c2f82b64-c19e-40cc-b106-f41878186395" style="width:25%" class="column"><figure id="128c7af9-bb60-802c-8852-da86fcd24a15" class="image"><a href="image%2010.png"><img style="width:192px" src="image%2010.png"/></a></figure></div><div id="6ff819bc-6bfc-4db7-ac3d-5614e42fe994" style="width:25%" class="column"><p id="128c7af9-bb60-80f0-adb6-d13369cdf0e8" class="">
+</p><figure id="128c7af9-bb60-8006-a383-e76a58fe1965" class="image"><a href="image%2011.png"><img style="width:240px" src="image%2011.png"/></a></figure></div></div><p id="128c7af9-bb60-806f-b2b4-c476be9afc96" class="">Pour la réalisation du projet <strong>Heart Green Event</strong>, l&#x27;installation et la configuration de l&#x27;environnement de travail ont été essentielles pour assurer un développement fluide et sécurisé, répondant aux exigences de performance et d&#x27;évolution du projet. Le développement front-end repose sur HTML, CSS et JavaScript pour créer des interfaces dynamiques et réactives, tandis que PHP et MySQL gèrent la logique back-end et le stockage des données.</p><p id="128c7af9-bb60-8031-aa21-d57f3140c19d" class="">Le projet utilise un environnement local configuré via Laragon pour simuler l&#x27;exécution du site, avec Apache en tant que serveur web et MySQL pour la gestion de la base de données. Cet environnement permet de tester et développer l&#x27;application web sans serveur externe dans les phases initiales. Des outils tels que Visual Studio Code, Git pour le contrôle de version, et MySQL Workbench pour la gestion visuelle des bases de données ont été choisis pour améliorer la productivité et faciliter la collaboration. Postman a servi à tester les API et ESLint a permis de maintenir un code JavaScript propre.</p><p id="128c7af9-bb60-8039-87de-e3b8532984d9" class="">En termes de contraintes techniques, le site doit être compatible avec les principaux navigateurs (Chrome, Firefox, Safari) et répondre aux exigences de <strong>responsive design</strong>, s&#x27;adaptant aux différents types d&#x27;appareils (ordinateurs, smartphones). La sécurité des données est primordiale avec des mots de passe chiffrés et des validations d&#x27;entrée pour prévenir les attaques SQL. L&#x27;hébergement est géré via un serveur LAMP sur un Raspberry Pi, avec un accès externe configuré par port forwarding et l&#x27;acquisition d&#x27;un nom de domaine via OVH.</p><p id="128c7af9-bb60-80a0-a3be-fbd3caecde5c" class="">En conclusion, l&#x27;environnement de travail et les outils choisis ont permis de répondre aux exigences techniques tout en garantissant un développement sécurisé et optimisé.</p><p id="128c7af9-bb60-80c0-aa4d-f12e341384ed" class="">Pour la gestion du temps et la visualisation du processus de réalisation, j&#x27;ai créé un diagramme de Gantt. Cet outil m&#x27;a permis de définir précisément mes échéances. Vous pouvez consulter ce diagramme dans l&#x27;annexe pour plus de détails.</p><p id="11bc7af9-bb60-8080-b885-ff625c81b2b3" class=""><strong>Annexe :</strong> Diagramme de Gantt</p><p id="128c7af9-bb60-80d2-bad1-d588206ffabe" class="">
+</p></div></details><hr id="11bc7af9-bb60-80d8-be3f-c2658e235a28"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">4. Spécifications Fonctionnelles</summary><div class="indented"><p id="11bc7af9-bb60-8056-93d7-edbb507d5cef" class="">Les spécifications fonctionnelles décrivent les fonctionnalités principales du site Heart Green Event en s&#x27;appuyant sur les besoins des utilisateurs. Ces spécifications ont été développées en fonction de cas d&#x27;utilisation détaillés et sont représentées graphiquement par des diagrammes UML pour clarifier les interactions entre les acteurs et le système.</p><h3 id="11bc7af9-bb60-80a5-b564-f27eabe3b560" class="">6.1 Description des Cas d&#x27;Utilisation</h3><p id="11bc7af9-bb60-803b-a65b-dd175c5a99d1" class="">Les cas d&#x27;utilisation sont définis afin de décrire toutes les interactions possibles entre les utilisateurs et le système Heart Green Event. Voici quelques exemples de cas d&#x27;utilisation :</p><ul id="11bc7af9-bb60-800a-ba31-ec31380396f6" class="bulleted-list"><li style="list-style-type:disc"><strong>Se connecter :</strong> L&#x27;utilisateur peut se connecter au site en utilisant ses identifiants, ce qui lui permet de gérer ses réservations, envoyer des messages et consulter les événements disponibles.</li></ul><ul id="11bc7af9-bb60-8069-8be2-dbab34eebd1e" class="bulleted-list"><li style="list-style-type:disc"><strong>Réserver une date pour un événement :</strong> L&#x27;utilisateur sélectionne un créneau disponible et envoie une demande de réservation pour une date précise. Cette fonctionnalité permet aux utilisateurs de vérifier la disponibilité en temps réel.</li></ul><ul id="11bc7af9-bb60-8021-b1f2-e50d28a06c00" class="bulleted-list"><li style="list-style-type:disc"><strong>Modifier le profil :</strong> Les utilisateurs peuvent accéder et modifier les informations de leur profil, telles que leurs coordonnées ou préférences.</li></ul><ul id="11bc7af9-bb60-8083-ac55-c5fa8101163a" class="bulleted-list"><li style="list-style-type:disc"><strong>Envoyer une demande de contact :</strong> Un utilisateur non inscrit ou inscrit peut contacter l&#x27;entreprise via un formulaire de contact intégré.</li></ul><h3 id="11bc7af9-bb60-8082-8f41-c3dcd5aeb7bf" class="">6.2 Diagrammes UML des Cas d&#x27;Utilisation</h3><p id="11bc7af9-bb60-8002-909e-f0b3d705d4f1" class="">Pour illustrer les cas d&#x27;utilisation et les interactions entre les différents acteurs (utilisateurs, administrateurs), des diagrammes UML ont été réalisés. Ces diagrammes montrent les actions possibles des utilisateurs sur le système, ainsi que les relations entre chaque action. Les acteurs principaux sont :</p><ul id="11bc7af9-bb60-803f-aef7-ef196dcea571" class="bulleted-list"><li style="list-style-type:disc"><strong>Client :</strong> Peut consulter les thèmes, réserver des événements, envoyer des messages et gérer son profil.</li></ul><ul id="11bc7af9-bb60-806e-b555-e1e0f9a95345" class="bulleted-list"><li style="list-style-type:disc"><strong>Administrateur :</strong> Responsable de la gestion des événements, de la validation des réservations et de la gestion des comptes utilisateurs.</li></ul><ul id="11bc7af9-bb60-807c-b2f9-c6954b79bf68" class="bulleted-list"><li style="list-style-type:disc"><strong>Diagrammes UML :</strong> (Voir annexe).</li></ul><figure id="128c7af9-bb60-80ed-87fa-c435a204d42c" class="image"><a href="image%2012.png"><img style="width:1051.175048828125px" src="image%2012.png"/></a></figure></div></details><hr id="11bc7af9-bb60-80c6-be4c-c3abd9746d7a"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">5. Arborescence du Site</summary><div class="indented"><figure id="11bc7af9-bb60-8010-b2d6-dd62af7cbbe1" class="image"><a href="image%2013.png"><img style="width:680.0062866210938px" src="image%2013.png"/></a></figure><p id="11bc7af9-bb60-8066-b8d9-f1aabb71e08d" class="">L&#x27;arborescence du site est conçue pour permettre une navigation claire et intuitive, facilitant l&#x27;accès à l&#x27;information pour les utilisateurs. La structure générale est la suivante :</p><ul id="11bc7af9-bb60-807f-a7a5-ee68b5c31c6e" class="bulleted-list"><li style="list-style-type:disc"><strong>Accueil :</strong> Page principale présentant les services de Heart Green Event et les principales sections du site. Cette page contient également des informations sur les valeurs de l&#x27;entreprise, la mise en avant des événements proposés et des boutons de redirection rapide vers les sections importantes.</li></ul><ul id="11bc7af9-bb60-8097-abad-d7613ebaf5d2" class="bulleted-list"><li style="list-style-type:disc"><strong>Nos Réalisations :</strong> Cette section permet de présenter des exemples d&#x27;événements organisés par Heart Green Event. Chaque réalisation est illustrée par des photos et des descriptions mettant en avant le thème, la décoration et l&#x27;impact écologique de l&#x27;événement.</li></ul><ul id="11bc7af9-bb60-80ba-beaf-faf0450da30b" class="bulleted-list"><li style="list-style-type:disc"><strong>Célébrer :</strong> Section dédiée aux offres de célébrations personnalisées proposées par l&#x27;entreprise. Elle inclut :<ul id="11bc7af9-bb60-8045-acab-e1b9adb7ab75" class="bulleted-list"><li style="list-style-type:circle"><strong>Les offres :</strong> Présentation des différents types de célébrations proposées (mariages, anniversaires, baptêmes, etc.).</li></ul><ul id="11bc7af9-bb60-80e7-9b27-e93192f03012" class="bulleted-list"><li style="list-style-type:circle"><strong>Questionnaire :</strong> Un questionnaire destiné aux clients pour mieux comprendre leurs attentes et les aider à définir leur événement personnalisé.</li></ul></li></ul><ul id="11bc7af9-bb60-806c-b2be-d0a3c9e49f64" class="bulleted-list"><li style="list-style-type:disc"><strong>Planning :</strong> Page permettant de visualiser les créneaux disponibles pour réserver un événement. Les clients peuvent vérifier la disponibilité et réserver une date en fonction des créneaux restants.</li></ul><ul id="11bc7af9-bb60-807d-988a-e94744af12c2" class="bulleted-list"><li style="list-style-type:disc"><strong>Formulaire/Contact :</strong> Page de contact permettant aux utilisateurs de poser des questions, de demander des informations supplémentaires ou de solliciter un devis personnalisé pour leurs événements. Un formulaire est mis à disposition pour faciliter la prise de contact.</li></ul><ul id="11bc7af9-bb60-8079-81f1-e729ae578e8c" class="bulleted-list"><li style="list-style-type:disc"><strong>Connexion :</strong> Section permettant aux utilisateurs de se connecter à leur compte personnel. Une fois connectés, les utilisateurs ont accès aux fonctionnalités suivantes :<ul id="11bc7af9-bb60-80b3-85e6-c56887314d88" class="bulleted-list"><li style="list-style-type:circle"><strong>Utilisateur :</strong> Gestion des informations personnelles, modification des coordonnées et visualisation des événements réservés.</li></ul><ul id="11bc7af9-bb60-8056-8318-d4c402388f38" class="bulleted-list"><li style="list-style-type:circle"><strong>Votre Événement :</strong> Espace où l&#x27;utilisateur peut suivre l&#x27;évolution de l&#x27;organisation de son événement, accéder aux informations partagées par l&#x27;équipe de Heart Green Event et communiquer avec eux.</li></ul><ul id="11bc7af9-bb60-8087-b9bb-ed12181a0511" class="bulleted-list"><li style="list-style-type:circle"><strong>Discussions :</strong> Fonctionnalité de messagerie permettant de communiquer directement avec l&#x27;équipe organisatrice et de poser des questions spécifiques liées aux événements en cours.</li></ul></li></ul></div></details><hr id="11fc7af9-bb60-80fe-8428-c7b5e229d2ff"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">6. Maquettage</summary><div class="indented"><p id="123c7af9-bb60-8051-89de-cc439fba9f5c" class="">Pour débuter l&#x27;étape cruciale du maquettage, j&#x27;ai commencé par élaborer un moodboard détaillé. Cette approche méthodique m&#x27;a permis de définir avec précision l&#x27;ambiance et l&#x27;atmosphère que je souhaitais insuffler au site. Le moodboard a servi de guide visuel essentiel, rassemblant des éléments d&#x27;inspiration tels que des couleurs, des typographies, des images et des styles graphiques.</p><p id="df4d8e1e-1865-4172-9cce-4915d7e1c998" class="">Cette étape préliminaire s&#x27;est avérée fondamentale pour établir une direction créative cohérente. Elle m&#x27;a aidé à visualiser concrètement l&#x27;identité visuelle du site et à m&#x27;assurer que tous les éléments de design s&#x27;aligneraient harmonieusement avec la vision globale du projet Heart Green Event. Le moodboard a ainsi constitué une base solide pour les phases ultérieures du processus de conception.</p><figure id="11bc7af9-bb60-80c8-95b7-ec57de244921" class="image"><a href="image%2014.png"><img style="width:707.9874877929688px" src="image%2014.png"/></a></figure><h3 id="123c7af9-bb60-8084-9cfe-db1c2d284477" class="">5.1 Zoning et Wireframes</h3><p id="123c7af9-bb60-8042-b5a0-dcea66ead218" class="">Les wireframes ont été créés afin de définir clairement la structure et l&#x27;organisation des éléments du site avant de commencer le développement. Ces maquettes permettent d&#x27;établir une vision précise de la disposition des différents composants et de l&#x27;ergonomie globale. Il est recommandé de consulter les wireframes, disponibles en annexe, pour visualiser cette étape préliminaire.</p><h3 id="123c7af9-bb60-8013-ba9c-d4672d181b66" class="">5.2 Charte Graphique</h3><p id="123c7af9-bb60-80e7-a896-d807993bd38e" class="">La charte graphique du site a été pensée pour refléter les valeurs écologiques de l&#x27;entreprise, en utilisant une palette de couleurs inspirées de la nature. Les couleurs principales incluent un vert (#148611) pour les boutons et éléments interactifs, un marron (#3F170E) pour les titres, et un beige doux (#F4F0E3) pour l&#x27;arrière-plan. Côté typographies, la police principale choisie est Lato, une police sans-serif qui assure une lisibilité optimale, tandis que la police secondaire, PT Serif Caption, apporte une touche d&#x27;originalité subtile au design.</p><ul id="11bc7af9-bb60-809e-a4fa-c875845df440" class="bulleted-list"><li style="list-style-type:disc"><strong>Éléments visuels :</strong><ul id="11bc7af9-bb60-8006-853f-c964d2cf82f8" class="bulleted-list"><li style="list-style-type:circle">Utilisation de couleurs évoquant la nature (feuilles, plantes). Style Tiles:<figure id="11bc7af9-bb60-80bf-8789-db33c3fd8db7" class="image"><a href="image%2015.png"><img style="width:680.0062866210938px" src="image%2015.png"/></a></figure></li></ul></li></ul><h3 id="128c7af9-bb60-8035-90a1-f0e5a71f8da1" class="">5.3 Mockup</h3><p id="120c7af9-bb60-809c-9b57-d0ffee8bbdc7" class="">Les mockups représentent l&#x27;étape finale avant la phase de développement, offrant une version haute fidélité des interfaces du site, incluant les détails visuels et esthétiques. Contrairement aux wireframes qui se concentrent sur la structure et la hiérarchie des éléments, les mockups ajoutent des aspects précis tels que la typographie, les couleurs, les images et les icônes. Ils permettent de visualiser le rendu final du site et d&#x27;effectuer les ajustements graphiques nécessaires avant le codage.</p><p id="120c7af9-bb60-80b8-add1-fa56f3a08758" class="">Dans le cadre du projet <strong>Heart Green Event</strong>, les mockups ont été réalisés avec <strong>Figma</strong>, respectant la charte graphique définie. Chaque page a été modélisée en intégrant les choix de couleurs, les typographies définies (Lato pour le texte courant et PT Serif Caption pour les titres), ainsi que les éléments visuels représentant la nature (icônes de feuilles, tons de vert et marron). Les mockups offrent un aperçu réaliste du design final, garantissant la cohérence esthétique du site tout en reflétant l&#x27;image écoresponsable de l&#x27;entreprise.</p><p id="120c7af9-bb60-80aa-a589-efe930b099b5" class="">Voir plus de mockup en annexe <em><strong> 📌</strong></em></p><div id="120c7af9-bb60-80a8-9145-e26f5ca6fcfb" class="column-list"><div id="120c7af9-bb60-8001-9818-df4ec4b5d5be" style="width:50%" class="column"><figure id="120c7af9-bb60-80ef-bf1e-d41611773bc2" class="image"><a href="image%2016.png"><img style="width:464px" src="image%2016.png"/></a></figure></div><div id="120c7af9-bb60-80e5-afeb-c8eb2e03c8e3" style="width:49.99999999999999%" class="column"><figure id="120c7af9-bb60-8009-9a47-d1e0fb8152a3" class="image"><a href="image%2017.png"><img style="width:384px" src="image%2017.png"/></a></figure></div></div></div></details><hr id="11bc7af9-bb60-8030-93fb-f805cb457b34"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">7. Développement Front-End</summary><div class="indented"><p id="11bc7af9-bb60-808c-8442-ffa15d8c92a2" class="">Le développement front-end du site <strong>Heart Green Event</strong> a constitué une étape déterminante pour offrir une expérience utilisateur à la fois fluide et attrayante. Cette phase s&#x27;est articulée principalement autour de deux axes : le maquettage des interfaces et la mise en place d&#x27;interactions dynamiques, avec une attention particulière portée à l&#x27;optimisation mobile.</p><h3 id="11bc7af9-bb60-8098-bb47-da5fe7d88beb" class="">Maquettage des Interfaces</h3><p id="11bc7af9-bb60-80c3-aed6-cd4f4fee2f0b" class="">Le processus de maquettage a débuté par la conversion des wireframes en pages web statiques. Cette étape a permis de définir clairement la structure visuelle et l&#x27;agencement des différents éléments du site. En adoptant une approche <strong>mobile-first</strong>, j&#x27;ai assuré que le site soit parfaitement adapté aux écrans de petite taille avant de le rendre compatible avec des dispositifs plus grands.</p><p id="11bc7af9-bb60-8093-a45f-c825a671e0cd" class="">Pour ce faire, j&#x27;ai utilisé les technologies <strong>Flexbox</strong> de CSS, qui offrent une grande flexibilité pour la création de mises en page réactives. Par exemple, le fichier CSS commence par un reset CSS d&#x27;Eric Meyer, garantissant une base cohérente pour le stylisme de tous les éléments HTML :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80b7-9e04-c1f09b6e1116" class="code"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">/* CSS Version Mobile First */
+body {
+	background: #f4f0e3;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Autres styles suivent... */</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="128c7af9-bb60-80e2-9084-fcc4c89e9ea8" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+		&lt;header&gt;
+			&lt;video preload=&quot;auto&quot; autoplay muted loop playsinline poster=&quot;./Video/video_fleur.mp4&quot; id=&quot;myVideo&quot;&gt;
+				&lt;source src=&quot;./Video/video_fleur.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+			&lt;/video&gt;
+			&lt;a href=&quot;./index.html&quot;&gt;&lt;img class=&quot;logo&quot; src=&quot;./Icons/Logos_var3/logo-transparent-svg.svg&quot; alt=&quot;heart green event icon&quot; /&gt;&lt;/a&gt;
+		&lt;/header&gt;
+		&lt;nav&gt;
+			&lt;img class=&quot;hamburgerIcon&quot; src=&quot;./Icons/hamburger.svg&quot; alt=&quot;menu hamburger&quot; /&gt;
+			&lt;div class=&quot;navLiens&quot;&gt;
+				&lt;img class=&quot;crossButton&quot; src=&quot;./Icons/exit_cross.svg&quot; alt=&quot;bouton retour&quot; /&gt;
+				&lt;a href=&quot;./index.html&quot;&gt;Accueil&lt;/a&gt;
+				&lt;a href=&quot;./Pages/realisation.html&quot;&gt;Nos réalisations&lt;/a&gt;
+				 &lt;!-- ETC --&gt;
+			&lt;/div&gt;
+		&lt;/nav&gt;
+		&lt;main&gt;
+		        &lt;div class=&quot;reverse&quot;&gt;
+		            &lt;div&gt;
+		                &lt;h2&gt;Notre Histoire&lt;/h2&gt;
+		                &lt;p&gt;
+		                    Heart Green Event est né de la passion et de l&#x27;expertise de Jarry Dominique, une passionnée de
+		                    décoration DIY envisageant une reconversion
+		                    dans le secteur de l&#x27;événementiel. Avec une vision partagée d&#x27;offrir des expériences exceptionnelles à
+		                    ses clients, l&#x27;équipe s&#x27;est lancée
+		                    dans cette aventure entrepreneuriale. En mettant en avant son expertise dans le domaine de
+		                    l&#x27;événementiel et en proposant des services
+		                    personnalisés répondant aux besoins uniques de chaque client, Heart Green Event se positionne comme une
+		                    référence dans l&#x27;organisation
+		                    d&#x27;événements uniques et mémorables à La Réunion.
+		                &lt;/p&gt;
+		            &lt;/div&gt;
+		            &lt;img src=&quot;./Assets/Image/accueil/enfant_peinture.png&quot; alt=&quot;enfant mains colorés&quot; /&gt;
+		        &lt;/div&gt;
+		        &lt;!-- ETC --&gt;</code></pre><p id="11bc7af9-bb60-802a-9307-cb89368cdf64" class="">Cette méthode a permis de normaliser les styles par défaut des navigateurs et de construire une base solide pour le design personnalisé du site.</p><figure id="11fc7af9-bb60-8093-a1b7-d35973c2e80e" class="image" style="text-align:center"><a href="image%2018.png"><img style="width:288px" src="image%2018.png"/></a></figure><figure id="11fc7af9-bb60-80cf-a04d-e722c56eab56" class="image"><a href="image%2019.png"><img style="width:1051.175048828125px" src="image%2019.png"/></a></figure><h3 id="11bc7af9-bb60-80c3-b9d7-f98ed1dc90e7" class="">Développement des Interfaces Dynamiques</h3><p id="11bc7af9-bb60-80df-8c2b-e0efdda5ae72" class="">Après avoir établi les pages statiques, j&#x27;ai concentré mes efforts sur l&#x27;ajout d&#x27;interactivité et d&#x27;animations pour enrichir l&#x27;expérience utilisateur. L&#x27;un des défis majeurs a été la création d&#x27;un effet de scroll fluide et sans bugs, garantissant que les éléments s&#x27;animent de manière harmonieuse lorsqu&#x27;ils entrent dans le champ de vision de l&#x27;utilisateur.</p><p id="11bc7af9-bb60-8042-89a4-f0030c47d663" class=""><strong>Fonctionnalité de Scroll Animations</strong></p><p id="11bc7af9-bb60-802c-afb2-ca17b19efa44" class="">L&#x27;implémentation de cette fonctionnalité a nécessité une approche méthodique pour s&#x27;assurer que les animations se déclenchent correctement sans interférer avec la performance globale du site. Voici comment j&#x27;ai procédé :</p><ol type="1" id="11bc7af9-bb60-8040-af48-ea806a8be0e0" class="numbered-list" start="1"><li><strong>Sélection des Éléments à Animer :</strong> J&#x27;ai commencé par identifier tous les éléments susceptibles de recevoir une animation au défilement. Cela inclut les divs, images, paragraphes, et boutons présents dans le contenu principal.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80f2-921c-e126705fdb04" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">let scrollElements = document.querySelectorAll(
+	&quot;main div, main img, main p, main .nousContacter, main h1, label, input, textarea, button, main a, #connexion&quot;
+);</code></pre></li></ol><ol type="1" id="11bc7af9-bb60-80e5-bf2c-c2d43a40e9ac" class="numbered-list" start="2"><li><strong>Détection de la Visibilité :</strong> Pour déterminer si un élément est visible dans la fenêtre du navigateur, j&#x27;ai créé deux fonctions : <code>elementInView</code> et <code>elementOutofView</code>. Ces fonctions vérifient la position de l&#x27;élément par rapport à la hauteur de la fenêtre.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-8018-aaff-f54130cc2792" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function elementInView(element) {
+	let elementTop = element.getBoundingClientRect().top;
+	let viewportHeight = window.innerHeight;
+	return elementTop &lt; viewportHeight;
+}
+
+function elementOutofView(element) {
+	let elementTop = element.getBoundingClientRect().top;
+	let viewportHeight = window.innerHeight;
+	return elementTop &gt; viewportHeight;
+}</code></pre></li></ol><ol type="1" id="11bc7af9-bb60-807c-af12-f0fb1df3d9cf" class="numbered-list" start="3"><li><strong>Application des Animations :</strong> Ensuite, une fonction <code>handleScrollAnimation</code> parcourt tous les éléments sélectionnés et applique la classe <code>scroll</code> lorsqu&#x27;ils entrent dans la vue. Cette classe déclenche les animations définies dans le CSS.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-808b-bb25-f07d48e24c93" class="code"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function handleScrollAnimation() {
+	scrollElements.forEach(element =&gt; {
+		if (elementInView(element)) {
+			element.classList.add(&quot;scroll&quot;);
+			element.classList.add(&quot;already-shown&quot;);
+		} else if (elementOutofView(element) &amp;&amp; !element.classList.contains(&quot;already-shown&quot;)) {
+			element.classList.remove(&quot;scroll&quot;);
+		}
+	});
+}
+
+window.addEventListener(&quot;scroll&quot;, handleScrollAnimation);
+window.addEventListener(&quot;load&quot;, handleScrollAnimation);</code></pre></li></ol><ol type="1" id="11bc7af9-bb60-806d-ac1d-f9393cfc8ec8" class="numbered-list" start="4"><li><strong>Définition des Animations en CSS :</strong> La classe <code>scroll</code> est associée à des animations CSS qui définissent comment les éléments doivent apparaître lorsqu&#x27;ils sont scrolled dans la vue.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-8098-89e7-d4f72c5c1dd1" class="code"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">/* Animation de fadeIn pour les éléments en scroll */
+.scroll {
+    animation: fadeIn 1s ease-in-out both;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}</code></pre></li></ol><p id="11bc7af9-bb60-8038-8257-f93e0c10707e" class="">Cette fonctionnalité a apporté une dimension supplémentaire au site, rendant la navigation plus engageante et visuellement plaisante pour les utilisateurs.</p><h3 id="11bc7af9-bb60-80af-ae78-fde8d11ebe00" class="">Exemples Pratiques</h3><p id="11bc7af9-bb60-807f-bc13-ee06e85a13a5" class="">Pour illustrer ces concepts, voici un extrait du fichier HTML de la page &quot;Célébrer&quot; et du fichier CSS correspondant :</p><p id="11bc7af9-bb60-8098-a5c0-c321969bbff3" class=""><strong>Extrait HTML :</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80f2-b211-f24f515f7bed" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;main class=&quot;celebrer&quot;&gt;
+    &lt;h1&gt;Célébrer&lt;/h1&gt;
+    &lt;div&gt;
+        &lt;div&gt;
+            &lt;video autoplay loop muted src=&quot;../Video/celebrer/celebrer1.mp4&quot; alt=&quot;enfant qui joue à la pinata&quot;&gt;&lt;/video&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;lesRond&quot;&gt;
+            &lt;img src=&quot;../Icons/rond_plein.svg&quot; alt=&quot;rond plein&quot; /&gt;
+            &lt;img src=&quot;../Icons/rond_vide.svg&quot; alt=&quot;rond vide&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;surMesure&quot;&gt;
+        &lt;img src=&quot;../Image/celebrer/pack_sur_mesure.png&quot; alt=&quot;pack sur mesure&quot; /&gt;
+        &lt;div&gt;
+            &lt;h2&gt;Pack Sur-Mesure&lt;/h2&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem corrupti nulla commodi eos perferendis praesentium quaerat non eius natus
+                fugiat distinctio minus in, iste ut quos saepe aliquam voluptates earum. Sed, a nulla debitis, veniam iste accusantium sequi tempora optio
+                quis eum culpa voluptate obcaecati consequatur porro libero odio voluptatum ipsum labore. Ducimus, quae provident maiores autem iste aut
+                perspiciatis?
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;a href=&quot;./contact.html&quot; class=&quot;nousContacter&quot;&gt;Nous Contacter&lt;/a&gt;
+    &lt;div class=&quot;questionnaire&quot;&gt;
+        &lt;h2&gt;Questionnaire&lt;/h2&gt;
+        &lt;p&gt;Passez ce petit test pour en savoir plus sur ce qui pourrait vous plaire!&lt;/p&gt;
+        &lt;img src=&quot;../Image/celebrer/questionnaire.png&quot; alt=&quot;homme qui s&#x27;interroge&quot; /&gt;
+        &lt;a href=&quot;#&quot; class=&quot;suivant&quot;&gt;Suivant&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/main&gt;</code></pre><p id="11bc7af9-bb60-8072-886b-f84b893ad037" class=""><strong>Extrait CSS :</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80ca-87b0-dbe5fc70c873" class="code"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">/* Animation de fadeIn pour les éléments en scroll */
+.scroll {
+    animation: fadeIn 1s ease-in-out both;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Styles spécifiques pour les animations */
+.main div, main img, main p, .nousContacter, main h1, label, input, textarea, button, main a, #connexion {
+    opacity: 0;
+}
+
+.scroll {
+    opacity: 1;
+}</code></pre><p id="11bc7af9-bb60-800f-9ebc-e460f101ce73" class="">Dans cet exemple, chaque élément pertinent dans la section &quot;Célébrer&quot; reçoit la classe <code>scroll</code> lorsqu&#x27;il entre dans la vue, déclenchant ainsi l&#x27;animation définie en CSS.</p><h3 id="11bc7af9-bb60-8042-930e-e2585236b704" class="">Difficultés Rencontrées</h3><p id="11bc7af9-bb60-8002-87c1-fc6af63fdb0c" class="">L&#x27;une des principales difficultés rencontrées a été de garantir que les animations de scroll se déclenchent de manière fluide et sans bugs. Initialement, certains éléments s&#x27;animaient de manière erratique ou ne se déclenchaient pas comme prévu. Pour résoudre ce problème, j&#x27;ai affiné les conditions de détection de la visibilité des éléments et optimisé le script JavaScript pour qu&#x27;il soit plus performant et réactif.</p><p id="11bc7af9-bb60-802c-9a66-c940ae247fc3" class="">De plus, assurer la compatibilité sur différents navigateurs et dispositifs a nécessité des tests approfondis et des ajustements CSS supplémentaires, notamment en utilisant des préfixes spécifiques et en optimisant les media queries pour une meilleure réactivité.</p><p id="11bc7af9-bb60-80a3-9f9a-fb09656f4c17" class="">En conclusion, le développement front-end de <strong>Heart Green Event</strong> a été mené avec succès grâce à une approche structurée et une attention particulière aux détails. Le maquettage rigoureux et les interactions dynamiques ont contribué à créer un site à la fois esthétique et fonctionnel, répondant aux attentes des utilisateurs tout en offrant une navigation intuitive et engageante.</p><p id="11fc7af9-bb60-8072-b7a9-ce6b99c5ed0b" class="">
+</p><p id="11bc7af9-bb60-80fa-9da3-f30f4134a8ad" class="">Je vous invite  à vous rendre sur le site pour constater des élément Front-End !</p><p id="11bc7af9-bb60-80eb-ada0-c0b1137f6147" class=""><a href="https://heartgreenevent.fr/">https://heartgreenevent.fr/</a> </p></div></details><hr id="11bc7af9-bb60-80d7-afab-c30c9cc741f5"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">8. Conception</summary><div class="indented"><h3 id="11bc7af9-bb60-80cf-839f-fed6d03c41b8" class="">8.1 Modèle de Données Conceptuel (MDC)</h3><p id="128c7af9-bb60-804d-8f00-cf8ee1c40ef4" class="">Le Modèle de Données Conceptuel (MDC) est une représentation abstraite qui identifie les entités clés du système ainsi que les relations entre elles. Il permet de définir les bases de la structure de la base de données en décrivant comment les différentes entités interagissent. Pour &quot;Heart Green Event&quot;, les principales entités identifiées sont les suivantes :</p><ul id="128c7af9-bb60-8063-b15a-c3a24a53e3fb" class="bulleted-list"><li style="list-style-type:disc"><strong>Utilisateur :</strong> Cette entité représente les clients et administrateurs du site, avec des attributs tels que le nom, prénom, email et mot de passe.</li></ul><ul id="128c7af9-bb60-8067-8b17-cd5bcca84ec0" class="bulleted-list"><li style="list-style-type:disc"><strong>Adresse :</strong> Un utilisateur peut posséder une ou plusieurs adresses. L&#x27;adresse est détaillée par pays, ville et code postal.</li></ul><ul id="128c7af9-bb60-802b-ad15-f6d8398aa453" class="bulleted-list"><li style="list-style-type:disc"><strong>Message :</strong> Permet la communication entre les utilisateurs (clients, administrateurs). Chaque message comporte un contenu, un expéditeur et un destinataire.</li></ul><ul id="128c7af9-bb60-80f1-a750-d20ea6e3f5c9" class="bulleted-list"><li style="list-style-type:disc"><strong>Commentaire :</strong> Les utilisateurs peuvent ajouter des commentaires sur les réalisations, avec des informations telles que la date de création.</li></ul><ul id="128c7af9-bb60-8017-a090-e7cd62ad78d1" class="bulleted-list"><li style="list-style-type:disc"><strong>Réalisation :</strong> Représente les événements déjà organisés par Heart Green Event, servant d&#x27;exemple pour les clients potentiels. Les réalisations peuvent contenir des photos et des vidéos.</li></ul><ul id="128c7af9-bb60-80cf-ab61-c95b3abe3178" class="bulleted-list"><li style="list-style-type:disc"><strong>Historique de connexion :</strong> Stocke les informations relatives aux connexions des utilisateurs, telles que l’adresse IP et la date de connexion.</li></ul><ul id="128c7af9-bb60-8021-9aa5-f75932d3c992" class="bulleted-list"><li style="list-style-type:disc"><strong>Rôle :</strong> Chaque utilisateur est associé à un rôle (ex. client, administrateur).</li></ul><h3 id="128c7af9-bb60-80f3-a4c3-fcac4037ba80" class="">Définition de la cardinalité</h3><p id="128c7af9-bb60-802b-9fd9-f732b07529e0" class="">Une <strong>cardinalité</strong> définit le nombre minimal et maximal d&#x27;occurrences d&#x27;une entité qui peut être associée à une autre entité dans une relation. Par exemple, un utilisateur peut avoir <strong>0 ou plusieurs adresses</strong> : la cardinalité de cette relation est (0,n), signifiant qu&#x27;un utilisateur peut ne pas avoir d&#x27;adresse ou en posséder plusieurs. Les cardinalités sont cruciales pour garantir la cohérence des données lors de la création des relations entre les entités.</p><figure id="11bc7af9-bb60-80cb-9e95-ee554e555653" class="image"><a href="image%2020.png"><img style="width:1344px" src="image%2020.png"/></a></figure><p id="128c7af9-bb60-8082-93d9-df6d62a60f32" class=""><br/>La relation entre les tables <br/><strong>Utilisateur</strong> et <strong>Message</strong> dans le MCD représente la structure des échanges entre les utilisateurs de la plateforme. Chaque <strong>Utilisateur</strong> peut envoyer ou recevoir plusieurs <strong>Messages</strong>, ce qui correspond à une relation de type <strong>1-N</strong>. Dans ce contexte, un utilisateur peut être à la fois expéditeur et destinataire de plusieurs messages, et chaque message est toujours lié à un seul expéditeur et un seul destinataire. Cette relation est matérialisée par deux clés étrangères dans la table <strong>Message</strong> : <code>Id_Expéditeur</code> et <code>Id_Destinataire</code>, qui font référence à la table <strong>Utilisateur</strong>. Cela permet de tracer précisément qui a envoyé et qui a reçu chaque message, tout en garantissant l&#x27;intégrité des données à travers la gestion de ces relations. Grâce à ce modèle, la plateforme peut gérer efficacement les échanges entre les utilisateurs et assurer une traçabilité complète des communications.</p><figure id="128c7af9-bb60-807e-a717-fe6df02eb4b0" class="image"><a href="image%2021.png"><img style="width:1299.175048828125px" src="image%2021.png"/></a></figure><h3 id="11bc7af9-bb60-8082-9fe3-f65ff136a393" class="">8.2 Modèle Logique de Données (MLD)</h3><p id="128c7af9-bb60-808d-934b-def669d25724" class="">Le Modèle Logique de Données (MLD) est la transformation du MDC en une représentation plus technique qui peut être implémentée dans une base de données relationnelle. Cette étape inclut la normalisation des données, l&#x27;identification des clés primaires et étrangères, ainsi que la gestion des relations.</p><p id="128c7af9-bb60-80f2-9209-fcb73ed34a73" class="">Dans le MLD de &quot;Heart Green Event&quot;, voici les principales tables qui composent la structure de la base de données :</p><ul id="128c7af9-bb60-8039-942b-c77a18b4ade9" class="bulleted-list"><li style="list-style-type:disc"><strong>Utilisateur :</strong><ul id="128c7af9-bb60-80c5-879d-c415e37d7358" class="bulleted-list"><li style="list-style-type:circle">Contient des attributs tels que <code>Nom</code>, <code>Prénom</code>, <code>Email</code> et <code>mdp</code> (mot de passe, qui est chiffré avant d&#x27;être stocké).</li></ul></li></ul><ul id="128c7af9-bb60-802f-b92c-d98145aea40e" class="bulleted-list"><li style="list-style-type:disc"><strong>Adresse :</strong><ul id="128c7af9-bb60-8086-b8e8-ee3dfeb76f1b" class="bulleted-list"><li style="list-style-type:circle">Stocke les adresses des utilisateurs, avec des colonnes pour le pays (<code>Id_Pays</code>), la ville (<code>Id_Ville</code>) et le code postal (<code>Id_Code_postal</code>).</li></ul></li></ul><ul id="128c7af9-bb60-80d5-a93c-df453e6d968f" class="bulleted-list"><li style="list-style-type:disc"><strong>Réalisation :</strong><ul id="128c7af9-bb60-8005-8b71-cbb07d4c62ab" class="bulleted-list"><li style="list-style-type:circle">Contient les réalisations d&#x27;événements organisés par Heart Green Event, avec des descriptions et des liens vers des photos/vidéos.</li></ul></li></ul><ul id="128c7af9-bb60-80c0-a8eb-f2e98f86fcce" class="bulleted-list"><li style="list-style-type:disc"><strong>Message :</strong><ul id="128c7af9-bb60-80b6-b2ea-fdc61d22618f" class="bulleted-list"><li style="list-style-type:circle">Permet de stocker les messages échangés entre utilisateurs, avec des références à l&#x27;expéditeur et au destinataire (<code>Id_Expéditeur</code>, <code>Id_Destinataire</code>).</li></ul></li></ul><ul id="128c7af9-bb60-80b9-bbdd-d76ade9f1ede" class="bulleted-list"><li style="list-style-type:disc"><strong>Commentaire :</strong><ul id="128c7af9-bb60-8043-a5a7-c00842e1e468" class="bulleted-list"><li style="list-style-type:circle">Stocke les commentaires des utilisateurs sur les réalisations.</li></ul></li></ul><ul id="128c7af9-bb60-809c-a42d-d2f1bc25a1a8" class="bulleted-list"><li style="list-style-type:disc"><strong>Historique de connexion :</strong><ul id="128c7af9-bb60-8031-b2f3-c501a34c1ae7" class="bulleted-list"><li style="list-style-type:circle">Stocke des informations sur chaque connexion utilisateur, telles que la date et l&#x27;adresse IP.</li></ul></li></ul><ul id="128c7af9-bb60-80b5-bf58-ecca3b5ebf19" class="bulleted-list"><li style="list-style-type:disc"><strong>Rôle :</strong><ul id="128c7af9-bb60-80c4-a9d5-fde5f0cc883b" class="bulleted-list"><li style="list-style-type:circle">Stocke les différents rôles associés aux utilisateurs (par exemple, <code>client</code> ou <code>administrateur</code>).</li></ul></li></ul><h3 id="128c7af9-bb60-80bc-9691-e31be96e1d7c" class="">Transformation des associations de type 1 et N</h3><p id="128c7af9-bb60-808a-afd6-f17ab1a1061e" class="">Lors de la transformation du modèle conceptuel en modèle logique, les relations de type <strong>1 à N</strong> sont particulièrement importantes. Dans ces relations, une entité de type &quot;1&quot; est associée à plusieurs entités de type &quot;N&quot;. Par exemple, un utilisateur peut envoyer plusieurs messages, mais chaque message n&#x27;a qu&#x27;un seul expéditeur. Pour représenter cela dans une base de données relationnelle, on ajoute une <strong>clé étrangère</strong> dans la table de l&#x27;entité &quot;N&quot; (ici, la table <code>Message</code>) qui fait référence à l&#x27;entité &quot;1&quot; (ici, la table <code>Utilisateur</code>).</p><h3 id="128c7af9-bb60-8023-9c57-e47bc013cc41" class="">Définition de la clé étrangère</h3><p id="128c7af9-bb60-801b-b776-fe0abab5d203" class="">Une <strong>clé étrangère</strong> est un champ dans une table qui établit une relation entre cette table et une autre. Elle est utilisée pour garantir l&#x27;intégrité référentielle dans la base de données en s&#x27;assurant que la valeur de la clé étrangère correspond à une clé primaire existante dans une autre table. Par exemple, dans la table <code>Message</code>, <code>Id_Expéditeur</code> et <code>Id_Destinataire</code> sont des clés étrangères qui font référence à la table <code>Utilisateur</code>. Cela permet de relier chaque message à ses expéditeur et destinataire respectifs.</p><figure id="11bc7af9-bb60-80de-ae00-f1e4cd1bd6fd" class="image"><a href="image%2022.png"><img style="width:707.9750366210938px" src="image%2022.png"/></a></figure></div></details><hr id="11bc7af9-bb60-80ba-8ea2-f82bf4a99553"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">9. Développement Back-End</summary><div class="indented"><p id="128c7af9-bb60-80c8-8a1d-d62d342a795e" class="">Le développement back-end de <strong>Heart Green Event</strong> a été pensé pour fournir une gestion efficace des utilisateurs, une communication interne fluide via la messagerie, et une architecture sécurisée. Le projet s’appuie sur le <strong>modèle MVC (Modèle-Vue-Contrôleur)</strong>, une architecture logicielle qui permet de séparer clairement la logique métier, la présentation et le contrôle des données. Cela favorise une meilleure organisation du code et une maintenance plus aisée du projet.</p><ul id="128c7af9-bb60-80eb-ba1a-c37ab743accf" class="bulleted-list"><li style="list-style-type:disc">Le <strong>Modèle</strong> (Models) gère les interactions avec la base de données, en particulier les opérations CRUD (Create, Read, Update, Delete).</li></ul><ul id="128c7af9-bb60-800e-8112-dc98127d02d3" class="bulleted-list"><li style="list-style-type:disc">La <strong>Vue</strong> (Views) s&#x27;occupe de l&#x27;affichage des informations pour l&#x27;utilisateur final, telles que les interfaces utilisateur.</li></ul><ul id="128c7af9-bb60-80e5-80c0-c00ca58d69f2" class="bulleted-list"><li style="list-style-type:disc">Le <strong>Contrôleur</strong> (Controllers) fait le lien entre les actions de l&#x27;utilisateur et les opérations à effectuer sur le modèle, tout en mettant à jour les vues en fonction des résultats.</li></ul><p id="128c7af9-bb60-8088-bdf1-ceccdc5ccbdf" class="">Dans le cadre de ce projet, PHP avec PDO a été utilisé pour interagir avec une base de données MySQL. L&#x27;objectif principal a été de construire une base solide permettant de gérer l&#x27;authentification des utilisateurs, la récupération des données, ainsi que la gestion des messages internes, tout en assurant un niveau de sécurité des échanges.</p><p id="128c7af9-bb60-80b1-af4f-e17eaa9156e8" class="">La structure du projet, comme on peut le voir dans l&#x27;organisation des fichiers (ci-dessous), est répartie entre trois dossiers principaux : <strong>Controllers</strong>, <strong>Models</strong>, et <strong>Views</strong>, avec un répertoire public servant de point d&#x27;entrée au site et contenant les ressources statiques. Cette architecture MVC garantit une organisation claire et modulaire du code, facilitant l&#x27;évolution future du site.</p><figure id="128c7af9-bb60-801d-8b93-f99b480ff5c9" class="image" style="text-align:center"><a href="image%2023.png"><img style="width:402px" src="image%2023.png"/></a></figure><h3 id="11fc7af9-bb60-80d5-a09e-df3fea03fcfd" class="">Mise en Place de la Base de Données</h3><p id="128c7af9-bb60-803a-a4e1-c64fbb5be548" class="">La base de données du projet est au cœur des opérations back-end. Elle centralise la gestion des utilisateurs, des messages et des autres entités importantes, tout en assurant une organisation optimale, des performances élevées et une sécurité maximale.</p><ul id="128c7af9-bb60-8074-86cf-fdb9dce920e9" class="bulleted-list"><li style="list-style-type:disc"><strong>Table Utilisateur</strong> : Cette table gère les informations personnelles des utilisateurs, comme leurs noms, prénoms, adresses e-mail, et mots de passe chiffrés.</li></ul><ul id="128c7af9-bb60-80db-932d-f845d0261a6d" class="bulleted-list"><li style="list-style-type:disc"><strong>Table Message</strong> : Elle contient les messages échangés entre les utilisateurs, en capturant des détails comme l&#x27;expéditeur, le destinataire, le contenu et la date d&#x27;envoi.</li></ul><p id="128c7af9-bb60-808b-8193-f46a54520c7c" class="">Voici un extrait de code pour la création de la table <strong>Message</strong> :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="128c7af9-bb60-80c5-bcbc-ece47a87b9b8" class="code"><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE TABLE Message(
+   Id_Message INT PRIMARY KEY AUTO_INCREMENT,
+   Contenu TEXT NOT NULL,
+   date_envoi DATETIME NOT NULL,
+   Id_Destinataire INT NOT NULL,
+   Id_Expéditeur INT NOT NULL,
+   FOREIGN KEY(Id_Destinataire) REFERENCES Utilisateur(Id_Utilisateur),
+   FOREIGN KEY(Id_Expéditeur) REFERENCES Utilisateur(Id_Utilisateur)
+);</code></pre><h3 id="128c7af9-bb60-8022-b941-d0cb20b85b60" class="">Composants Métier : Modèle, Contrôleur et Vue</h3><p id="128c7af9-bb60-80f9-88c2-d5b71021b1bb" class="">Dans le cadre du modèle MVC (Modèle-Vue-Contrôleur), les fonctionnalités back-end, telles que la gestion des utilisateurs et des messages, reposent sur trois composants majeurs :</p><ol type="1" id="128c7af9-bb60-801d-9b46-d0d4c6d2d614" class="numbered-list" start="1"><li><strong>Le Modèle</strong> contient la logique métier, comme la récupération des informations des utilisateurs ou l&#x27;envoi de messages.</li></ol><ol type="1" id="128c7af9-bb60-806a-8fdb-e4d0bace5846" class="numbered-list" start="2"><li><strong>Le Contrôleur</strong> agit comme un intermédiaire, captant les actions de l&#x27;utilisateur via l&#x27;interface, orchestrant les opérations en faisant appel au modèle et en renvoyant les données à la vue.</li></ol><ol type="1" id="128c7af9-bb60-803c-8639-eeb8fcd2220a" class="numbered-list" start="3"><li><strong>La Vue</strong> est responsable de l&#x27;affichage des données sous forme de pages web dynamiques.</li></ol><h3 id="128c7af9-bb60-80d6-bc9b-c69933be3cdf" class="">Exemple d&#x27;Utilisation : Messagerie</h3><p id="128c7af9-bb60-80d4-8221-fe01860a5cd3" class="">Prenons un cas d&#x27;utilisation simple : un utilisateur souhaite voir ses messages échangés avec un autre utilisateur. Le contrôleur de la messagerie intercepte la requête, vérifie que l&#x27;utilisateur est authentifié, récupère les messages via le modèle, puis les affiche à l&#x27;utilisateur via la vue.</p><h3 id="128c7af9-bb60-80ee-974b-d5b9eb75411c" class=""><strong>1. Contrôleur :</strong> Gestion de la discussion</h3><p id="128c7af9-bb60-8082-9e0c-f12cff472d69" class="">Le contrôleur <strong>DiscussionController</strong> traite la requête de l&#x27;utilisateur et fait appel au modèle pour récupérer les messages échangés entre deux utilisateurs authentifiés. Voici un extrait pertinent du contrôleur :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="128c7af9-bb60-80d7-bbfb-e7c28d78deb6" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all">public function discussionWith($prenom)
+{
+    session_start();
+    if (!isset($_SESSION[&#x27;user_id&#x27;])) {
+        http_response_code(403); // Forbidden
+        echo json_encode([&#x27;error&#x27; =&gt; &#x27;Utilisateur non connecté&#x27;]);
+        header(&quot;Location: /connexion&quot;);
+        exit();
+    }
+
+    $userId = $_SESSION[&#x27;user_id&#x27;];
+    $destinataire = $this-&gt;utilisateurModel-&gt;getUserByPrenom($prenom);
+
+    if (!$destinataire) {
+        echo &quot;Utilisateur non trouvé.&quot;;
+        return;
+    }
+
+    $destinataireId = $destinataire[&#x27;Id_Utilisateur&#x27;];
+    $messages = $this-&gt;messageModel-&gt;getMessagesBetweenUsers($userId, $destinataireId);
+
+    // Appel de la vue avec les messages récupérés
+    $title = &quot;Discussion avec $prenom&quot;;
+    $scripts = [&#x27;goBottomMp.js&#x27;, &#x27;ajax.js&#x27;];
+
+    include &#x27;../app/Views/head.php&#x27;;
+    include &#x27;../app/Views/header.php&#x27;;
+    include &#x27;../app/Views/discussion.php&#x27;;
+    include &#x27;../app/Views/footer.php&#x27;;
+
+    echo headContent($title, $scripts);
+    echo headerContent();
+    echo discussionContent($messages, $destinataireId, $prenom);
+    echo footerContent();
+}</code></pre><h3 id="128c7af9-bb60-8089-bdb7-f169662ca9eb" class=""><strong>2. Modèle :</strong> Gestion des messages</h3><p id="128c7af9-bb60-80c7-8295-efbbec820569" class="">Le modèle <strong>MessageModel</strong> contient la logique pour interagir avec la base de données. Il encapsule les requêtes SQL et permet au contrôleur de récupérer ou insérer des messages sans manipuler directement la base de données.</p><p id="128c7af9-bb60-80fd-be28-ec79f89ab4f8" class="">Voici un exemple de la méthode qui récupère les messages entre deux utilisateurs :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="128c7af9-bb60-8072-88b7-cbfcde766527" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all">public function getMessagesBetweenUsers($userId, $otherUserId)
+{
+    $query = $this-&gt;db-&gt;prepare(&quot;
+        SELECT Id_Message, Contenu, date_envoi, Id_Expéditeur, Id_Destinataire
+        FROM Message
+        WHERE (Id_Expéditeur = :userId AND Id_Destinataire = :otherUserId)
+        OR (Id_Expéditeur = :otherUserId AND Id_Destinataire = :userId)
+        ORDER BY date_envoi ASC
+    &quot;);
+    $query-&gt;execute([
+        &#x27;userId&#x27; =&gt; $userId,
+        &#x27;otherUserId&#x27; =&gt; $otherUserId
+    ]);
+
+    return $query-&gt;fetchAll(PDO::FETCH_ASSOC);</code></pre><h3 id="128c7af9-bb60-8052-934b-fcc1946ee523" class=""><strong>3. Vue :</strong> Affichage des messages</h3><p id="128c7af9-bb60-8010-bba7-eb99df4276df" class="">La vue est chargée d&#x27;afficher les messages récupérés sous forme de liste, en veillant à la présentation et à la sécurité des données affichées. Voici un extrait de la vue qui affiche chaque message dans une interface utilisateur claire et structurée :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="128c7af9-bb60-80be-8165-c05b16b87f33" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all">&lt;ul class=&quot;chat&quot; id=&quot;message-list&quot;&gt;
+    &lt;?php foreach ($messages as $message): ?&gt;
+        &lt;?php
+        // Détermine si l&#x27;utilisateur actuel est l&#x27;expéditeur du message
+        $isCurrentUser = htmlspecialchars($message[&#x27;Id_Expéditeur&#x27;]) == $_SESSION[&#x27;user_id&#x27;];
+        $userIcon = $isCurrentUser ? &#x27;yellow_user_icon.svg&#x27; : &#x27;green_user_icon.svg&#x27;;
+        ?&gt;
+        &lt;li class=&quot;message &lt;?= $isCurrentUser ? &#x27;right&#x27; : &#x27;left&#x27; ?&gt;&quot;&gt;
+            &lt;img class=&quot;logo&quot; src=&quot;/Assets/Icons/&lt;?= $userIcon ?&gt;&quot; alt=&quot;User Icon&quot; /&gt;
+            &lt;p&gt;&lt;?= htmlspecialchars($message[&#x27;Contenu&#x27;]) ?&gt;&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/ul&gt;</code></pre><p id="128c7af9-bb60-8042-922a-cd8a44cd80df" class="">Ce système d&#x27;affichage dans la vue permet de différencier les messages envoyés et reçus à l&#x27;aide d&#x27;une disposition visuelle distincte (gauche/droite) et d&#x27;une icône pour chaque expéditeur.</p><h3 id="11fc7af9-bb60-8098-af51-e8cc4c7e3322" class="">Sécurité</h3><p id="11fc7af9-bb60-80f3-ae69-d76b0b19a694" class="">La sécurité des données et des utilisateurs a été une priorité lors de la phase de développement back-end. Plusieurs mesures ont été prises pour garantir que le site soit protégé contre les attaques courantes :</p><ol type="1" id="11fc7af9-bb60-805d-ab10-dd88485cd2e6" class="numbered-list" start="1"><li><strong>Chiffrement des Mots de Passe</strong> : Tous les mots de passe des utilisateurs sont chiffrés avant d&#x27;être stockés dans la base de données. La fonction PHP <code>password_hash</code> avec l&#x27;algorithme <code>bcrypt</code> est utilisée à cette fin. Cela assure que les mots de passe ne sont jamais stockés en clair dans la base de données, garantissant ainsi une meilleure protection contre les failles potentielles.</li></ol><ol type="1" id="11fc7af9-bb60-801a-a53f-d41a1d602d79" class="numbered-list" start="2"><li><strong>Protection contre les Injections SQL</strong> : Grâce à l&#x27;utilisation de PDO, toutes les interactions avec la base de données sont sécurisées par l&#x27;utilisation de requêtes préparées, ce qui protège contre les attaques par injection SQL.<p id="11fc7af9-bb60-8079-81ae-d169354585a7" class="">Par exemple, voici une requête sécurisée pour la recherche d&#x27;un utilisateur via son prénom :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11fc7af9-bb60-8023-9249-c920b0b9a26e" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all">public function getUserByPrenom($prenom) {
+    $req = $this-&gt;db-&gt;prepare(&quot;SELECT Id_Utilisateur, Nom, Prenom, Email FROM Utilisateur WHERE Prenom = :prenom&quot;);
+    $req-&gt;bindParam(&#x27;:prenom&#x27;, $prenom);
+    $req-&gt;execute();
+    return $req-&gt;fetch(PDO::FETCH_ASSOC);
+}</code></pre></li></ol><ol type="1" id="11fc7af9-bb60-80a1-b4c2-ce4d7edef838" class="numbered-list" start="3"><li><strong>Validation des Données Reçues</strong><p id="11fc7af9-bb60-8018-99d5-ec64ca457679" class="">Chaque fois qu&#x27;un formulaire est soumis ou qu&#x27;une requête est envoyée, il est crucial de s&#x27;assurer que les données reçues sont valides, sécurisées et conformes aux attentes. Cela est particulièrement important pour éviter les attaques comme les <strong>injections SQL</strong>, les <strong>injections XSS</strong> ou la manipulation de la logique du système.</p><p id="11fc7af9-bb60-80f1-b6e8-cb7000a66c3a" class="">Dans la méthode <code>sendMessage()</code> du contrôleur <strong>DiscussionController</strong>, la vérification de la validité des données se fait en plusieurs étapes :</p><h3 id="11fc7af9-bb60-8055-9f75-d7a4681714ed" class="">a. Nettoyage et sécurisation des données</h3><p id="11fc7af9-bb60-809f-baa3-ff7e67c6e604" class="">Lors de l&#x27;envoi d&#x27;un message, le contenu du message est nettoyé et sécurisé à l&#x27;aide de plusieurs fonctions pour éviter l&#x27;exécution de scripts indésirables (attaque XSS) et pour s&#x27;assurer que les données reçues sont des chaînes valides.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11fc7af9-bb60-8056-bf06-f4100456bcf5" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all">$messageContent = htmlentities(strip_tags(stripslashes(trim($_POST[&#x27;message&#x27;]))), ENT_QUOTES, &#x27;UTF-8&#x27;);</code></pre><ul id="11fc7af9-bb60-80d5-9700-d397fe612b49" class="bulleted-list"><li style="list-style-type:disc"><code><strong>trim()</strong></code> : Supprime les espaces superflus au début et à la fin des données saisies.</li></ul><ul id="11fc7af9-bb60-8034-9593-f564cfc49239" class="bulleted-list"><li style="list-style-type:disc"><code><strong>stripslashes()</strong></code> : Retire les antislashs (<code>\</code>) potentiellement ajoutés par les utilisateurs ou des contextes spécifiques.</li></ul><ul id="11fc7af9-bb60-8015-b6b9-cda37db7716a" class="bulleted-list"><li style="list-style-type:disc"><code><strong>strip_tags()</strong></code> : Supprime toutes les balises HTML ou PHP, empêchant ainsi l&#x27;insertion de scripts.</li></ul><ul id="11fc7af9-bb60-80d0-8ddf-d734de308630" class="bulleted-list"><li style="list-style-type:disc"><code><strong>htmlentities()</strong></code> : Convertit les caractères spéciaux en entités HTML pour éviter qu&#x27;ils ne soient interprétés comme du code.</li></ul><p id="11fc7af9-bb60-8008-a19e-d85d49696203" class="">Cette méthode empêche les utilisateurs de soumettre des contenus pouvant exécuter du code malveillant dans l&#x27;interface de discussion.</p><h3 id="11fc7af9-bb60-80c4-8ff3-eccb02ac7fa8" class="">b. Validation des types de données</h3><p id="11fc7af9-bb60-806c-acd1-c4738171fe6c" class="">En plus de nettoyer les données, il est essentiel de vérifier qu&#x27;elles respectent le type attendu. Par exemple, l&#x27;<strong>ID du destinataire</strong> doit être un nombre. Si ce n&#x27;est pas le cas, la requête est rejetée :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11fc7af9-bb60-802e-bcf8-e6c5ec8a8b3c" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all">if (empty($messageContent) || !is_numeric($otherUserId)) {
+    http_response_code(400); // Bad Request
+    echo json_encode([&#x27;error&#x27; =&gt; &#x27;Données invalides pour l\&#x27;envoi du message.&#x27;]);
+    exit();
+    }</code></pre><p id="11fc7af9-bb60-8095-9d69-c0029a8d64c6" class="">Cette condition permet de s&#x27;assurer que le contenu du message n&#x27;est pas vide et que l&#x27;ID du destinataire est bien un entier, ce qui protège contre les tentatives de manipulation des identifiants par des utilisateurs malveillants.</p><h3 id="11fc7af9-bb60-8024-9c35-c26954fe4a8a" class="">2. Gestion des Sessions Utilisateurs</h3><p id="11fc7af9-bb60-80d6-afaf-fa4eab2a67d7" class="">Avant toute action liée aux messages, le contrôleur vérifie également que l&#x27;utilisateur est bien <strong>authentifié</strong>. Cette vérification est cruciale pour empêcher un utilisateur non connecté ou non autorisé d&#x27;accéder aux discussions ou d&#x27;envoyer des messages.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11fc7af9-bb60-80cd-b5c9-fc1eab275f68" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all"> session_start();
+if (!isset($_SESSION[&#x27;user_id&#x27;])) {
+    http_response_code(403); // Forbidden
+    echo json_encode([&#x27;error&#x27; =&gt; &#x27;Utilisateur non connecté&#x27;]);
+    header(&quot;Location: /connexion&quot;);
+    exit();
+}</code></pre><p id="11fc7af9-bb60-80e5-a9a2-d568177a026e" class="">Si l&#x27;utilisateur n&#x27;est pas connecté, il reçoit une réponse avec le code <strong>403 Forbidden</strong> et le traitement s&#x27;arrête. Cela garantit que seuls les utilisateurs authentifiés peuvent interagir avec la messagerie.</p></li></ol><h3 id="11fc7af9-bb60-8096-a9f6-fd261356c931" class="">Améliorations Futures</h3><p id="11fc7af9-bb60-8049-866e-f62dc5ccb6cb" class="">Une des améliorations identifiées pour le futur est l&#x27;intégration d&#x27;un <strong>système de réservation</strong> qui permettra aux utilisateurs de réserver des événements directement sur le site. Ce module n&#x27;a pas encore été mis en place, mais il est prévu que ce système inclura la vérification des créneaux horaires disponibles et la gestion des réservations en temps réel.</p><p id="123c7af9-bb60-80ba-b75a-dcef98b4fe4a" class=""><br/>De plus, le <br/><strong>système de messagerie </strong>pourrait intégrer du<strong> temps réel </strong>pour améliorer encore la communication entre les utilisateurs. L&#x27;intégration d&#x27;<strong>AJAX</strong>, de <strong>WebSocket&#x27;s</strong> ou l&#x27;utilisation de solutions prêtes à l&#x27;emploi comme <strong>Pusher ou Firebase </strong>pourrait permettre de recevoir et d&#x27;envoyer des messages sans recharger la page, rendant l&#x27;expérience utilisateur plus interactive et fluide.</p></div></details><hr id="123c7af9-bb60-8054-8f0b-c54732e0a444"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">10. Documentation du Déploiement</summary><div class="indented"><p id="11bc7af9-bb60-8025-8466-c6ab690d26c0" class="">
+</p><h3 id="11bc7af9-bb60-80d2-9cba-e0c04e97be08" class=""><strong>Guide de Déploiement Détaillé</strong></h3><p id="11bc7af9-bb60-807b-b67a-da0f31f5e1ce" class="">Le déploiement du site <strong>Heart Green Event</strong> a été réalisé sur un serveur LAMP (Linux, Apache, MySQL, PHP) hébergé sur un Raspberry Pi. Cette section décrit les étapes clés que j&#x27;ai suivies pour configurer le serveur, lier le domaine <code>heartgreenevent.fr</code> via OVH, sécuriser le site avec Certbot, et déployer le code source organisé selon le modèle MVC avec les dossiers <code>app</code>, <code>config</code> et <code>public</code>.</p><h3 id="11bc7af9-bb60-8077-ae52-fa06f709bded" class=""><strong>1. Configuration du Serveur</strong></h3><h3 id="11bc7af9-bb60-8056-b971-c817f3571182" class=""><strong>1.1. Mise à Jour du Système</strong></h3><p id="11bc7af9-bb60-80a6-9e87-cfada4c03f63" class="">Pour garantir la stabilité et la sécurité de mon serveur, j&#x27;ai commencé par mettre à jour les paquets existants. Cela a été effectué en exécutant la commande suivante dans le terminal :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-804f-805b-fbe15e788810" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo apt update &amp;&amp; sudo apt upgrade -y</code></pre><p id="11bc7af9-bb60-8023-a8e7-c2b533e5f7e1" class="">Cette commande a permis de s&#x27;assurer que tous les logiciels installés étaient à jour avec les dernières versions disponibles.</p><h3 id="11bc7af9-bb60-808d-8393-c142b6027d53" class=""><strong>1.2. Installation d&#x27;Apache</strong></h3><p id="11bc7af9-bb60-809b-9ef8-ea1e86a8ad46" class="">Apache a été choisi comme serveur web pour héberger le site. L&#x27;installation s&#x27;est faite rapidement grâce à la commande :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-803e-834a-c8907f5694c3" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo apt install apache</code></pre><p id="11bc7af9-bb60-80b0-976c-f445ba89c33f" class="">Après l&#x27;installation, Apache démarre automatiquement. Pour vérifier son bon fonctionnement, j&#x27;ai accédé à l&#x27;adresse IP de mon Raspberry Pi via un navigateur web, ce qui a affiché la page par défaut d&#x27;Apache, confirmant ainsi que le serveur web fonctionnait correctement.</p><h3 id="11bc7af9-bb60-80cc-b601-f7f0f9942548" class=""><strong>1.3. Installation de PHP</strong></h3><p id="11bc7af9-bb60-8009-9225-d9ee879eb670" class="">PHP est essentiel pour le traitement des scripts côté serveur. J&#x27;ai installé PHP ainsi que les modules nécessaires pour l&#x27;intégration avec Apache en utilisant la commande suivante :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-800c-b374-c43c6ccf0628" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo apt install php libapache2-mod-php</code></pre><p id="11bc7af9-bb60-804b-9a85-cb84d9cb8b32" class="">Cette étape a permis à Apache de traiter les fichiers PHP, rendant possible la génération dynamique des pages web.</p><h3 id="11bc7af9-bb60-8076-b8db-c2874a94c9bb" class=""><strong>1.4. Installation de MySQL</strong></h3><p id="11bc7af9-bb60-807d-a320-da0f04e17b86" class="">Pour la gestion des données de l&#x27;application, j&#x27;ai installé MySQL avec la commande :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80ad-9144-ce45ec378fd7" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo apt install mysql-server -y</code></pre><p id="11bc7af9-bb60-8076-8391-c67d56d70595" class="">Bien que la gestion détaillée de la base de données ne soit pas abordée ici, cette installation est cruciale pour stocker et manipuler les données nécessaires au fonctionnement du site.</p><h3 id="11bc7af9-bb60-8076-b28f-d3926fe413a6" class=""><strong>1.5. Sécurisation de MySQL</strong></h3><p id="11bc7af9-bb60-80af-811a-d0a9c2252ab7" class="">La sécurisation de MySQL est une étape importante pour protéger les données. J&#x27;ai exécuté le script de sécurisation avec :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-8005-91a8-f861947984ef" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo mysql_secure_installation</code></pre><p id="11bc7af9-bb60-80fa-a04b-ce824ee842a4" class="">Cela m&#x27;a permis de définir un mot de passe root sécurisé, de supprimer les utilisateurs anonymes, de désactiver les connexions root à distance et de supprimer la base de données de test, renforçant ainsi la sécurité de mon serveur de base de données.</p><hr id="11bc7af9-bb60-8072-b87a-fb6d38fc54f8"/><h3 id="11bc7af9-bb60-8033-a2be-cc11771aaf52" class=""><strong>2. Configuration des Virtual Hosts</strong></h3><p id="11bc7af9-bb60-8018-81d4-ccb00ae62883" class="">Les virtual hosts permettent d&#x27;héberger le site <strong>Heart Green Event</strong> sur le serveur Apache en utilisant le domaine <code>heartgreenevent.fr</code>.</p><h3 id="11bc7af9-bb60-8029-bde4-ea47d9a4b1dd" class=""><strong>2.1. Création du Répertoire du Site</strong></h3><p id="11bc7af9-bb60-80bc-a5ca-d2a438468e65" class="">J&#x27;ai créé un répertoire dédié pour les fichiers du site web avec la commande suivante :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-800e-83b3-da51edc1608c" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo mkdir -p /var/www/heartgreenevent.fr/public_html</code></pre><p id="11bc7af9-bb60-803e-9cba-d724be17c09f" class="">Ce répertoire servira de racine pour le contenu public du site.</p><h3 id="11bc7af9-bb60-80a7-842a-dd3533818aad" class=""><strong>2.2. Définition des Permissions</strong></h3><p id="11bc7af9-bb60-80ce-8cc0-e396fae83183" class="">Pour permettre à mon utilisateur actuel de gérer les fichiers du site, j&#x27;ai ajusté les permissions :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80aa-8822-f13da902db4b" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo chown -R $USER:$USER /var/www/heartgreenevent.fr/public_html
+sudo chmod -R 755 /var/www</code></pre><p id="11bc7af9-bb60-8015-b8fa-ca68648b21f4" class="">Ces commandes assurent que les fichiers sont accessibles et modifiables par moi tout en maintenant des permissions sécurisées.</p><h3 id="11bc7af9-bb60-8038-8a8d-c2e5c70a97d5" class=""><strong>2.3. Création d&#x27;une Page d&#x27;Index de Test</strong></h3><p id="11bc7af9-bb60-8064-ba09-f5dc4b4bed8f" class="">Afin de vérifier la configuration d&#x27;Apache et PHP, j&#x27;ai créé un fichier <code>index.php</code> :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80fc-b264-e7b09905fcae" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">nano /var/www/heartgreenevent.fr/public_html/index.php</code></pre><p id="11bc7af9-bb60-80b2-a732-ec5f64b08b8f" class="">J&#x27;ai ajouté le contenu suivant pour afficher les informations PHP :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80fb-acd2-d927b8e35c94" class="code"><code class="language-PHP" style="white-space:pre-wrap;word-break:break-all">&lt;?php
+phpinfo();
+?&gt;</code></pre><p id="11bc7af9-bb60-8022-b110-c68f4ed3bf6c" class="">En enregistrant et fermant le fichier, j&#x27;ai pu accéder à cette page via un navigateur pour confirmer que PHP était correctement intégré avec Apache.</p><h3 id="11bc7af9-bb60-809a-99cc-c5231948ae1a" class=""><strong>2.4. Création du Fichier de Configuration du Virtual Host</strong></h3><p id="11bc7af9-bb60-8090-9d68-d2e3cf305061" class="">J&#x27;ai ensuite créé un fichier de configuration spécifique pour mon domaine :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80ad-a61c-cb947e622e33" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo nano /etc/apache2/sites-available/heartgreenevent.fr.conf</code></pre><p id="11bc7af9-bb60-80dc-b142-e3aa883f5d16" class="">Le contenu du fichier était le suivant :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80e8-861f-d8cc4375a5ed" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;VirtualHost *:80&gt;
+    ServerAdmin webmaster@heartgreenevent.fr
+    ServerName heartgreenevent.fr
+    ServerAlias www.heartgreenevent.fr
+    DocumentRoot /var/www/heartgreenevent.fr/public_html
+
+    &lt;Directory /var/www/heartgreenevent.fr/public_html&gt;
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/heartgreenevent.fr_error.log
+    CustomLog ${APACHE_LOG_DIR}/heartgreenevent.fr_access.log combined
+&lt;/VirtualHost&gt;
+
+</code></pre><h3 id="11bc7af9-bb60-805c-ab68-c3debb01a96e" class=""><strong>2.5. Activation du Virtual Host et des Modules Nécessaires</strong></h3><p id="11bc7af9-bb60-8089-a065-f1943e48ecd2" class="">Pour activer le site et les modules requis, j&#x27;ai exécuté :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80de-86dd-e23433c194d6" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo a2ensite heartgreenevent.fr.conf
+sudo a2enmod rewrite</code></pre><h3 id="11bc7af9-bb60-80f2-bc1b-e5fbb2e4d57d" class=""><strong>2.6. Désactivation du Site par Défaut</strong></h3><p id="11bc7af9-bb60-809b-bfce-e32cfd1dba47" class="">Afin d&#x27;éviter tout conflit, j&#x27;ai désactivé le site par défaut d&#x27;Apache :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-8021-a809-ea45e47ddd44" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo a2dissite 000-default.conf</code></pre><h3 id="11bc7af9-bb60-8049-8abe-dbbaed3e491c" class=""><strong>2.7. Test de la Configuration Apache</strong></h3><p id="11bc7af9-bb60-801a-903c-dfeba97e0185" class="">Pour m&#x27;assurer que la configuration était correcte, j&#x27;ai vérifié la syntaxe d&#x27;Apache :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-800e-806e-caef8d839204" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo apache2ctl configtest</code></pre><p id="11bc7af9-bb60-80c9-9ee4-ea32bc4e507d" class="">Un retour <code>Syntax OK</code> a confirmé que tout était en ordre.</p><h3 id="11bc7af9-bb60-80ef-88e9-e784ec620776" class=""><strong>2.8. Redémarrage d&#x27;Apache</strong></h3><p id="11bc7af9-bb60-8097-a1a9-f3a73884bc0f" class="">Enfin, j&#x27;ai redémarré Apache pour appliquer les changements :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80af-800e-f4cc48e6e46b" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo systemctl restart apache2</code></pre><hr id="11bc7af9-bb60-8006-b0b5-cb8053a2f7c4"/><h3 id="11bc7af9-bb60-80aa-9c10-c5f553f4b407" class=""><strong>3. Configuration du Port Forwarding</strong></h3><p id="11bc7af9-bb60-8042-900a-cf316fe0a077" class="">Pour rendre le serveur Apache accessible depuis l&#x27;extérieur de mon réseau local, j&#x27;ai configuré le port forwarding sur mon routeur.</p><h3 id="11bc7af9-bb60-8019-8d5e-c7cff6c5709c" class=""><strong>3.1. Accéder à l&#x27;Interface de Gestion du Routeur</strong></h3><p id="11bc7af9-bb60-8081-a96e-da1481999ec2" class="">J&#x27;ai ouvert un navigateur web et saisi l&#x27;adresse IP de mon routeur (généralement <code>192.168.1.1</code> ou <code>192.168.0.1</code>) pour accéder à son interface de gestion.</p><h3 id="11bc7af9-bb60-804d-ab5e-fc17fc2e4f03" class=""><strong>3.2. Configuration du Port Forwarding</strong></h3><p id="11bc7af9-bb60-8026-b598-cc076d1ab67a" class="">Dans l&#x27;interface du routeur, j&#x27;ai configuré les règles de redirection des ports pour HTTP (80) et HTTPS (443) vers l&#x27;adresse IP locale de mon Raspberry Pi :</p><ul id="11bc7af9-bb60-804f-b267-cf1bbe6c0653" class="bulleted-list"><li style="list-style-type:disc"><strong>Service :</strong> HTTP<ul id="11bc7af9-bb60-80cc-876b-f433555a862f" class="bulleted-list"><li style="list-style-type:circle"><strong>Port Externe :</strong> 80</li></ul><ul id="11bc7af9-bb60-80f4-87a4-d47caa331ec8" class="bulleted-list"><li style="list-style-type:circle"><strong>Port Interne :</strong> 80</li></ul><ul id="11bc7af9-bb60-806a-b21e-d14d58df6d36" class="bulleted-list"><li style="list-style-type:circle"><strong>Adresse IP Interne :</strong> [Adresse IP locale du Raspberry Pi]</li></ul></li></ul><ul id="11bc7af9-bb60-8010-8f30-ccf78c6e37f2" class="bulleted-list"><li style="list-style-type:disc"><strong>Service :</strong> HTTPS<ul id="11bc7af9-bb60-805b-9791-fa06475d5289" class="bulleted-list"><li style="list-style-type:circle"><strong>Port Externe :</strong> 443</li></ul><ul id="11bc7af9-bb60-8086-9327-ecd727b3c456" class="bulleted-list"><li style="list-style-type:circle"><strong>Port Interne :</strong> 443</li></ul><ul id="11bc7af9-bb60-8054-9e5b-c91caa31ec15" class="bulleted-list"><li style="list-style-type:circle"><strong>Adresse IP Interne :</strong> [Adresse IP locale du Raspberry Pi]</li></ul></li></ul><p id="11bc7af9-bb60-801c-a1aa-e8284871de8e" class="">Ces réglages permettent aux utilisateurs externes d&#x27;accéder à mon site via Internet.</p><hr id="11bc7af9-bb60-808d-91ae-e7f7c79bdf92"/><h3 id="11bc7af9-bb60-8073-9d67-c298091b9943" class=""><strong>4. Liaison du Domaine OVH à l&#x27;Adresse IP Publique</strong></h3><h3 id="11bc7af9-bb60-806a-bfe2-c43507e5f83a" class=""><strong>4.1. Obtention de l&#x27;Adresse IP Publique</strong></h3><p id="11bc7af9-bb60-80a6-9434-ff4c702bfc75" class="">Pour lier mon domaine à mon serveur, j&#x27;ai d&#x27;abord obtenu l&#x27;adresse IP publique de mon réseau en exécutant :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-809e-9c8e-d48be314755f" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">curl ifconfig.me</code></pre><p id="11bc7af9-bb60-80be-b9ec-c47db5b131aa" class="">Cette adresse IP a ensuite été utilisée pour configurer les enregistrements DNS chez OVH.</p><h3 id="11bc7af9-bb60-803c-a58a-feb621dc4dbf" class=""><strong>4.2. Configuration des DNS chez OVH</strong></h3><ol type="1" id="11bc7af9-bb60-802e-b9fc-d6c0816da8db" class="numbered-list" start="1"><li><strong>Connexion au Manager OVH :</strong><p id="11bc7af9-bb60-802b-a87f-d6685077c80f" class="">Je me suis connecté à mon compte OVH et ai accédé à la section <strong>Domaines</strong>.</p></li></ol><ol type="1" id="11bc7af9-bb60-801c-84a4-f40fc00651e0" class="numbered-list" start="2"><li><strong>Sélection du Domaine :</strong><p id="11bc7af9-bb60-80a2-a9d8-f5f04969bfa5" class="">J&#x27;ai sélectionné <code>heartgreenevent.fr</code> dans la liste de mes domaines.</p></li></ol><ol type="1" id="11bc7af9-bb60-8010-a78a-c2dae8f9c3b8" class="numbered-list" start="3"><li><strong>Modification des Enregistrements DNS :</strong><ul id="11bc7af9-bb60-808a-812f-f123d4f843ca" class="bulleted-list"><li style="list-style-type:disc"><strong>A Record :</strong><ul id="11bc7af9-bb60-80da-a62c-cb147346c202" class="bulleted-list"><li style="list-style-type:circle"><strong>Nom :</strong> @</li></ul><ul id="11bc7af9-bb60-809e-b66c-d5cdbb4a488c" class="bulleted-list"><li style="list-style-type:circle"><strong>Cible :</strong> [Mon adresse IP publique]</li></ul><ul id="11bc7af9-bb60-8083-ab98-d60859f2174d" class="bulleted-list"><li style="list-style-type:circle"><strong>TTL :</strong> 3600</li></ul></li></ul><ul id="11bc7af9-bb60-80a1-be2f-c47d230605ce" class="bulleted-list"><li style="list-style-type:disc"><strong>CNAME Record :</strong><ul id="11bc7af9-bb60-80b2-98c7-d4ca3d80baec" class="bulleted-list"><li style="list-style-type:circle"><strong>Nom :</strong> www</li></ul><ul id="11bc7af9-bb60-8001-8684-c890367a5173" class="bulleted-list"><li style="list-style-type:circle"><strong>Cible :</strong> heartgreenevent.fr</li></ul><ul id="11bc7af9-bb60-805a-83b9-d289eb44187f" class="bulleted-list"><li style="list-style-type:circle"><strong>TTL :</strong> 3600</li></ul></li></ul></li></ol><ol type="1" id="11bc7af9-bb60-8044-9403-d198766cb461" class="numbered-list" start="4"><li><strong>Propagation des DNS :</strong><p id="11bc7af9-bb60-80af-8d39-f52db18a15d6" class="">Les modifications DNS ont pris jusqu&#x27;à 24 heures pour se propager complètement.</p></li></ol><hr id="11bc7af9-bb60-8008-8791-d7866d3d9a90"/><h3 id="11bc7af9-bb60-8008-9b60-c82771c9c367" class=""><strong>5. Déploiement du Code Source via Git</strong></h3><h3 id="11bc7af9-bb60-80b9-96c7-c931f0d92fa8" class=""><strong>5.1. Installation de Git</strong></h3><p id="11bc7af9-bb60-800e-a74a-fcdfd12b8861" class="">Pour gérer le déploiement du code source, j&#x27;ai installé Git sur le serveur :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80af-bd64-eb01d25e72ea" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo apt install git -y</code></pre><h3 id="11bc7af9-bb60-800e-8c90-e36d115cbf7d" class=""><strong>5.2. Clonage du Référentiel Git</strong></h3><p id="11bc7af9-bb60-8080-9df2-c170e97b6ec1" class="">J&#x27;ai cloné mon dépôt Git contenant le code source du site dans le répertoire dédié :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-8099-9e88-fd712ec18793" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">cd /var/www/heartgreenevent.fr/public_html
+git clone https://github.com/votre-utilisateur/votre-repo.git .</code></pre><p id="11bc7af9-bb60-80ef-ae8b-d3f1fffebb47" class=""><strong>Remarque :</strong> Il faut remplacer <code>https://github.com/votre-utilisateur/votre-repo.git</code> par l&#x27;URL de mon propre dépôt Git.</p><hr id="11bc7af9-bb60-80f4-9688-fa8134be8323"/><h3 id="11bc7af9-bb60-808b-baa8-e1f791604592" class=""><strong>6. Structure du Projet MVC</strong></h3><p id="11bc7af9-bb60-80e8-b624-ed4c2ccac0de" class="">Le projet <strong>Heart Green Event</strong> est organisé selon le modèle MVC, facilitant ainsi la maintenance et l&#x27;évolution du site. La structure des dossiers est la suivante :</p><ul id="11bc7af9-bb60-807d-b438-e27fec05d7db" class="bulleted-list"><li style="list-style-type:disc"><strong>app/</strong> : Contient la logique métier de l&#x27;application, y compris les contrôleurs, les modèles et les vues.</li></ul><ul id="11bc7af9-bb60-809a-a0e1-d4039cb323c0" class="bulleted-list"><li style="list-style-type:disc"><strong>config/</strong> : Regroupe les fichiers de configuration, tels que les paramètres de la base de données et les configurations de l&#x27;application.</li></ul><ul id="11bc7af9-bb60-8025-9079-d0741b48f46e" class="bulleted-list"><li style="list-style-type:disc"><strong>public/</strong> : Contient les fichiers accessibles publiquement, comme les fichiers CSS, JavaScript, les images et le fichier <code>index.php</code> servant de point d&#x27;entrée.</li></ul><p id="11bc7af9-bb60-8001-8751-ea4a3b208695" class="">Cette organisation permet de séparer clairement les différentes responsabilités de l&#x27;application, améliorant ainsi la lisibilité et la gestion du code.</p><hr id="11bc7af9-bb60-80e3-925f-c7212a0dfbdf"/><h3 id="11bc7af9-bb60-80b0-8d66-d88f08fb106e" class=""><strong>7. Sécurisation avec Certbot</strong></h3><p id="11bc7af9-bb60-804c-a135-f658ebd2d424" class="">Pour sécuriser le site avec HTTPS, j&#x27;ai utilisé Certbot pour obtenir et renouveler automatiquement des certificats SSL/TLS gratuits de Let&#x27;s Encrypt.</p><h3 id="11bc7af9-bb60-8007-b345-e9f5a611e8ab" class=""><strong>7.1. Installation de Certbot</strong></h3><p id="11bc7af9-bb60-80a1-87a6-d262f9a625fb" class="">J&#x27;ai installé Certbot et le plugin Apache avec la commande suivante :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-8087-aaef-f9d95380782e" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo apt install certbot python3-certbot-apache -y</code></pre><h3 id="11bc7af9-bb60-806a-ac4d-edec14250dee" class=""><strong>7.2. Obtention et Installation du Certificat SSL</strong></h3><p id="11bc7af9-bb60-8009-9f13-f5f9a5cb0b3c" class="">Ensuite, j&#x27;ai exécuté Certbot pour obtenir le certificat SSL et configurer Apache automatiquement :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-80cc-8b91-f4b1221094e7" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo certbot --apache -d heartgreenevent.fr -d www.heartgreenevent.fr</code></pre><p id="11bc7af9-bb60-80b6-8754-e1071924084b" class="">J&#x27;ai suivi les instructions à l&#x27;écran pour accepter les termes du service et choisir de rediriger le trafic HTTP vers HTTPS, assurant ainsi une connexion sécurisée pour les utilisateurs.</p><h3 id="11bc7af9-bb60-8031-afef-d0194a83ba2b" class=""><strong>7.3. Test du Renouvellement Automatique</strong></h3><p id="11bc7af9-bb60-80e2-9741-dfa1b082f2d9" class="">Pour vérifier que Certbot peut renouveler les certificats automatiquement, j&#x27;ai effectué un test de renouvellement :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11bc7af9-bb60-806c-a9e4-f4107b688444" class="code"><code class="language-Shell" style="white-space:pre-wrap;word-break:break-all">sudo certbot renew --dry-run</code></pre><h3 id="11bc7af9-bb60-8032-8a2b-fe42a9310c0b" class=""><strong>Remarques Finales</strong></h3><p id="11bc7af9-bb60-802d-9709-d31cb4a60fa3" class="">Le déploiement du serveur LAMP pour <strong>Heart Green Event</strong> a été mené à bien, permettant une mise en ligne sécurisée et fonctionnelle du site web. L&#x27;organisation du projet selon le modèle MVC a grandement facilité le développement et la maintenance, en assurant une séparation claire des responsabilités entre la logique métier, les configurations et les ressources publiques.</p><p id="11bc7af9-bb60-8036-aa34-e7066fa5f95c" class=""><strong>Points d&#x27;amélioration à mettre en place :</strong></p><ul id="11bc7af9-bb60-8056-96aa-cac7817d95e3" class="bulleted-list"><li style="list-style-type:disc"><strong>Surveillance des Services :</strong> Mettre en place des outils de surveillance pour suivre la performance et la disponibilité des services Apache et MySQL.</li></ul><ul id="11bc7af9-bb60-8003-b34f-e0453dc91715" class="bulleted-list"><li style="list-style-type:disc"><strong>Sauvegardes Régulières :</strong> Implémenter des stratégies de sauvegarde automatiques pour les fichiers du site et la base de données afin de prévenir toute perte de données.</li></ul><p id="11bc7af9-bb60-8040-a61e-d908a9badcec" class="">Ces améliorations contribueront à renforcer la fiabilité et la sécurité du site, assurant ainsi une meilleure expérience utilisateur et une protection accrue des données.</p></div></details><hr id="11bc7af9-bb60-80e4-ab10-cf93f8f46c76"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">11. Conclusion</summary><div class="indented"><p id="123c7af9-bb60-8062-8253-e8ae65ccd27e" class="">Le développement du site <strong>Heart Green Event</strong> a été une expérience enrichissante qui m&#x27;a permis de mettre en pratique les compétences acquises durant ma formation. J&#x27;ai pu aborder toutes les étapes d&#x27;un projet web complet, de l&#x27;analyse du besoin à la mise en production.</p><p id="123c7af9-bb60-80c6-b632-edbfcd9ff663" class="">Les défis rencontrés, tels que la mise en place du serveur sur un Raspberry Pi ou la gestion de la sécurité des données, ont été surmontés grâce à une recherche continue et à l&#x27;application de bonnes pratiques. Ce projet offre une base solide pour l&#x27;entreprise afin de renforcer sa présence en ligne et de mieux servir ses clients.</p><h3 id="123c7af9-bb60-8052-a600-dad10065b752" class=""><strong>Perspectives d&#x27;amélioration :</strong></h3><ul id="123c7af9-bb60-80da-89d2-e108a512f0b2" class="bulleted-list"><li style="list-style-type:disc"><strong>Intégration d&#x27;un système de paiement en ligne :</strong><p id="123c7af9-bb60-80a8-827f-f28fccf1016a" class="">Mettre en place un système de paiement en ligne permettrait aux clients de réserver et payer directement pour leurs événements sur le site, offrant ainsi une expérience plus fluide et complète. Cette fonctionnalité simplifierait le processus de réservation, améliorerait l&#x27;efficacité opérationnelle et offrirait un moyen sécurisé pour traiter les transactions financières, ce qui contribuerait à augmenter les taux de conversion et à répondre aux attentes des utilisateurs modernes.</p></li></ul><ul id="123c7af9-bb60-808a-93d8-cc4b1fa861ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Développement d&#x27;une application mobile :</strong><p id="123c7af9-bb60-8066-aee7-e849003ef674" class="">Une application mobile dédiée améliorerait l&#x27;accessibilité et l&#x27;engagement des utilisateurs, leur permettant de gérer leurs événements, réservations, et communications directement depuis leur smartphone. Avec la montée en puissance de l&#x27;utilisation mobile, une application native offrirait une expérience utilisateur optimisée, des notifications en temps réel, et des fonctionnalités plus intégrées comme la géolocalisation pour mieux adapter les services aux besoins des clients. Cela aiderait à renforcer la relation client et à encourager la fidélisation.</p></li></ul><ul id="123c7af9-bb60-80d3-bb19-faef7862dccb" class="bulleted-list"><li style="list-style-type:disc"><strong>Optimisation SEO avancée pour une meilleure visibilité :</strong><p id="123c7af9-bb60-8038-8d1d-e6a9f11b00dc" class="">Une stratégie d&#x27;optimisation SEO plus poussée augmenterait la visibilité du site sur les moteurs de recherche, attirant ainsi un flux de trafic organique plus important. En ciblant des mots-clés pertinents, en améliorant la structure du site et en optimisant la vitesse de chargement, Heart Green Event pourrait atteindre une audience plus large, générer davantage de leads et augmenter sa notoriété en ligne. De plus, un SEO bien exécuté aiderait à maintenir une position concurrentielle dans un marché de plus en plus digitalisé.</p></li></ul><p id="123c7af9-bb60-8067-a233-f72db796fa59" class="">Ces améliorations permettraient d&#x27;élargir les services offerts, d&#x27;optimiser l&#x27;expérience utilisateur, et d&#x27;accroître la portée et l&#x27;impact commercial du site.</p></div></details><hr id="11bc7af9-bb60-806f-83ea-c60837f849c8"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">12. Annexes</summary><div class="indented"><ul id="11bc7af9-bb60-80f3-8401-d26df015cec4" class="bulleted-list"><li style="list-style-type:disc"><em>Code source complet disponible sur  :</em><figure id="11bc7af9-bb60-802e-b4a1-f755dae08d72"><div class="source">https://github.com/xLucasGitHubx/HeartGreenEvent_MVC</div></figure></li></ul><p id="11bc7af9-bb60-80cf-8dc3-d3c5b84943c8" class="">
+</p><p id="11fc7af9-bb60-8033-a72c-e715f6e05236" class="">
+</p><figure id="11bc7af9-bb60-8021-ada5-e351e5675b69" class="image"><a href="image%2024.png"><img style="width:2016px" src="image%2024.png"/></a></figure><figure id="11bc7af9-bb60-8004-95a0-e2c55b631d39" class="image"><a href="image%2025.png"><img style="width:2016px" src="image%2025.png"/></a></figure><figure id="11bc7af9-bb60-805d-8be5-f2eaa5f3970b" class="image"><a href="image%2026.png"><img style="width:2016px" src="image%2026.png"/></a></figure><figure id="11bc7af9-bb60-804d-94d5-fbf6c1fcfd8e" class="image"><a href="image%2027.png"><img style="width:2016px" src="image%2027.png"/></a></figure><figure id="11bc7af9-bb60-80f4-89ed-e541199097de" class="image"><a href="image%2028.png"><img style="width:2016px" src="image%2028.png"/></a></figure><figure id="11bc7af9-bb60-801b-b866-c31eaa94d4b9" class="image"><a href="image%2029.png"><img style="width:2016px" src="image%2029.png"/></a></figure><figure id="11bc7af9-bb60-80f9-982c-f676b730913c" class="image"><a href="image%2030.png"><img style="width:2016px" src="image%2030.png"/></a></figure><figure id="11bc7af9-bb60-8015-9066-d61d13c12020" class="image"><a href="image%2031.png"><img style="width:2016px" src="image%2031.png"/></a></figure><figure id="11bc7af9-bb60-800b-ae7c-e57289ca5835" class="image"><a href="image%2032.png"><img style="width:2016px" src="image%2032.png"/></a></figure><figure id="11bc7af9-bb60-8086-b267-c67e06476348" class="image"><a href="image%2033.png"><img style="width:2016px" src="image%2033.png"/></a></figure><figure id="11bc7af9-bb60-8074-8421-c3b2f7e22c33" class="image"><a href="image%2034.png"><img style="width:2016px" src="image%2034.png"/></a></figure><figure id="11bc7af9-bb60-8012-b014-fbfdebe90ef1" class="image"><a href="image%2035.png"><img style="width:2016px" src="image%2035.png"/></a></figure><figure id="11bc7af9-bb60-80b4-8fab-cfd7218cb6b9" class="image"><a href="image%2036.png"><img style="width:2016px" src="image%2036.png"/></a></figure><figure id="11bc7af9-bb60-80eb-9f93-e24ca2b65597" class="image"><a href="image%2037.png"><img style="width:2016px" src="image%2037.png"/></a></figure><figure id="126c7af9-bb60-809f-80eb-dc1a7d0ac89d"><div class="source"><a href="https://drive.google.com/file/d/1KaNeSa65d_dYhld4tLj_8hcKNnlh68li/view?usp=sharing">https://drive.google.com/file/d/1KaNeSa65d_dYhld4tLj_8hcKNnlh68li/view?usp=sharing</a></div></figure><p id="126c7af9-bb60-80a0-aa1a-fac59929a961" class="">
+</p></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
