@@ -6,6 +6,9 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // Connexion à MongoDB
+//  petie à parter le mdp à étais partager tels quel mais à étais modifier  je l'ai partager pour le bien de la démonstration
+// il aurait fallu créer un fichier .env afin de pas partager le mdp comme fait dans le projet HGE_MVC
+
 mongoose.connect("mongodb+srv://lucas:QDVHDYF2z8rtVA4E@cluster0.r5inqzz.mongodb.net/todoapp", {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
